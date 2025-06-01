@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body data-spy="scroll" data-target="#site-nav">
@@ -52,7 +53,8 @@
                     <li><a data-scroll href="#about">Introducción</a></li>
                     <li><a data-scroll href="#history">Historia</a></li>
                     <li><a data-scroll href="#events">Eventos</a></li>
-                    <li><a data-scroll href="#facilites">Instalaciónes</a></li>
+                    <li><a data-scroll href="#facilities">Instalaciónes</a></li>
+                    <li><a data-scroll href="#gastronomy">Gastronomía</a></li>
                     <li><a data-scroll href="#gallery">Galeria</a></li>
                     <li><a data-scroll href="#contacts">Contactos</a></li>
 
@@ -165,118 +167,122 @@
 
     <!-- EVENTOS -->
     <section id="events" class="section_events">
-        <h3 class="section-title">Eventos</h3>
-        <div class="card-container">
-
-            <!-- Event 1 -->
-            <div class="card">
-                <img src="/demo-proyecto-plazatoros/assets/images/events/Evento Cars.png" alt="Visita al Museo Cars" />
-                <div class="card-content">
-                    <h3 class="card-title">Visita al Museo Cars</h3>
-                    <p class="card-text">
-                        A solo 20 kilómetros de Colonia del Sacramento está el Museo C’ars, un espacio mágico de más de
-                        2000 metros cuadrados en los que se puede hacer un viaje en el tiempo, disfrutando de una
-                        colección única de autos clásicos y comercios de época, como una barbería, una farmacia y una
-                        estación de servicio, entre otros.
-                    </p>
-                    <div class="card-actions">
-                        <button class="read-more">Ver más</button>
-                        <a href="https://redtickets.uy/evento/VISITA-al-MUSEO-CARS--Mayo/21445/"
-                            class="card-button">Comprar Ticket</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 2 -->
-            <div class="card">
-                <img src="/demo-proyecto-plazatoros/assets/images/events/Visita Plaza Toros.jpg"
-                    alt="Visita la Plaza de Toros" />
-                <div class="card-content">
-                    <h3 class="card-title">Visita la Plaza de Toros</h3>
-                    <p class="card-text">Visita la Plaza de Toros con una visita guiada!</p>
-                    <div class="card-actions">
-                        <button class="read-more">Ver más</button>
-                        <a href="https://redtickets.uy/evento/Visita-la-Plaza-de-Toros--Segunda-Quincena-de-Mayo/21674/"
-                            class="card-button">Comprar Ticket</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 3 -->
-            <div class="card">
-                <img src="/demo-proyecto-plazatoros/assets/images/events/Tour Destileria Sur 34.jpg"
-                    alt="Tour y Cata Destileria Sur 34" />
-                <div class="card-content">
-                    <h3 class="card-title">Tour Destilería y Cata de Sur 34 Gin</h3>
-                    <p class="card-text">
-                        Entrar a Sacramento Spirits es entrar a un laboratorio. El alcohol extra neutro es destilado en
-                        modernos alambiques de columna fabricados íntegramente en acero inoxidable, importados de
-                        Holanda. En la destilería se produce Sur 34, un gin artesanal premium 100% uruguayo, elaborado
-                        con pasión y orgullo en Colonia del Sacramento...
-                    </p>
-                    <div class="card-actions">
-                        <button class="read-more">Ver más</button>
-                        <a href="https://redtickets.uy/evento/TOUR-DESTILERIA-y-Cata-de-Sur-34-Gin--Mayo/21446/"
-                            class="card-button">Comprar Ticket</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 4 -->
-            <div class="card">
-                <img src="/demo-proyecto-plazatoros/assets/images/events/Lucía Severino - Tour El Tiempo es una Cancion.jpg"
-                    alt="Lucía Severino - Gira El Tiempo es una Canción" />
-                <div class="card-content">
-                    <h3 class="card-title">Lucía Severino - Gira "El Tiempo es una Canción"</h3>
-                    <p class="card-text">
-                        Lucía Severino presenta en vivo su nuevo álbum “El tiempo en una canción”... Invitados
-                        especiales los artistas locales DUB CLUB con quienes trabajaron en su reciente lanzamiento Río
-                        Prendido Remix tema que integra el álbum.
-                    </p>
-                    <div class="card-actions">
-                        <button class="read-more">Ver más</button>
-                        <a href="https://redtickets.uy/evento/Lucia-Severino--Gira-El-Tiempo-en-una--Cancion/21568/"
-                            class="card-button">Comprar Ticket</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 5 -->
-             <div class="card">
-                <img src="assets\images\events\Plaza de Sabores 2025.jpg"
-                    alt="Plaza de Sabores 2025" />
-                <div class="card-content">
-                    <h3 class="card-title">Plaza de Sabores 2025</h3>
-                    <p class="card-text">
-                        Vuelve el evento gastronómico a beneficio más grande de Colonia. Plaza de Sabores apoya a Plaza Inclusivo y comparte con los colonienses una gran degustación gourmet. 
-                    </p>
-                    <div class="card-actions">
-                        <button class="read-more">Ver más</button>
-                        <a href="https://redtickets.uy/evento/Plaza-de-Sabores-2025/21927/"
-                            class="card-button">Comprar Ticket</a>
-                    </div>
+        <!-- Título centrado -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 class="section-title">Eventos</h3>
                 </div>
             </div>
         </div>
+
+        <!-- Carrusel con flechas -->
+        <div class="carousel-wrapper">
+            <button id="prevBtn" class="carousel-btn prev-btn" aria-label="Anterior">&#10094;</button>
+            <div class="card-container">
+
+                <!-- Event 1 -->
+                <div class="card">
+                    <img src="/demo-proyecto-plazatoros/assets/images/events/Evento Cars.png"
+                        alt="Visita al Museo Cars" />
+                    <div class="card-content">
+                        <h3 class="card-title">Visita al Museo Cars</h3>
+                        <p class="card-text">
+                            A solo 20 kilómetros de Colonia del Sacramento está el Museo C’ars, un espacio mágico de más
+                            de 2000 metros cuadrados en los que se puede hacer un viaje en el tiempo, disfrutando de una
+                            colección única de autos clásicos y comercios de época, como una barbería, una farmacia y
+                            una
+                            estación de servicio, entre otros.
+                        </p>
+                        <div class="card-actions">
+                            <button class="read-more">Ver más</button>
+                            <a href="https://redtickets.uy/evento/VISITA-al-MUSEO-CARS--Mayo/21445/"
+                                class="card-button">Comprar Ticket</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="card">
+                    <img src="/demo-proyecto-plazatoros/assets/images/events/Visita Plaza Toros.jpg"
+                        alt="Visita la Plaza de Toros" />
+                    <div class="card-content">
+                        <h3 class="card-title">Visita la Plaza de Toros</h3>
+                        <p class="card-text">Visita la Plaza de Toros con una visita guiada!</p>
+                        <div class="card-actions">
+                            <button class="read-more">Ver más</button>
+                            <a href="https://redtickets.uy/evento/Visita-la-Plaza-de-Toros--Segunda-Quincena-de-Mayo/21674/"
+                                class="card-button">Comprar Ticket</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="card">
+                    <img src="/demo-proyecto-plazatoros/assets/images/events/Tour Destileria Sur 34.jpg"
+                        alt="Tour y Cata Destileria Sur 34" />
+                    <div class="card-content">
+                        <h3 class="card-title">Tour Destilería y Cata de Sur 34 Gin</h3>
+                        <p class="card-text">
+                            Entrar a Sacramento Spirits es entrar a un laboratorio. El alcohol extra neutro es destilado
+                            en
+                            modernos alambiques de columna fabricados íntegramente en acero inoxidable, importados de
+                            Holanda. En la destilería se produce Sur 34, un gin artesanal premium 100% uruguayo,
+                            elaborado
+                            con pasión y orgullo en Colonia del Sacramento...
+                        </p>
+                        <div class="card-actions">
+                            <button class="read-more">Ver más</button>
+                            <a href="https://redtickets.uy/evento/TOUR-DESTILERIA-y-Cata-de-Sur-34-Gin--Mayo/21446/"
+                                class="card-button">Comprar Ticket</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="card">
+                    <img src="/demo-proyecto-plazatoros/assets/images/events/Lucía Severino - Tour El Tiempo es una Cancion.jpg"
+                        alt="Lucía Severino - Gira El Tiempo es una Canción" />
+                    <div class="card-content">
+                        <h3 class="card-title">Lucía Severino - Gira "El Tiempo es una Canción"</h3>
+                        <p class="card-text">
+                            Lucía Severino presenta en vivo su nuevo álbum “El tiempo en una canción”... Invitados
+                            especiales los artistas locales DUB CLUB con quienes trabajaron en su reciente lanzamiento
+                            Río
+                            Prendido Remix tema que integra el álbum.
+                        </p>
+                        <div class="card-actions">
+                            <button class="read-more">Ver más</button>
+                            <a href="https://redtickets.uy/evento/Lucia-Severino--Gira-El-Tiempo-en-una--Cancion/21568/"
+                                class="card-button">Comprar Ticket</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="card">
+                    <img src="/demo-proyecto-plazatoros/assets/images/events/Plaza de Sabores 2025.jpg"
+                        alt="Plaza de Sabores 2025" />
+                    <div class="card-content">
+                        <h3 class="card-title">Plaza de Sabores 2025</h3>
+                        <p class="card-text">
+                            Vuelve el evento gastronómico a beneficio más grande de Colonia. Plaza de Sabores apoya a
+                            Plaza
+                            Inclusivo y comparte con los colonienses una gran degustación gourmet.
+                        </p>
+                        <div class="card-actions">
+                            <button class="read-more">Ver más</button>
+                            <a href="https://redtickets.uy/evento/Plaza-de-Sabores-2025/21927/"
+                                class="card-button">Comprar Ticket</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button id="nextBtn" class="carousel-btn next-btn" aria-label="Siguiente">&#10095;</button>
+        </div>
     </section>
 
-
-    <!-- JavaScript para el efecto "Ver más" en EVENTOS -->
-    <script>
-        document.querySelectorAll('.card').forEach(card => {
-            const text = card.querySelector('.card-text');
-            const btn = card.querySelector('.read-more');
-
-            if (text.scrollHeight <= 100) {
-                btn.style.display = 'none';
-            }
-
-            btn.addEventListener('click', () => {
-                text.classList.toggle('expanded');
-                btn.textContent = text.classList.contains('expanded') ? 'Ver menos' : 'Ver más';
-            });
-        });
-    </script>
 
 
     <!-- GASTRONOMÍA -->
@@ -479,8 +485,12 @@
                 </div>
                 <div class="col-sm-9">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96706.50013548559!2d-78.9870674333782!3d40.76030630398601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sbd!4v1436299406518"
-                        width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52649.852391891975!2d-57.89859454204318!3d-34.43651360799682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a312d0b33bb5ff%3A0x70ccaa876da3e19b!2sPlaza%20de%20Toros%20Real%20de%20San%20Carlos!5e0!3m2!1ses!2suy!4v1748812437499!5m2!1ses!2suy"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+
                 </div>
             </div>
         </div>
