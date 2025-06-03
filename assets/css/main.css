@@ -883,3 +883,56 @@ ul li {
 }
 
 ::-webkit-scrollbar {display: none;}
+
+
+/*CSS Gastronomía*/
+
+.logo-hover-wrapper {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.logo-box {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  background-color: #fff;
+  color: #000;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  text-align: left;
+}
+
+.logo-box:hover .hover-content {
+  display: block;
+}
+
+.hover-image {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 6px;
+}
