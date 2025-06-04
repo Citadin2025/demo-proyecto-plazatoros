@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="script.js" defer></script>
+    <script src="./assets/js/portaEvento.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target="#site-nav">
@@ -178,28 +180,13 @@
         <!-- Carrusel con flechas -->
         <div class="carousel-wrapper">
             <button id="prevBtn" class="carousel-btn prev-btn" aria-label="Anterior">&#10094;</button>
-            <div class="card-container">
-
+            <div class="card-container" id="cartaEvento">
+        <!--aca van a ir los eventos pero van a ser importados de la BD-->
                 <!-- Event 1 -->
-                <div class="card">
-                    <img src="/demo-proyecto-plazatoros/assets/images/events/Evento Cars.png"
-                        alt="Visita al Museo Cars" />
-                    <div class="card-content">
-                        <h3 class="card-title">Visita al Museo Cars</h3>
-                        <p class="card-text">
-                            A solo 20 kilómetros de Colonia del Sacramento está el Museo C’ars, un espacio mágico de más
-                            de 2000 metros cuadrados en los que se puede hacer un viaje en el tiempo, disfrutando de una
-                            colección única de autos clásicos y comercios de época, como una barbería, una farmacia y
-                            una
-                            estación de servicio, entre otros.
-                        </p>
-                        <div class="card-actions">
-                            <button class="read-more">Ver más</button>
-                            <a href="https://redtickets.uy/evento/VISITA-al-MUSEO-CARS--Mayo/21445/"
-                                class="card-button">Comprar Ticket</a>
-                        </div>
-                    </div>
-                </div>
+
+
+
+                
 
                 <!-- Event 2 -->
                 <div class="card">
@@ -276,6 +263,7 @@
                         </div>
                     </div>
                 </div>
+
 
             </div>
             <button id="nextBtn" class="carousel-btn next-btn" aria-label="Siguiente">&#10095;</button>
