@@ -1,4 +1,5 @@
 <?php
+// filepath: c:\Users\marti\Desktop\folders de apps\Xample\htdocs\TRABAJO FINAL 2025 CITADIN\demo-proyecto-plazatoros\backEnd\model\evento.php
 // Se importa el archivo que contiene la configuración de la base de datos, que establece la conexión
 require "../config/dataBaseConfig.php"; // Importar la conexión a la base de datos
 
@@ -20,7 +21,14 @@ class Evento {
         $stmt->execute();
         
         // Devuelve todos los resultados como un array asociativo
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Sanitize the descripcion field
+        foreach ($eventos as &$evento) {
+            $evento['descripcion'] = htmlspecialchars($evento['descripcion'], ENT_QUOTES, 'UTF-8');
+        }
+
+        return $eventos;
     }
 
     // Método para agregar un nuevo evento a la base de datos

@@ -1,15 +1,12 @@
 <?php
-require "../models/evento.php"; // Importar el modelo
+require "../model/evento.php"; // Importar el modelo
 require "../config/dataBaseConfig.php";
-//ESTO ES CONTROLLER, NO TE MANDES CAGADA
-$eventoModel = new Evento($pdo); // Instancia del modelo
 
-//
+$eventoModel = new Evento($pdo); 
+
 function obtenerEventos() {
     global $eventoModel;
-    $eventos = $eventoModel->obtenerTodos();
-    header('Content-Type: application/json');
-    echo json_encode($eventos);
+    echo json_encode($eventoModel->obtenerTodos());
 }
 
 function agregarEvento($nombre, $fecha, $descripcion, $imagen, $linkDeCompra) {
@@ -31,4 +28,5 @@ function eliminarEvento($idEvento) {
     }
 
 
-}
+} 
+?>
