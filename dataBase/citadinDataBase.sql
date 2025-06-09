@@ -1,3 +1,6 @@
+create database citadin;
+use citadin;
+
 CREATE TABLE ADMINISTRADOR (
     administradorID INT PRIMARY KEY AUTO_INCREMENT,
     nombreAdministrador VARCHAR(100) NOT NULL
