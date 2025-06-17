@@ -25,7 +25,6 @@ function mostrarEventos(evento) {
         contenido += `<img src="${evento.imagen}" alt="${evento.nombre}">`;
         contenido += `<div class="card-content">`;
         contenido += `<h3 class="card-title">${evento.nombre}</h3>`;
-        // filepath: c:\Users\marti\Desktop\folders de apps\Xample\htdocs\TRABAJO FINAL 2025 CITADIN\demo-proyecto-plazatoros\assets\js\portaEvento.js
         contenido += `<p class="card-text">${evento.descripcion}</p>`;
         contenido += `<div class="card-actions">`;
         contenido += `<button class="read-more">Ver más</button>`;

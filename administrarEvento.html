@@ -1,0 +1,68 @@
+<!-- 
+ esto es literalmente una boludez, aniadanle estilo despues porque ahora voy a haer alg BARE BONES
+ REPITO, esto es BARE BONES
+ :o
+  -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Evento</title>
+    <script src="./assets/js/portaEventosAdminVer.js" defer></script>
+</head>
+<body>
+    <h1>Administrar Eventos</h1>
+    
+    <div>
+<h2> Aniadir evento :o</h2>
+
+    <form action="" method="POST">
+        <div> <!-- esta poronga de los div los hice para que la poronga esta no este toda en una sola fila -->
+            <label for="nombre">Nombre del Evento :o</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        
+        <div>
+        <label for="descripcion">Descripcion del Evento :p</label>
+        <input type="text" id="descripcion" name="descripcion" required>
+
+        </div>
+<div>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+</div>
+        
+<div>
+        <label for="imagen">imagen del evento :3 (url)</label>
+        <input type="text" id="imagen" name="imagen" required>
+</div>
+
+        <button type="submit">Aniadir Evento</button>
+    </form>
+
+    </div>
+    <div>
+        <h2>Eventos ya hechos (en tablita para que sean mas lindos)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <!--<th>Id</th>   no hace falta que vean la ID, no?-->
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Fecha</th>
+                    <th>link de comprita :3</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="contenedor-eventos">
+            </tbody>
+        </table>
+
+    </div>    
+    
+</body>
+</html>
