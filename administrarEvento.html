@@ -6,42 +6,48 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrar Evento</title>
     <script src="./assets/js/portaEventosAdminVer.js" defer></script>
 </head>
+
 <body>
     <h1>Administrar Eventos</h1>
-    
+
     <div>
-<h2> Aniadir evento :o</h2>
+        <h2> Aniadir evento :o</h2>
 
-    <form action="" method="POST">
-        <div> <!-- esta poronga de los div los hice para que la poronga esta no este toda en una sola fila -->
-            <label for="nombre">Nombre del Evento :o</label>
-            <input type="text" id="nombre" name="nombre" required>
-        </div>
-        
-        <div>
-        <label for="descripcion">Descripcion del Evento :p</label>
-        <input type="text" id="descripcion" name="descripcion" required>
+        <form action="./backEnd/api/api.php?url=masEventos" method="post">
+            <div> <!-- esta poronga de los div los hice para que la poronga esta no este toda en una sola fila -->
+                <label for="nombre">Nombre del Evento :o</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
 
-        </div>
-<div>
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha" required>
+            <div>
+                <label for="descripcion">Descripcion del Evento :p</label>
+                <input type="text" id="descripcion" name="descripcion" required>
 
-</div>
-        
-<div>
-        <label for="imagen">imagen del evento :3 (url)</label>
-        <input type="text" id="imagen" name="imagen" required>
-</div>
+            </div>
+            <div>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
 
-        <button type="submit">Aniadir Evento</button>
-    </form>
+            </div>
+
+            <div>
+                <label for="imagen">imagen del evento :3 (url)</label>
+                <input type="text" id="imagen" name="imagen" required>
+            </div>
+
+            <div>
+                <label for="linkDeCompra">link de compra dle eventon </label>
+                <input type="text" id="linkDeCompra" name="linkDeCompra" required>
+            </div>
+            <button type="submit" id="enviar" name="enviar">Aniadir Evento</button>
+        </form>
 
     </div>
     <div>
@@ -62,7 +68,8 @@
             </tbody>
         </table>
 
-    </div>    
-    
+    </div>
+
 </body>
+
 </html>

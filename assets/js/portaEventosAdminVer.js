@@ -27,7 +27,7 @@ function mostrarEventosAdminVer(evento) {
         contenido += `<td>${evento.descripcion}</td>`;
         contenido += `<td>${evento.fecha}</td>`;
         contenido += `<td>${evento.linkDeCompra}</td>`;
-        contenido += `<td> <a href="./backend/routes/api.php?url=eventos&action=delete&idEvento=${evento.idEvento}"> <img src="./assets/basura.png" width="35px" height="35px"> </a></td>`;
+        //contenido += `<td> <a href="./backend/routes/api.php?url=eventos&action=delete&idEvento=${evento.idEvento}"></a></td>`;
         contenido += `</tr>`;
     });
     return contenido;
