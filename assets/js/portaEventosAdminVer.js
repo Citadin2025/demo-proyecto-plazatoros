@@ -22,12 +22,12 @@ function mostrarEventosAdminVer(evento) {
     evento.forEach(evento => {
         contenido += `<tr>`;
         contenido += `<td><img src="${evento.imagen}" alt="${evento.nombre}"></td>`;
-        //contenido += `<td>${evento.idEvento}</td>`;
+        contenido += `<td>${evento.idEvento}</td>`;
         contenido += `<td>${evento.nombre}</td>`;
         contenido += `<td>${evento.descripcion}</td>`;
         contenido += `<td>${evento.fecha}</td>`;
         contenido += `<td>${evento.linkDeCompra}</td>`;
-        //contenido += `<td> <a href="./backend/routes/api.php?url=eventos&action=delete&idEvento=${evento.idEvento}"></a></td>`;
+        contenido += `<td> <a href="./backend/api/api.php?url=eliminarEvento&idEvento=${evento.idEvento}"> elim </a></td>`;
         contenido += `</tr>`;
     });
     return contenido;
