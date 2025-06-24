@@ -32,9 +32,21 @@ if ($requestMethod == "GET") {
             "message" => "Evento agregado correctamente"
         ]);
 
-        // echo " <head>
-        // <meta http-equiv='refresh' content='0; URL=http://localhost/biblioteca/libros.html'>
-        // </head> ";
-
+        echo " <head>
+        <meta http-equiv='refresh' content='0; URL=../../administrarEvento.html'>
+        </head> ";
     }
-}
+} elseif ($requestMethod == "DELETE") {
+    $solicitud = $_GET["url"];
+    if ($solicitud == "eliminarEvento") {
+        $idEvento = $data["idEvento"];
+        
+        // Llama a la función para eliminar un evento
+        eliminarEvento($idEvento);
+        echo json_encode([
+            "status" => "success",
+            "message" => "Evento eliminado correctamente"
+        ]);
+    }
+} 
+
