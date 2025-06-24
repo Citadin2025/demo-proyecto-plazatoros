@@ -22,6 +22,19 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.header {
+  display: flex;
+  align-items: center; /* Centers vertically */
+  justify-content: space-between; /* Optional, for spacing */
+  padding: 10px;
+}
+
+.header img {
+  height: 50px; /* Or whatever size fits */
+  margin: 0;
+  padding: 0;
+}
+
 a {
   color: #ffffff;
 }
@@ -281,6 +294,14 @@ ul li {
     text-align: left;
   }
 }
+
+.navbar-logo {
+    height: 80px;  /* Aumenta el tamaño a gusto */
+    width: auto;
+    max-height: 100px;
+    padding: 5px 0;
+}
+
 
 /* 
  * 4.0 Navigation
