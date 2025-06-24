@@ -12,8 +12,29 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 if ($requestMethod == "GET") {
     $solicitud = $_GET["url"];
 
-     if ($solicitud == "eventos") {
-            obtenerEventos();
-        }
+    if ($solicitud == "eventos") {
+        obtenerEventos();
+    }
+} elseif ($requestMethod == "POST") {
+    $solicitud = $_GET["url"];
+    if ($solicitud == "masEventos") {
 
+        $nombre = $_POST["nombre"];
+        $descripcion = $_POST["descripcion"];
+        $fecha = $_POST["fecha"];
+        $imagen = $_POST["imagen"];
+        $linkDeCompra = $_POST["linkDeCompra"];
+
+        // Llama a la función para agregar un evento
+        agregarEvento($nombre, $descripcion, $fecha, $imagen, $linkDeCompra);
+        echo json_encode([
+            "status" => "success",
+            "message" => "Evento agregado correctamente"
+        ]);
+
+        // echo " <head>
+        // <meta http-equiv='refresh' content='0; URL=http://localhost/biblioteca/libros.html'>
+        // </head> ";
+
+    }
 }
