@@ -41,9 +41,9 @@ class Evento {
         return $stmt->execute(["nombre" => $nombre, "fecha" => $fecha, "descripcion" => $descripcion, "imagen" => $imagen, "linkDeCompra" => $linkDeCompra]);
     }
 
-    public function eliminar($idEvento) {
+    public function eliminar($eventoID) {
         $stmt = $this->pdo->prepare("DELETE FROM evento WHERE id = :id");
-        return $stmt->execute(["id" => $idEvento]);
+        return $stmt->execute(["id" => $eventoID]);
     }
 
 }

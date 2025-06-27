@@ -39,10 +39,10 @@ if ($requestMethod == "GET") {
 } elseif ($requestMethod == "DELETE") {
     $solicitud = $_GET["url"];
     if ($solicitud == "eliminarEvento") {
-        $idEvento = $data["idEvento"];
-        
+        $eventoID = $data["eventoID"];
+        echo $eventoID;
         // Llama a la función para eliminar un evento
-        eliminarEvento($idEvento);
+        eliminarEvento($eventoID);
         echo json_encode([
             "status" => "success",
             "message" => "Evento eliminado correctamente"

@@ -19,9 +19,9 @@ function agregarEvento($nombre, $fecha, $descripcion, $imagen, $linkDeCompra) {
     }
 }
 
-function eliminarEvento($idEvento) {
+function eliminarEvento($eventoID) {
     global $eventoModel;
-    if ($eventoModel->eliminar($idEvento)) {
+    if ($eventoModel->eliminar($eventoID)) {
         echo json_encode(["message" => "Evento eliminado"]);
     } else {
         echo json_encode(["error" => "Error al eliminar el evento"]);
