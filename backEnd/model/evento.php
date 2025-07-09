@@ -23,11 +23,6 @@ class Evento {
         // Devuelve todos los resultados como un array asociativo
         $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Sanitize the descripcion field
-        foreach ($eventos as &$evento) {
-            $evento['descripcion'] = htmlspecialchars($evento['descripcion'], ENT_QUOTES, 'UTF-8');
-        }
-
         return $eventos;
     }
 
