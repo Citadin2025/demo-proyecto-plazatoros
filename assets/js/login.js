@@ -8,7 +8,7 @@
       const password = form.contrasena.value;
         console.log('Intentando iniciar sesión con:', nombre);
         console.log('Contraseña:', password);
-      const res = await fetch('./backend/api/apiLogin.php', {
+      const res = await fetch('./backEnd/api/apiLogin.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nombre, password })

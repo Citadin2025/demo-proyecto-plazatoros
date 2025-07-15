@@ -15,6 +15,7 @@ if ($requestMethod == "GET") {
     if ($solicitud == "eventos") {
         obtenerEventos();
     }
+    
 } elseif ($requestMethod == "POST") {
     $solicitud = $_GET["url"];
     if ($solicitud == "masEventos") {

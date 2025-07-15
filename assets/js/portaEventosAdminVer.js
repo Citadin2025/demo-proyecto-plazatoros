@@ -1,7 +1,7 @@
 async function obtenerEventos() {
     try {
         console.log("el js de porta eventos esta cargando almenos");
-        const respuesta = await fetch("./backend/api/api.php?url=eventos");
+        const respuesta = await fetch("./backEnd/api/api.php?url=eventos");
         console.log(respuesta);
 
         const eventos = await respuesta.json();

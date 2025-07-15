@@ -2,7 +2,7 @@
 async function obtenerEventos() {
     try {
         console.log("el js de porta eventos esta cargando almenos");
-        const respuesta = await fetch("./backend/api/api.php?url=eventos");
+        const respuesta = await fetch("./backEnd/api/api.php?url=eventos");
         console.log(respuesta);
 
         const eventos = await respuesta.json(); //okay, ojala alguien agarre y se ponga a arreglar esto, el problema es basicamente esta linea, el json no funciona porque no se reconoce como json, basicamente la poronga esta dice: "emmmmmmm vs tenes <b> y esas puterias de html, no funciono UwU" y en ese mismo momento te agarra de las bolas y las tuerce
