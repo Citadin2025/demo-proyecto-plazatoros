@@ -40,7 +40,7 @@ if ($requestMethod == "GET") {
 } elseif ($requestMethod == "DELETE") {
     $solicitud = $_GET["url"];
     if ($solicitud == "eliminarEvento") {
-        $eventoID = $data["eventoID"];
+        $eventoID = $_GET["eventoID"];
         echo $eventoID;
         // Llama a la función para eliminar un evento
         eliminarEvento($eventoID);

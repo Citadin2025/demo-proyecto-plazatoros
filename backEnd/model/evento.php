@@ -37,8 +37,8 @@ class Evento {
     }
 
     public function eliminar($eventoID) {
-        $stmt = $this->pdo->prepare("DELETE FROM evento WHERE id = :id");
-        return $stmt->execute(["id" => $eventoID]);
+        $stmt = $this->pdo->prepare("DELETE FROM evento WHERE eventoID = :eventoID");
+        return $stmt->execute(["eventoID" => $eventoID]);
     }
 
 }

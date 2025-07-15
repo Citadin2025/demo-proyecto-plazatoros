@@ -21,10 +21,24 @@ function mostrarEventosAdminVer(evento) {
         contenido += `<td>${evento.descripcion}</td>`;
         contenido += `<td>${evento.fecha}</td>`;
         contenido += `<td>${evento.linkDeCompra}</td>`;
-        contenido += `<td> <button method="DELETE" data-url="./backEnd/api/api.php?url=eliminarEvento&eventoID=${evento.eventoID}"> elim </button></td>`;
+        contenido += `<td> <button onClick="eliminarEvento(${evento.eventoID})"> eliminar </button></td>`;
         contenido += `</tr>`;
     });
     return contenido;
 }
     
 obtenerEventos();
+
+function eliminarEvento(eventoID) {
+    fetch(`./backEnd/api/api.php?url=eliminarEvento&eventoID=${eventoID}`, {
+        method: 'DELETE'    
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log("Evento eliminado correctamente");
+            obtenerEventos(); // Actualiza la lista de eventos
+        } else {
+            console.error("Error al eliminar el evento");
+        }
+    })
+}
