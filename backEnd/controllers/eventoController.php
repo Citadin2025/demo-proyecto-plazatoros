@@ -9,9 +9,9 @@ function obtenerEventos() {
     echo json_encode($eventoModel->obtenerTodos());
 }
 
-function agregarEvento($nombre, $fecha, $descripcion, $imagen, $linkDeCompra) {
+function agregarEvento($nombre, $descripcion, $fecha, $imagen, $linkDeCompra) {
     global $eventoModel;
-    if ($eventoModel->agregar($nombre, $fecha, $descripcion, $imagen, $linkDeCompra)) {
+    if ($eventoModel->agregar($nombre, $descripcion, $fecha, $imagen, $linkDeCompra)) {
         
         echo json_encode(["message" => "Evento agregado"]);
     } else {
