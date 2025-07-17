@@ -48,6 +48,36 @@ if ($requestMethod == "GET") {
             "status" => "success",
             "message" => "Evento eliminado correctamente"
         ]);
-    }
-} 
+        echo " <head>
+        <meta http-equiv='refresh' content='0; URL=../../administrarEvento.html'>
+        </head> ";
 
+    } else echo json_encode([
+        "status" => "failed",
+        "message" => "You can't do that."
+    ]);
+} elseif($requestMethod == "PUT"){
+    $solicitud = $_GET["url"];
+    if($solicitud == "modificarEvento"){
+        $eventId = $_GET["eventId"];
+        $newName = $_GET["nombre"];
+        $newDate = $_GET["date"];
+        $newDescription = $_GET["description"];
+        $newImage = $_GET["imageLink"];
+        $newBuyLink = $_GET["buyLink"];
+        $newAdminId = $_GET["adminId"];
+        $newTimeSTamp = $_GET["timeStamp"];
+
+        modificarEvento($eventId, $newName, $newDate, $newDescription, $newImage, $newBuyLink, $newAdminId, $newTimeSTamp);
+        // name date description imageLink buyLink adminId timeStamp
+
+        echo " <head>
+        <meta http-equiv='refresh' content='0; URL=../../administrarEvento.html'>
+        </head> ";
+
+    } else echo json_encode([
+        "status" => "failed",
+        "message" => "You can't do that."
+    ]);
+}
+?>

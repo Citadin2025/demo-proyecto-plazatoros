@@ -36,6 +36,15 @@ class Evento {
         return $stmt->execute(["nombre" => $nombre, "descripcion" => $descripcion, "fecha" => $fecha, "imagen" => $imagen, "linkDeCompra" => $linkDeCompra]);
     }
 
+    // name date description imageLink buyLink adminId timeStamp
+    function modificar($eventId, $newName, $newDate, $newDescription, $newImageLink, $newBuyLink, $newAdminId, $newTimeStamp){
+        $stmt = $this->pdo->prepare(""); 
+        // ^ sql to modify event
+
+        return $stmt->execute([]);
+        // ^ fill with moar sql shit
+    }
+
     public function eliminar($eventoID) {
         $stmt = $this->pdo->prepare("DELETE FROM evento WHERE eventoID = :eventoID");
         return $stmt->execute(["eventoID" => $eventoID]);

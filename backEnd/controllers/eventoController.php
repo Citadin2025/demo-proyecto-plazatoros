@@ -19,6 +19,22 @@ function agregarEvento($nombre, $descripcion, $fecha, $imagen, $linkDeCompra) {
     }
 }
 
+// name date description imageLink buyLink adminId timeStamp
+function modificarEvento($eventId, $newName, $newDate, $newDescription, $newImageLink, $newBuyLink, $newAdminId, $newTimeStamp){
+    global $eventoModel;
+    if($eventoModel->modificar($eventId, $newName, $newDate, $newDescription, $newImageLink, $newBuyLink, $newAdminId, $newTimeStamp)){
+        echo json_encode([
+            "status" => "Succesful.",
+            "message" => "Modified succesfuly."
+        ]);
+    } else {
+        echo json_encode([
+            "status" => "Failed.",
+            "error" => "Failed to modify the event."
+        ]);
+    }
+}
+
 function eliminarEvento($eventoID) {
     global $eventoModel;
     if ($eventoModel->eliminar($eventoID)) {

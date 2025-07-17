@@ -15,19 +15,24 @@ function mostrarEventosAdminVer(evento) {
     let contenido = "";
     evento.forEach(evento => {
         contenido += `<tr>`;
-        contenido += `<td><img src="${evento.imagen}" alt="${evento.nombre}"></td>`;
+        contenido += `<td><img src="${evento.imagen}" alt="${evento.nombre}" height="280px" width="280px"></td>`;
         contenido += `<td>${evento.eventoID}</td>`;
         contenido += `<td>${evento.nombre}</td>`;
         contenido += `<td>${evento.descripcion}</td>`;
         contenido += `<td>${evento.fecha}</td>`;
         contenido += `<td>${evento.linkDeCompra}</td>`;
-        contenido += `<td> <button onClick="eliminarEvento(${evento.eventoID})"> eliminar </button></td>`;
+        contenido += `<td> <button onClick="eliminarEvento(${evento.eventoID})"> Eliminar </button></td>`;
+        contenido += `<td> <button onClick="modificarEvento(${evento.eventoID})"> Modificar </button></td>`;
         contenido += `</tr>`;
     });
     return contenido;
 }
     
 obtenerEventos();
+
+function modificarEvento(eventoID){
+    
+}
 
 function eliminarEvento(eventoID) {
     fetch(`./backEnd/api/api.php?url=eliminarEvento&eventoID=${eventoID}`, {
