@@ -146,60 +146,62 @@
     <!-- EVENTOS -->
     <section id="eventos" class="section_eventos">
 
-        <!-- Título centrado -->
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h3 class="section-title">Eventos</h3>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carrusel con flechas -->
-        <div class="carousel-wrapper">
-            <div id="basicCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
-
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#basicCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#basicCarousel" data-slide-to="1"></li>
-                    <li data-target="#basicCarousel" data-slide-to="2"></li>
-                </ol>
-
-            <!-- EVENTOS POR BD -->
-            <div class="card-container" id="cartaEvento">
-
-            </div>
-
-             <!-- FLECHAS CARRUSEL -->
+        <!-- Sección de Eventos con Carrusel -->
+<section id="eventos" class="section">
+    <div class="container">
+        <h2 class="text-center">Eventos</h2>
+        <div id="basicCarousel" class="carousel slide" data-ride="carousel" data-interval="7000">
+            <ol class="carousel-indicators" id="carousel-indicators"></ol>
+            <div class="carousel-inner" id="carousel-inner"></div>
             <a class="left carousel-control" href="#basicCarousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
             <a class="right carousel-control" href="#basicCarousel" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
             </a>
+        </div>
+    </div>
+</section>
 
-            <!-- Carousel styling don't wanna do it on the .css fuck you -->
-            <style>
-                .carousel-img-container {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100%;
-                    overflow: hidden;
-                }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("backEnd/api/api.php?action=getEventos")
+        .then(response => response.json())
+        .then(data => {
+            const indicators = document.getElementById("carousel-indicators");
+            const inner = document.getElementById("carousel-inner");
 
-                .carousel-img-container img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            </style>
-    </section>
+            data.forEach((evento, index) => {
+                const li = document.createElement("li");
+                li.setAttribute("data-target", "#basicCarousel");
+                li.setAttribute("data-slide-to", index);
+                if (index === 0) li.classList.add("active");
+                indicators.appendChild(li);
 
+                const item = document.createElement("div");
+                item.className = "item" + (index === 0 ? " active" : "");
+
+                const img = document.createElement("img");
+                img.src = evento.imagen || "assets/images/default.jpg";
+                img.alt = evento.titulo;
+                img.style.width = "100%";
+
+                const caption = document.createElement("div");
+                caption.className = "carousel-caption";
+                caption.innerHTML = `<h3>${evento.titulo}</h3><p>${evento.descripcion}</p>`;
+
+                item.appendChild(img);
+                item.appendChild(caption);
+                inner.appendChild(item);
+            });
+        })
+        .catch(err => {
+            console.error("Error al cargar eventos:", err);
+        });
+});
+</script>
     <!-- GASTRONOMÍA -->
     <section id="gastronomia" class="section_gastronomia">
         <div class="container">
