@@ -11,6 +11,8 @@ html {
   font-size: 16px;
 }
 
+
+/**CUERPO**/
 body {
   overflow-x: hidden;
   color: #fff;
@@ -110,6 +112,7 @@ ul li {
   color: #000;
 }
 
+/*BOTÓN*/
 .btn.active.focus,
 .btn.active:focus,
 .btn.focus,
@@ -167,6 +170,7 @@ ul li {
   align-items: center;
 }
 
+/*SECCIÓN*/
 .section {
   padding: 70px 0;
   background-color: #121212;
