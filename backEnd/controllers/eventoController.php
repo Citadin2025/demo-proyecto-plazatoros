@@ -20,9 +20,9 @@ function agregarEvento($nombre, $descripcion, $fecha, $imagen, $linkDeCompra) {
 }
 
 // name date description imageLink buyLink adminId timeStamp
-function modificarEvento($eventId, $newName, $newDate, $newDescription, $newImageLink, $newBuyLink, $newAdminId, $newTimeStamp){
+function modificarEvento($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $newAdministradorID){
     global $eventoModel;
-    if($eventoModel->modificar($eventId, $newName, $newDate, $newDescription, $newImageLink, $newBuyLink, $newAdminId, $newTimeStamp)){
+    if($eventoModel->modificar($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $newAdministradorID)){
         echo json_encode([
             "status" => "Succesful.",
             "message" => "Modified succesfuly."
