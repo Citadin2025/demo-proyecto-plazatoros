@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
 require "../config/dataBaseConfig.php"; // Importar la conexión a la base de datos
+require "../logging/log.php"; // Importar el archivo de logging para manejar errores
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
