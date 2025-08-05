@@ -60,16 +60,16 @@ if ($requestMethod == "GET") {
 } elseif($requestMethod == "PUT"){
     $solicitud = $_GET["url"];
     if($solicitud == "modificarEvento"){
-        $eventId = $_GET["eventId"];
-        $newName = $_GET["nombre"];
-        $newDate = $_GET["date"];
-        $newDescription = $_GET["description"];
-        $newImage = $_GET["imageLink"];
-        $newBuyLink = $_GET["buyLink"];
-        $newAdminId = $_GET["adminId"];
-        $newTimeSTamp = $_GET["timeStamp"];
+        $eventId = $_GET["eventoID"];
+        $newNombre = $_GET["nombre"];
+        $newFecha = $_GET["fecha"];
+        $newDescripcion = $_GET["descripcion"];
+        $newImagen = $_GET["imagen"];
+        $newLinkDeCompra = $_GET["linkDeCompra"];
+        $newAdministradorID = $_GET["administradorID"];
 
-        modificarEvento($eventId, $newName, $newDate, $newDescription, $newImage, $newBuyLink, $newAdminId, $newTimeSTamp);
+
+        modificarEvento($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $newAdministradorID);
         // name date description imageLink buyLink adminId timeStamp
 
         echo " <head>
