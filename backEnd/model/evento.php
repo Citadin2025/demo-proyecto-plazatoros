@@ -37,11 +37,11 @@ class Evento {
     }
 
     // name date description imageLink buyLink adminId timeStamp
-    function modificar($eventId, $newName, $newDate, $newDescription, $newImageLink, $newBuyLink, $newAdminId, $newTimeStamp){
-        $stmt = $this->pdo->prepare(""); 
+    function modificar($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $newAdministradorID){
+        $stmt = $this->pdo->prepare("UPDATE evento SET nombre = :nombre, descripcion = :descripcion, fecha = :fecha, imagen = :imagen, linkDeCompra = :linkDeCompra, administradorID = :administradorID WHERE eventoID = :eventoID"); 
         // ^ sql to modify event
 
-        return $stmt->execute([]);
+        return $stmt->execute(["nombre" => $newNombre, "descripcion" => $newDescripcion, "fecha" => $newFecha, "imagen" => $newImagen, "linkDeCompra" => $newLinkDeCompra, "administradorID" => $newAdministradorID, "eventoID" => $eventId]);
         // ^ fill with moar sql shit
     }
 

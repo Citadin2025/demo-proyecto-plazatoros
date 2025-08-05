@@ -1,9 +1,3 @@
-<!-- 
- esto es literalmente una boludez, aniadanle estilo despues porque ahora voy a haer alg BARE BONES
- REPITO, esto es BARE BONES
- :o
-  -->
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -18,54 +12,54 @@
     <h1>Administrar Eventos</h1>
 
     <div>
-        <h2> Aniadir evento :o</h2>
+        <h2> Añadir Evento</h2>
 
-        <form action="./backEnd/api/api.php?url=masEventos" method="post"> <!-- importante no tocar-->
-            <div> <!-- esta poronga de los div los hice para que la poronga esta no este toda en una sola fila -->
-                <label for="nombre">Nombre del Evento :o</label> 
-                <input type="text" id="nombre" name="nombre" required> <!-- importante no tocar-->
+        <form action="./backEnd/api/api.php?url=masEventos" method="post"> <!--Importante no tocar-->
+            <div>
+                <label for="nombre">Nombre del Evento</label> 
+                <input type="text" id="nombre" name="nombre" required> <!-- Importante no tocar-->
             </div>
 
             <div>
-                <label for="descripcion">Descripcion del Evento :p</label> 
-                <input type="text" id="descripcion" name="descripcion" required> <!-- importante no tocar-->
+                <label for="descripcion">Descripcion del Evento</label> 
+                <input type="text" id="descripcion" name="descripcion" required> <!-- Importante no tocar-->
 
             </div>
             <div>
-                <label for="fecha">Fecha:</label> 
-                <input type="date" id="fecha" name="fecha" required> <!-- importante no tocar-->
+                <label for="fecha">Fecha</label> 
+                <input type="date" id="fecha" name="fecha" required> <!-- Importante no tocar-->
 
             </div>
 
             <div>
-                <label for="imagen">imagen del evento :3 (url)</label> 
-                <input type="text" id="imagen" name="imagen" required> <!-- importante no tocar-->
+                <label for="imagen">Imagen del Evento (URL)</label> 
+                <input type="text" id="imagen" name="imagen" required> <!-- Importante no tocar-->
             </div>
 
             <div>
-                <label for="linkDeCompra">link de compra dle eventon </label> 
-                <input type="text" id="linkDeCompra" name="linkDeCompra" required> <!-- importante no tocar-->
+                <label for="linkDeCompra">Link del Evento</label> 
+                <input type="text" id="linkDeCompra" name="linkDeCompra" required> <!-- Importante no tocar-->
             </div>
-            <button type="submit" id="enviar" name="enviar">Aniadir Evento</button> <!-- importante no tocar-->
+            <button type="submit" id="enviar" name="enviar">Añadir Evento</button> <!-- Importante no tocar-->
         </form>
 
     </div>
     <div>
-        <h2>Eventos ya hechos (en tablita para que sean mas lindos)</h2>
-        <table> <!-- importante no tocar-->
+        <h2>Eventos ya Subidos</h2>
+        <table> <!--Importante no tocar-->
             <thead>
                 <tr>
                     <th>Imagen</th> 
-                    <th>Id</th>    
+                    <th>Identificador</th>    
                     <th>Nombre</th>
-                    <th>Descripcion</th>
+                    <th>Descripción</th>
                     <th>Fecha</th> 
-                    <th>link de comprita :3</th> 
+                    <th>Link del Evento</th> 
                     <th>Eliminar</th> 
                     <th>Modificar</th>
                 </tr> 
             </thead>
-            <tbody id="contenedor-eventos"> <!-- importante no tocar-->
+            <tbody id="contenedor-eventos"> <!--Importante no tocar-->
             </tbody>
         </table>
 
