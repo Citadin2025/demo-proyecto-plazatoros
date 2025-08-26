@@ -1,4 +1,10 @@
 async function obtenerEventos() {
+    document.getElementById("nombre").value = "";
+    document.getElementById("descripcion").value = "";
+    document.getElementById("fecha").value = "";
+    document.getElementById("linkDeCompra").value = "";
+    document.getElementById("imagen").value = "";
+
     try {
         const respuesta = await fetch("./backEnd/api/api.php?url=eventos");
         const eventos = await respuesta.json();
@@ -27,7 +33,7 @@ function mostrarEventosAdminVer(evento) {
     });
     return contenido;
 }
-    
+
 obtenerEventos();
 
 // toma los datos de la bd y los carga en los campos, user modifica a gusto y confirma haciendo click en el boton nuevo que aparece
@@ -40,15 +46,17 @@ async function modificarEvento(evento) {
         });
 
         const result = await response.json();
-        if(result.status === "success"){
-            alert("Evento modificado correctamente");
-            obtenerEventos();
-        } else {
-            alert("Error: " + result.message);
+        if (result.status === "success") {
+            alert(result.message);
+            obtenerEventos(); // refresh events list
+        }
+        else {
+            console.log("Error: " + result.message);
         }
     } catch (err) {
         console.error(err);
-        alert("Error de red al modificar el evento");
+        console.log("Error de red al modificar el evento");
+        obtenerEventos(); // refresh events list
     }
 }
 
@@ -60,8 +68,9 @@ async function obtenerEvento(eventoID) {
 
 // IMPORTANTE: el boton de confirmar modificacion se crea y elimina dinamicamente, no existe en el HTML
 //---------> IMPORTANTE 2: LOS BOTONES DE MODIFICAR Y ELIMINAR SE DESHABILITAN MIENTRAS SE ESTA EDITANDO UN EVENTO!!!!! <--------------------
-async function cargarEventoEnFormulario(eventoID){
+async function cargarEventoEnFormulario(eventoID) {
     const evento = await obtenerEvento(eventoID);
+    console.log(evento);
 
     document.getElementById("nombre").value = evento.nombre;
     document.getElementById("descripcion").value = evento.descripcion;
@@ -78,12 +87,13 @@ async function cargarEventoEnFormulario(eventoID){
     // Disable all modify/delete buttons while editing
     const allButtons = document.querySelectorAll("#btn-modificar, #btn-eliminar");
     allButtons.forEach(btn => btn.disabled = true);
+    document.getElementById("enviar").disabled = true; // Disable add button too
 
     // Create confirm button
     const botonModificar = document.createElement("button");
     botonModificar.id = "boton-confirmar-modificacion";
     botonModificar.textContent = "Confirmar Modificación";
-    botonModificar.onclick = function() { 
+    botonModificar.onclick = function () {
         const eventoActualizado = {
             eventoID: eventoID,
             nombre: document.getElementById("nombre").value,
@@ -98,22 +108,22 @@ async function cargarEventoEnFormulario(eventoID){
         // Remove confirm button and re-enable other buttons
         botonModificar.remove();
         allButtons.forEach(btn => btn.disabled = false);
+        document.getElementById("enviar").disabled = false; // enable add button
     };
 
     formulario.appendChild(botonModificar);
 }
 
-
 function eliminarEvento(eventoID) {
     fetch(`./backEnd/api/api.php?url=eliminarEvento&eventoID=${eventoID}`, {
-        method: 'DELETE'    
+        method: 'DELETE'
     })
-    .then(response => {
-        if (response.ok) {
-            console.log("Evento eliminado correctamente");
-            obtenerEventos(); // Actualiza la lista de eventos
-        } else {
-            console.error("Error al eliminar el evento");
-        }
-    })
+        .then(response => {
+            if (response.ok) {
+                console.log("Evento eliminado correctamente");
+                obtenerEventos(); // Actualiza la lista de eventos
+            } else {
+                console.error("Error al eliminar el evento");
+            }
+        })
 }
