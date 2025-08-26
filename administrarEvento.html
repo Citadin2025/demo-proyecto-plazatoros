@@ -9,62 +9,62 @@
 </head>
 
 <body>
-    <h1>Administrar Eventos</h1>
+    <div class="container">
+        <h1>Administrar Eventos</h1>
 
-    <div>
-        <h2> Añadir Evento</h2>
+        <div>
+            <h2>Añadir Evento</h2>
 
-        <form action="./backEnd/api/api.php?url=masEventos" method="post" id="formulario-evento"> <!--Importante no tocar-->
-            <div>
-                <label for="nombre">Nombre del Evento</label> 
-                <input type="text" id="nombre" name="nombre" required> <!-- Importante no tocar-->
-            </div>
+            <form action="./backEnd/api/api.php?url=masEventos" method="post" id="formulario-evento">
+                <div>
+                    <label for="nombre">Nombre del Evento</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
 
-            <div>
-                <label for="descripcion">Descripcion del Evento</label> 
-                <input type="text" id="descripcion" name="descripcion" required> <!-- Importante no tocar-->
+                <div>
+                    <label for="descripcion">Descripción del Evento</label>
+                    <input type="text" id="descripcion" name="descripcion" required>
+                </div>
 
-            </div>
-            <div>
-                <label for="fecha">Fecha</label> 
-                <input type="date" id="fecha" name="fecha" required> <!-- Importante no tocar-->
+                <div>
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
 
-            </div>
+                <div>
+                    <label for="imagen">Imagen del Evento (URL)</label>
+                    <input type="text" id="imagen" name="imagen" required>
+                </div>
 
-            <div>
-                <label for="imagen">Imagen del Evento (URL)</label> 
-                <input type="text" id="imagen" name="imagen" required> <!-- Importante no tocar-->
-            </div>
+                <div>
+                    <label for="linkDeCompra">Link del Evento</label>
+                    <input type="text" id="linkDeCompra" name="linkDeCompra" required>
+                </div>
+                <button type="submit" id="enviar" name="enviar">Añadir Evento</button>
+            </form>
+        </div>
 
-            <div>
-                <label for="linkDeCompra">Link del Evento</label> 
-                <input type="text" id="linkDeCompra" name="linkDeCompra" required> <!-- Importante no tocar-->
-            </div>
-            <button type="submit" id="enviar" name="enviar">Añadir Evento</button> <!-- Importante no tocar-->
-        </form>
-
+        <div>
+            <h2>Eventos ya Subidos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Identificador</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Fecha</th>
+                        <th>Link del Evento</th>
+                        <th>Eliminar</th>
+                        <th>Modificar</th>
+                    </tr>
+                </thead>
+                <tbody id="contenedor-eventos">
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div>
-        <h2>Eventos ya Subidos</h2>
-        <table> <!--Importante no tocar-->
-            <thead>
-                <tr>
-                    <th>Imagen</th> 
-                    <th>Identificador</th>    
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Fecha</th> 
-                    <th>Link del Evento</th> 
-                    <th>Eliminar</th> 
-                    <th>Modificar</th>
-                </tr> 
-            </thead>
-            <tbody id="contenedor-eventos"> <!--Importante no tocar-->
-            </tbody>
-        </table>
-
-    </div>
-
 </body>
-    <script src="./assets/js/portaEventosAdminVer.js" defer></script> <!-- importante no tocar-->
+
+<script src="./assets/js/portaEventosAdminVer.js" defer></script>
 </html>
