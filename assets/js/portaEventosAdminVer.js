@@ -52,17 +52,14 @@ async function modificarEvento(evento) {
     }
 }
 
-
-//.backend/api/api.php?url=modificarEvento&eventoID=1&nombre=Concierto Rock Fest&fecha=2025-08-15
-//&descripcion=Un festival de rock con bandas nacionales e internacionales. 
-//Wee woo wee woo&imagen=-&linkDeCompra=https://entradas.com/rockfest&administradorID=1
-
 async function obtenerEvento(eventoID) {
     const response = await fetch(`./backEnd/api/api.php?url=eventos&eventoID=${eventoID}`);
     const evento = await response.json();
     return evento;
 }
 
+// IMPORTANTE: el boton de confirmar modificacion se crea y elimina dinamicamente, no existe en el HTML
+//---------> IMPORTANTE 2: LOS BOTONES DE MODIFICAR Y ELIMINAR SE DESHABILITAN MIENTRAS SE ESTA EDITANDO UN EVENTO!!!!! <--------------------
 async function cargarEventoEnFormulario(eventoID){
     const evento = await obtenerEvento(eventoID);
 
