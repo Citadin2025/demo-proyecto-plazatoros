@@ -2,24 +2,39 @@
 
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    /* Fondo nocturno */
+    background: url('../images/plaza_noche.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
 }
 
+/* Caja principal */
+.container {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* Títulos */
 h1, h2 {
     text-align: center;
-    color: #222;
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
 }
 
+/* Formulario */
 form {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 form div {
@@ -30,50 +45,68 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #eee;
 }
 
 input[type="text"],
 input[type="date"] {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #aaa;
-    border-radius: 4px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
     box-sizing: border-box;
+    outline: none;
+    background: rgba(255,255,255,0.9);
+    color: #222;
+    font-size: 14px;
 }
 
+/* Botón */
 button {
     display: block;
     width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 12px;
+    background: linear-gradient(135deg, #007acc, #005f99);
     color: white;
     font-size: 16px;
+    font-weight: bold;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    background: linear-gradient(135deg, #0099ff, #0077cc);
+    transform: scale(1.03);
 }
 
+/* Tabla */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 30px;
-    background-color: #fff;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px;
     text-align: center;
+    color: #eee;
+    font-size: 14px;
 }
 
 thead {
-    background-color: #eaeaea;
+    background: rgba(255,255,255,0.1);
+    font-weight: bold;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background: rgba(255,255,255,0.05);
+}
+
+tbody tr:hover {
+    background: rgba(255,255,255,0.15);
 }
