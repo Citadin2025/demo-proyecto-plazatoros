@@ -28,7 +28,7 @@ function mostrarEventosAdminVer(evento) {
         contenido += `<td>${evento.fecha}</td>`;
         contenido += `<td>${evento.linkDeCompra}</td>`;
         contenido += `<td> <button onClick="eliminarEvento(${evento.eventoID})" id="btn-eliminar"> Eliminar </button></td>`;
-        contenido += `<td> <button onClick="cargarEventoEnFormulario(${evento.eventoID})" id="btn-modificar"> Modificar </button></td>`;
+        contenido += `<td> <button onClick="cargarEventoEnFormulario(${evento.eventoID}); window.scrollTo({ top: 0, behavior: 'smooth' });" id="btn-modificar"> Modificar </button></td>`;
         contenido += `</tr>`;
     });
     return contenido;
