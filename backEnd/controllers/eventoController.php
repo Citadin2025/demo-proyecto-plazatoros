@@ -9,6 +9,11 @@ function obtenerEventos() {
     echo json_encode($eventoModel->obtenerTodos());
 }
 
+function obtenerUnEvento($eventoID) {
+    global $eventoModel;
+    echo json_encode($eventoModel->obtenerPorId($eventoID));
+}
+
 function agregarEvento($nombre, $descripcion, $fecha, $imagen, $linkDeCompra) {
     global $eventoModel;
     if ($eventoModel->agregar($nombre, $descripcion, $fecha, $imagen, $linkDeCompra)) {
@@ -20,9 +25,9 @@ function agregarEvento($nombre, $descripcion, $fecha, $imagen, $linkDeCompra) {
 }
 
 // name date description imageLink buyLink adminId timeStamp
-function modificarEvento($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $newAdministradorID){
+function modificarEvento($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $administradorID) {
     global $eventoModel;
-    if($eventoModel->modificar($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $newAdministradorID)){
+    if($eventoModel->modificar($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $administradorID)){
         echo json_encode([
             "status" => "Succesful.",
             "message" => "Modified succesfuly."

@@ -12,10 +12,17 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 // Si la solicitud es de tipo GET, se llama a la función obtenerEventos()
 if ($requestMethod == "GET") {
     $solicitud = $_GET["url"] ;
-
-    if ($solicitud == "eventos") {
+    $idEvento = $_GET["eventoID"] ?? null;
+    
+    if ($solicitud == "eventos" && $idEvento === null) {
         obtenerEventos();
     }
+    else if ($solicitud == "eventos" && $idEvento !== null) {
+        obtenerUnEvento($idEvento);
+    } else echo json_encode([
+        "status" => "failed",
+        "message" => "You can't do that."
+    ]);
     
 } elseif ($requestMethod == "POST") {
     $solicitud = $_GET["url"];
@@ -58,27 +65,49 @@ if ($requestMethod == "GET") {
         "message" => "You can't do that."
     ]);
 } elseif($requestMethod == "PUT"){
-    $solicitud = $_GET["url"];
-    if($solicitud == "modificarEvento"){
-        $eventId = $_GET["eventoID"];
-        $newNombre = $_GET["nombre"];
-        $newFecha = $_GET["fecha"];
-        $newDescripcion = $_GET["descripcion"];
-        $newImagen = $_GET["imagen"];
-        $newLinkDeCompra = $_GET["linkDeCompra"];
-        $newAdministradorID = $_GET["administradorID"];
+    $solicitud = $_GET["url"] ?? null;
 
+    if($solicitud === "modificarEvento"){
+        // Read raw JSON from the request body
+        $input = json_decode(file_get_contents('php://input'), true);
 
-        modificarEvento($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $newAdministradorID);
-        // name date description imageLink buyLink adminId timeStamp
+        if (!$input) {
+            echo json_encode([
+                "status" => "failed",
+                "message" => "No input received"
+            ]);
+            exit;
+        }
 
-        echo " <head>
-        <meta http-equiv='refresh' content='0; URL=../../administrarEvento.html'>
-        </head> ";
+        $eventId = $input["eventoID"] ?? null;
+        $newNombre = $input["nombre"] ?? null;
+        $newFecha = $input["fecha"] ?? null;
+        $newDescripcion = $input["descripcion"] ?? null;
+        $newImagen = $input["imagen"] ?? null;
+        $newLinkDeCompra = $input["linkDeCompra"] ?? null;
+        $administradorID = $input["administradorID"] ?? null;
 
-    } else echo json_encode([
-        "status" => "failed",
-        "message" => "You can't do that."
-    ]);
+        // Optional: check required fields
+        if(!$eventId || !$newNombre || !$newFecha) {
+            echo json_encode([
+                "status" => "failed",
+                "message" => "Missing required fields"
+            ]);
+            exit;
+        }
+
+        modificarEvento($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $administradorID);
+
+        echo json_encode([
+            "status" => "success",
+            "message" => "Evento modificado correctamente"
+        ]);
+
+    } else {
+        echo json_encode([
+            "status" => "failed",
+            "message" => "You can't do that."
+        ]);
+    }
 }
 ?>

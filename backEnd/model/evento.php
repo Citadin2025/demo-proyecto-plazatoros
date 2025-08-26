@@ -12,6 +12,14 @@ class Evento {
         $this->pdo = $pdo;  // Asigna la conexión PDO a la propiedad de la clase
     }
 
+    public function obtenerPorId($eventoID) {
+        $stmt = $this->pdo->prepare("SELECT * FROM evento WHERE eventoID = :eventoID");
+        $stmt->execute(["eventoID" => $eventoID]);
+        $evento = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $evento;
+    }
+
     // Método para obtener todos los libros de la base de datos
     public function obtenerTodos() {
         // Prepara la consulta SQL para seleccionar todos los registros de la tabla 'eventos'
@@ -37,12 +45,10 @@ class Evento {
     }
 
     // name date description imageLink buyLink adminId timeStamp
-    function modificar($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $newAdministradorID){
+    function modificar($eventId, $newNombre, $newFecha, $newDescripcion, $newImagen, $newLinkDeCompra, $administradorID) {
         $stmt = $this->pdo->prepare("UPDATE evento SET nombre = :nombre, descripcion = :descripcion, fecha = :fecha, imagen = :imagen, linkDeCompra = :linkDeCompra, administradorID = :administradorID WHERE eventoID = :eventoID"); 
-        // ^ sql to modify event
 
-        return $stmt->execute(["nombre" => $newNombre, "descripcion" => $newDescripcion, "fecha" => $newFecha, "imagen" => $newImagen, "linkDeCompra" => $newLinkDeCompra, "administradorID" => $newAdministradorID, "eventoID" => $eventId]);
-        // ^ fill with moar sql shit
+        return $stmt->execute(["nombre" => $newNombre, "descripcion" => $newDescripcion, "fecha" => $newFecha, "imagen" => $newImagen, "linkDeCompra" => $newLinkDeCompra, "administradorID" => $administradorID,"eventoID" => $eventId]);
     }
 
     public function eliminar($eventoID) {

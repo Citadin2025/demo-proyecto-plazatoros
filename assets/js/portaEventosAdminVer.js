@@ -21,8 +21,8 @@ function mostrarEventosAdminVer(evento) {
         contenido += `<td>${evento.descripcion}</td>`;
         contenido += `<td>${evento.fecha}</td>`;
         contenido += `<td>${evento.linkDeCompra}</td>`;
-        contenido += `<td> <button onClick="eliminarEvento(${evento.eventoID})"> Eliminar </button></td>`;
-        contenido += `<td> <button onClick="modificarEvento(${evento.eventoID})"> Modificar </button></td>`;
+        contenido += `<td> <button onClick="eliminarEvento(${evento.eventoID})" id="btn-eliminar"> Eliminar </button></td>`;
+        contenido += `<td> <button onClick="cargarEventoEnFormulario(${evento.eventoID})" id="btn-modificar"> Modificar </button></td>`;
         contenido += `</tr>`;
     });
     return contenido;
@@ -30,9 +30,82 @@ function mostrarEventosAdminVer(evento) {
     
 obtenerEventos();
 
-function modificarEvento(eventoID){
-    
+// toma los datos de la bd y los carga en los campos, user modifica a gusto y confirma haciendo click en el boton nuevo que aparece
+async function modificarEvento(evento) {
+    try {
+        const response = await fetch('./backEnd/api/api.php?url=modificarEvento', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(evento) // must include eventoID
+        });
+
+        const result = await response.json();
+        if(result.status === "success"){
+            alert("Evento modificado correctamente");
+            obtenerEventos();
+        } else {
+            alert("Error: " + result.message);
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Error de red al modificar el evento");
+    }
 }
+
+
+//.backend/api/api.php?url=modificarEvento&eventoID=1&nombre=Concierto Rock Fest&fecha=2025-08-15
+//&descripcion=Un festival de rock con bandas nacionales e internacionales. 
+//Wee woo wee woo&imagen=-&linkDeCompra=https://entradas.com/rockfest&administradorID=1
+
+async function obtenerEvento(eventoID) {
+    const response = await fetch(`./backEnd/api/api.php?url=eventos&eventoID=${eventoID}`);
+    const evento = await response.json();
+    return evento;
+}
+
+async function cargarEventoEnFormulario(eventoID){
+    const evento = await obtenerEvento(eventoID);
+
+    document.getElementById("nombre").value = evento.nombre;
+    document.getElementById("descripcion").value = evento.descripcion;
+    document.getElementById("fecha").value = evento.fecha;
+    document.getElementById("linkDeCompra").value = evento.linkDeCompra;
+    document.getElementById("imagen").value = evento.imagen;
+
+    const formulario = document.getElementById("formulario-evento");
+
+    // Check if a confirm button already exists
+    let existingButton = document.getElementById("boton-confirmar-modificacion");
+    if (existingButton) return; // Stop if already editing
+
+    // Disable all modify/delete buttons while editing
+    const allButtons = document.querySelectorAll("#btn-modificar, #btn-eliminar");
+    allButtons.forEach(btn => btn.disabled = true);
+
+    // Create confirm button
+    const botonModificar = document.createElement("button");
+    botonModificar.id = "boton-confirmar-modificacion";
+    botonModificar.textContent = "Confirmar Modificación";
+    botonModificar.onclick = function() { 
+        const eventoActualizado = {
+            eventoID: eventoID,
+            nombre: document.getElementById("nombre").value,
+            descripcion: document.getElementById("descripcion").value,
+            fecha: document.getElementById("fecha").value,
+            linkDeCompra: document.getElementById("linkDeCompra").value,
+            imagen: document.getElementById("imagen").value,
+            administradorID: evento.administradorID
+        };
+        modificarEvento(eventoActualizado);
+
+        // Remove confirm button and re-enable other buttons
+        botonModificar.remove();
+        allButtons.forEach(btn => btn.disabled = false);
+    };
+
+    formulario.appendChild(botonModificar);
+}
+
 
 function eliminarEvento(eventoID) {
     fetch(`./backEnd/api/api.php?url=eliminarEvento&eventoID=${eventoID}`, {
