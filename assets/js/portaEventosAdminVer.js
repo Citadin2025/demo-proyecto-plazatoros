@@ -78,6 +78,11 @@ async function cargarEventoEnFormulario(eventoID) {
     document.getElementById("linkDeCompra").value = evento.linkDeCompra;
     document.getElementById("imagen").value = evento.imagen;
 
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
     const formulario = document.getElementById("formulario-evento");
 
     // Check if a confirm button already exists
