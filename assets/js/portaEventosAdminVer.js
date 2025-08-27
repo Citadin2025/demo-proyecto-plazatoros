@@ -31,7 +31,7 @@ function mostrarEventosAdminVer(evento) {
         contenido += `<td> <button onClick="cargarEventoEnFormulario(${evento.eventoID}); window.scrollTo({ top: 0, behavior: 'smooth' });" id="btn-modificar"> Modificar </button></td>`;
         contenido += `</tr>`;
     });
-    return contenido;
+    return contenido;   
 }
 
 obtenerEventos();
