@@ -178,8 +178,8 @@
 
                         <!-- Imagen del restaurante -->
                         <div class="col-md-6">
-                            <img src="assets/images/gastronomy/Logo Quintón PdT.png"
-                                alt="Restaurante Plaza de Toros" class="img-responsive img-rounded shadow">
+                            <img src="assets/images/gastronomy/Logo Quintón PdT.png" alt="Restaurante Plaza de Toros"
+                                class="img-responsive img-rounded shadow">
                         </div>
 
                         <!-- Texto descriptivo -->
@@ -191,7 +191,96 @@
                                 Jueves a lunes de 10:30 a 20hs
                                 Con y sin reserva
                             </p>
-                            <a href="https://www.instagram.com/quintonbistro/?hl=en" class="btn btn-primary mt-3">Conocenos</a>
+                            <a href="https://www.instagram.com/quintonbistro/?hl=en"
+                                class="btn btn-primary mt-3">Conocenos</a>
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <!-- Carrusel de imágenes -->
+                            <div id="carousel" class="carousel">
+                                <div class="carousel-container">
+                                    <div class="carousel-slide"><img src="assets/images/gastronomy/Quinton 1.png " alt="Imagen 1"></div>
+                                    <div class="carousel-slide"><img src="assets/images/gastronomy/Quinton 2.png" alt="Imagen 2"></div>
+                                    <div class="carousel-slide"><img src="assets/images/gastronomy/Quinton 3.png" alt="Imagen 3"></div>
+                                </div>
+                                <button class="prev">❮</button>
+                                <button class="next">❯</button>
+                            </div>
+
+                            <style>
+                                .carousel {
+                                    position: relative;
+                                    width: 600px;
+                                    /* podés ajustar */
+                                    height: 350px;
+                                    /* podés ajustar */
+                                    margin: auto;
+                                    overflow: hidden;
+                                    border-radius: 12px;
+                                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                                }
+
+                                .carousel-container {
+                                    display: flex;
+                                    transition: transform 0.5s ease-in-out;
+                                }
+
+                                .carousel-slide {
+                                    min-width: 100%;
+                                    box-sizing: border-box;
+                                }
+
+                                .carousel-slide img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+
+                                .prev,
+                                .next {
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    background: rgba(0, 0, 0, 0.5);
+                                    color: white;
+                                    border: none;
+                                    font-size: 24px;
+                                    padding: 8px 12px;
+                                    cursor: pointer;
+                                    border-radius: 50%;
+                                }
+
+                                .prev {
+                                    left: 10px;
+                                }
+
+                                .next {
+                                    right: 10px;
+                                }
+                            </style>
+
+                            <script>
+                                const carousel = document.querySelector('.carousel-container');
+                                const slides = document.querySelectorAll('.carousel-slide');
+                                const prevBtn = document.querySelector('.prev');
+                                const nextBtn = document.querySelector('.next');
+
+                                let index = 0;
+
+                                function showSlide(i) {
+                                    if (i < 0) index = slides.length - 1;
+                                    else if (i >= slides.length) index = 0;
+                                    else index = i;
+                                    carousel.style.transform = `translateX(${-index * 100}%)`;
+                                }
+
+                                prevBtn.addEventListener('click', () => showSlide(index - 1));
+                                nextBtn.addEventListener('click', () => showSlide(index + 1));
+
+                                // Auto-play cada 4s
+                                setInterval(() => showSlide(index + 1), 4000);
+                            </script>
                         </div>
 
                     </div>
