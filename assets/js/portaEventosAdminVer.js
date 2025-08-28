@@ -19,8 +19,13 @@ async function obtenerEventos() {
 
 // check if URL ends with a common image file extension
 function isImageUrl(url) {
-    return /\.(jpg|jpeg|png|gif|bmp|webp|svg)$/i.test(url.split('?')[0]);
+  // Strip query strings and hash fragments
+  const cleanUrl = url.split(/[?#]/)[0];
+
+  // Match only if the extension is at the very end
+  return /\.(jpe?g|png|gif|bmp|webp|svg)$/i.test(cleanUrl);
 }
+
 
 // validate image URL on form submission
 document.getElementById("formulario-evento").addEventListener("submit", function (event) {
