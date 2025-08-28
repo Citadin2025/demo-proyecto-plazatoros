@@ -17,11 +17,25 @@ async function obtenerEventos() {
 
 }
 
+// check if URL ends with a common image file extension
+function isImageUrl(url) {
+    return /\.(jpg|jpeg|png|gif|bmp|webp|svg)$/i.test(url.split('?')[0]);
+}
+
+// validate image URL on form submission
+document.getElementById("formulario-evento").addEventListener("submit", function (event) {
+    const url = document.getElementById("imagen").value;
+    if (!isImageUrl(url)) {
+        event.preventDefault();
+        alert("Pone una imagen posta gato (jpg, jpeg, png, gif, bmp, webp, svg).");
+    }
+});
+
 function mostrarEventosAdminVer(evento) {
     let contenido = "";
     evento.forEach(evento => {
         contenido += `<tr>`;
-        contenido += `<td><img src="${evento.imagen}" alt="${evento.nombre}" height="280px" width="280px"></td>`;
+        contenido += `<td><img src="${evento.imagen}" alt="No encontramos una foto de ${evento.nombre}" height="140px" width="120px"></td>`;
         contenido += `<td>${evento.eventoID}</td>`;
         contenido += `<td>${evento.nombre}</td>`;
         contenido += `<td>${evento.descripcion}</td>`;
@@ -31,7 +45,7 @@ function mostrarEventosAdminVer(evento) {
         contenido += `<td> <button onClick="cargarEventoEnFormulario(${evento.eventoID}); window.scrollTo({ top: 0, behavior: 'smooth' });" id="btn-modificar"> Modificar </button></td>`;
         contenido += `</tr>`;
     });
-    return contenido;   
+    return contenido;
 }
 
 obtenerEventos();
