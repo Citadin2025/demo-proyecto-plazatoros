@@ -18,8 +18,6 @@ form.addEventListener('submit', async (e) => {
   if (data.ok) {
     mensaje.textContent = 'Login exitoso';
     mensaje.style.color = 'green';
-    // Redirigir si querés:
-    // window.location.href = 'panel.html';
     window.location.href = 'http://localhost/demo-proyecto-plazatoros/administrarEvento.html';
   } else {
     mensaje.textContent = data.error || 'Error desconocido';

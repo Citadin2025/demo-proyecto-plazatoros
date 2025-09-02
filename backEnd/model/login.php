@@ -12,28 +12,25 @@ class Login
 
     public function autenticar($nombre, $password)
     {
-        // verificar en la base de datos si el usuario existe y la contraseña es correcta
-
-        $data = json_decode(file_get_contents("php://input"), true);
-
-        if (!isset($data['nombre']) || !isset($data['password'])) {
-            http_response_code(400);
-            echo json_encode(['error' => 'Faltan campos']);
-            exit;
-        }
-
-        $nombre = $data['nombre'];
-        $password = $data['password'];
-
-        $stmt = $this->pdo->prepare("SELECT password FROM administrador WHERE nombreAdministrador = ?");
+        $stmt = $this->pdo->prepare("SELECT id, password, tipo FROM administrador WHERE nombreAdministrador = ?");
         $stmt->execute([$nombre]);
-        $user = $stmt->fetch();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['password'])) {
-            echo json_encode(['success' => true, 'msg' => 'Login correcto']);
-        } else {
-            http_response_code(401);
-            echo json_encode(['error' => 'Credenciales inválidas']);
+            return [
+                "ok" => true,
+                "usuario" => $nombre,
+                "tipo" => $user['tipo']
+            ];
         }
+        return false;
+    }
+
+    public function agregar($nombre, $password)
+    {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt = $this->pdo->prepare("INSERT INTO administrador (nombreAdministrador, passwordAdministrador) VALUES (?, ?)");
+        $stmt->execute([$nombre, $hashedPassword]);
     }
 }
