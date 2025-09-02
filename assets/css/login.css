@@ -5,11 +5,13 @@
 }
 
 body {
-  font-family: arial;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Fondo nocturno */
+    background: url('../images/plaza_noche.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
 }
 
 html, body {
@@ -20,13 +22,14 @@ html, body {
 .form-login {
   width: 400px;
   height: 300px;
-  background: rgba(255,255,255,0.85);
+  background: rgba(0, 0, 0, 0.65);
   margin: auto;
+  border-radius: 12px;
   margin-top: 180px;
-  box-shadow: 7px 13px 37px #000;
-  padding: 20px 30px;
-  border-top: 4px solid #017bab;
+  padding: 30px;
   color: #333333;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  max-width: 1000px;
 }
 
 .form-login h5 {
@@ -36,6 +39,7 @@ html, body {
   margin-bottom: 30px;
   border-bottom: 1px solid;
   font-size: 20px;
+  color: #fff;
 }
 
 .controls {
@@ -46,6 +50,7 @@ html, body {
   background: #dddddd;
   font-size: 14px;
   font-weight: bold;
+  border-radius: 6px;
 }
 
 .buttons {
@@ -56,6 +61,7 @@ html, body {
   color: white;
   margin-bottom: 16px;
   margin-top: 15px;
+  border-radius: 6px;
 }
 
 .buttons:hover {

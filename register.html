@@ -3,19 +3,26 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Inicio de Sesión</title>
+  <title>Registro</title>
   <link rel="stylesheet" href="./assets/css/login.css">
-
+  
 </head>
 
 <body>
+
+  <style>
+    body {
+      background-image: url('./assets/images/Imagen-Plaza-de-Toros.jpg');
+    }
+  </style>
+
   <section class="form-login">
-    <h5>Formulario Login</h5>
+    <h5>Formulario de Registro</h5>
 
     <form id="loginForm" method="POST">
       <input class="controls" type="text" name="usuario" placeholder="Usuario" required>
       <input class="controls" type="password" name="contrasena" placeholder="Contraseña" required>
-      <input class="buttons" type="submit" value="Ingresar">
+      <input class="buttons" type="submit" value="Registrarse">
     </form>
 
     <p id="mensaje"></p>
