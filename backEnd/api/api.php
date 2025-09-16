@@ -3,7 +3,6 @@
 error_reporting(E_ALL);
 require "../logging/log.php"; // Importar el archivo de logging para manejar errores
 require "../controllers/eventoController.php"; // Importar el controlador que maneja la lógica de negocio
-require "../config/dataBaseConfig.php"; // Importar la conexión a la base de datos
 // Obtener el método de la solicitud HTTP (GET, POST, etc.)
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
