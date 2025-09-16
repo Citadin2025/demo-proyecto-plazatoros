@@ -46,7 +46,7 @@ function mostrarEventosAdminVer(evento) {
         contenido += `<td>${evento.fecha}</td>`;
         contenido += `<td>${evento.linkDeCompra}</td>`;
         contenido += `<td> <button onClick="cargarEventoEnFormulario(${evento.eventoID}); window.scrollTo({ top: 0, behavior: 'smooth' });" id="btn-modificar"> Modificar </button></td>`;
-        contenido += `<td> <button onClick="eliminarEvento(${evento.eventoID}); confirm('¿Estás seguro de que deseas eliminar este evento?');" id="btn-eliminar"> Eliminar </button></td>`;
+        contenido += `<td> <button onClick="eliminarEvento(${evento.eventoID}); " id="btn-eliminar"> Eliminar </button></td>`;
         contenido += `</tr>`;
     });
     return contenido;
@@ -102,11 +102,11 @@ async function cargarEventoEnFormulario(eventoID) {
     });
 
     const formulario = document.getElementById("formulario-evento");
-// Hide the "Aniadir usuario" button
+    // Hide the "Aniadir usuario" button
     const btnAniadirUsuario = document.getElementById("enviar");
     if (btnAniadirUsuario) btnAniadirUsuario.style.display = "none";
 
-   
+
 
     // Check if a confirm button already exists
     let existingButton = document.getElementById("boton-confirmar-modificacion");
@@ -137,7 +137,7 @@ async function cargarEventoEnFormulario(eventoID) {
         botonModificar.remove();
         allButtons.forEach(btn => btn.disabled = false);
         document.getElementById("enviar").disabled = false; // enable add button
-        
+
         // Show the "Aniadir usuario" button again
         if (btnAniadirUsuario) btnAniadirUsuario.style.display = "";
     };
@@ -146,6 +146,10 @@ async function cargarEventoEnFormulario(eventoID) {
 }
 
 function eliminarEvento(eventoID) {
+    if (!confirm('¿Estás seguro de que deseas eliminar este evento?')) {
+        return; // Stop if user cancels
+    }
+
     fetch(`./backEnd/api/api.php?url=eliminarEvento&eventoID=${eventoID}`, {
         method: 'DELETE'
     })
