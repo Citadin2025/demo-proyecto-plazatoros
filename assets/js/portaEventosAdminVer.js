@@ -27,8 +27,8 @@ function mostrarEventosAdminVer(evento) {
         contenido += `<td>${evento.descripcion}</td>`;
         contenido += `<td>${evento.fecha}</td>`;
         contenido += `<td>${evento.linkDeCompra}</td>`;
-        contenido += `<td> <button onClick="eliminarEvento(${evento.eventoID}); confirm('¿Estás seguro de que deseas eliminar este evento?');" id="btn-eliminar"> Eliminar </button></td>`;
         contenido += `<td> <button onClick="cargarEventoEnFormulario(${evento.eventoID}); window.scrollTo({ top: 0, behavior: 'smooth' });" id="btn-modificar"> Modificar </button></td>`;
+        contenido += `<td> <button onClick="eliminarEvento(${evento.eventoID}); confirm('¿Estás seguro de que deseas eliminar este evento?');" id="btn-eliminar"> Eliminar </button></td>`;
         contenido += `</tr>`;
     });
     return contenido;   
