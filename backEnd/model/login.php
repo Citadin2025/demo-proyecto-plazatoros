@@ -1,5 +1,5 @@
 <?php
-require "../config/dataBaseConfig.php"; // Importar la conexión a la base de datos
+require "../config/dataBaseConfig.php";
 
 class Login
 {
@@ -7,30 +7,24 @@ class Login
 
     public function __construct($pdo)
     {
-        $this->$pdo = $pdo;
+        $this->pdo = $pdo;
     }
 
-    public function autenticar($nombre, $password)
+    public function autenticar($username, $password)
     {
-        $stmt = $this->pdo->prepare("SELECT id, password, tipo FROM administrador WHERE nombreAdministrador = ?");
-        $stmt->execute([$nombre]);
+        $stmt = $this->pdo->prepare("SELECT * FROM administrador WHERE nombreAdministrador = :nombreAdministrador");
+        $stmt->bindParam(':nombreAdministrador', $username);
+        $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        $dummy = '$2y$10$usesomesillystringforsalt$';
+        if (!$user) password_verify($password, $dummy);
+
         if ($user && password_verify($password, $user['password'])) {
-            return [
-                "ok" => true,
-                "usuario" => $nombre,
-                "tipo" => $user['tipo']
-            ];
+            unset($user['password']); // Remove password hash before returning user data
+            return $user;
+        } else {
+            return false;
         }
-        return false;
-    }
-
-    public function agregar($nombre, $password)
-    {
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        $stmt = $this->pdo->prepare("INSERT INTO administrador (nombreAdministrador, passwordAdministrador) VALUES (?, ?)");
-        $stmt->execute([$nombre, $hashedPassword]);
     }
 }
