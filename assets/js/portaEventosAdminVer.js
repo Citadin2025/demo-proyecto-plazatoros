@@ -102,6 +102,11 @@ async function cargarEventoEnFormulario(eventoID) {
     });
 
     const formulario = document.getElementById("formulario-evento");
+// Hide the "Aniadir usuario" button
+    const btnAniadirUsuario = document.getElementById("enviar");
+    if (btnAniadirUsuario) btnAniadirUsuario.style.display = "none";
+
+   
 
     // Check if a confirm button already exists
     let existingButton = document.getElementById("boton-confirmar-modificacion");
@@ -132,6 +137,9 @@ async function cargarEventoEnFormulario(eventoID) {
         botonModificar.remove();
         allButtons.forEach(btn => btn.disabled = false);
         document.getElementById("enviar").disabled = false; // enable add button
+        
+        // Show the "Aniadir usuario" button again
+        if (btnAniadirUsuario) btnAniadirUsuario.style.display = "";
     };
 
     formulario.appendChild(botonModificar);
