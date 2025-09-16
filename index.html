@@ -516,6 +516,17 @@
                 });
         });
     </script>
+
+    <script>
+  document.addEventListener("scroll", function () {
+    const nav = document.querySelector(".navbar-custom");
+    if (window.scrollY > 50) {
+      nav.classList.add("navbar-scrolled");
+    } else {
+      nav.classList.remove("navbar-scrolled");
+    }
+  });
+</script>
 </body>
 
 </html>
