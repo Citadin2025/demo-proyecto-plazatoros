@@ -1,0 +1,78 @@
+/* Container for the whole carousel */
+#event-carousel-wrapper {
+    position: relative;
+    max-width: 800px;
+    /* Example size */
+    margin: 0 auto;
+    overflow: hidden;
+    /* Hides slides that are not currently active */
+}
+
+/* Container for all slides */
+#event-carousel {
+    display: flex;
+    /* Helps align slides if using a scrolling effect */
+    width: 100%;
+    position: relative;
+    /* If you were doing a sliding transition, you'd use 'transition: transform 0.5s ease;' here */
+}
+
+/* Individual slide styling */
+.carousel-slide {
+    flex: 0 0 100%;
+    /* Makes each slide take up 100% of the container width */
+    position: relative;
+    /* Key for positioning the caption */
+    display: none;
+    /* Hide all slides by default */
+}
+
+.carousel-slide.active {
+    display: block;
+    /* Only show the active slide */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Caption styling (making it sit on top of the image) */
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    /* Align to the bottom of the slide */
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background for readability */
+    color: white;
+}
+
+.carousel-caption h3 {
+    margin-top: 0;
+}
+
+.event-date {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Navigation Buttons */
+#prev-btn,
+#next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* ... rest of button styling */
+}
+
+#prev-btn {
+    left: 10px;
+}
+
+#next-btn {
+    right: 10px;
+}
