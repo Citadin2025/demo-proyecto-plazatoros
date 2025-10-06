@@ -94,33 +94,42 @@ a:focus {
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: transparent;
-  transition: all 0.2s linear 0s;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.navbar-custom.scrolled {
-  background-color: #000 !important;
+/* Navbar sólida al hacer scroll */
+.navbar-custom.scrolled,
+.navbar-scrolled {
+  background-color: rgba(0, 0, 0, 1) !important;
 }
 
-.navbar-custom .navbar-nav>li>a {
+/* NAV LINKS */
+.navbar-custom .navbar-nav > li > a {
   color: #a7a5a5;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 9px; /* más pequeño */
   font-weight: 400;
   border-bottom: 1px solid transparent;
+  padding: 6px 8px; /* menos espacio horizontal */
+  letter-spacing: 0.5px;
 }
 
-.navbar-custom .navbar-nav>li>a:hover,
-.navbar-custom .navbar-nav>li>a:focus {
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus {
   background-color: transparent;
-  border-color: rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
+  border-color: #fff;
+  color: #fff;
 }
 
-.navbar-custom .navbar-nav>.active>a {
-  border-color: rgb(255, 255, 255);
+.navbar-custom .navbar-nav > .active > a {
+  border-color: #fff;
 }
 
+/* Toggle */
 .navbar-toggle {
   border: 0;
   border-radius: 0;
@@ -131,25 +140,26 @@ a:focus {
   background-color: #fff;
 }
 
-/* logo */
+/* LOGO (a la derecha) */
 .navbar-logo {
-  height: 100px;
+  order: 2; /* mueve el logo al final (a la derecha) */
+  height: 60px !important;
   width: auto;
-  max-height: 100px;
+  max-height: 80px;
   padding: 5px 0;
+  margin-left: 15px;
 }
 
-/* Navbar semi-transparente arriba */
-.navbar-custom {
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: background-color 0.3s ease;
+/* NAV LIST (a la izquierda del logo) */
+.navbar-custom .navbar-nav {
+  order: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
-/* Navbar sólida al hacer scroll */
-.navbar-scrolled {
-  background-color: rgba(0, 0, 0, 1) !important;
-}
-
 
 /* =====================
    SITE HEADER / HERO
