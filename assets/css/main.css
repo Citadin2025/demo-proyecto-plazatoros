@@ -237,6 +237,22 @@ a:focus {
   text-align: center;
 }
 
+.section_eventos {
+  position: relative;
+  z-index: 5;
+  padding: 40px 0;
+  background-color: #0f0f0f; /* o el color base que uses */
+}
+
+.section_galeria {
+  position: relative;
+  z-index: 5;
+  padding: 40px 0;
+  background-color: #0f0f0f; /* o el color base que uses */
+}
+
+
+
 @media (min-width: 768px) {
   .section {
     padding: 90px 0;
@@ -296,27 +312,26 @@ a:focus {
 }
 
 
-/* =====================
-   CAROUSEL (ajustes finales)
-   ===================== */
+/* ====== Carrusel: estilos mejorados y responsive ====== */
 #basicCarousel {
   position: relative;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  overflow: visible;
+  overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  margin-bottom: 60px;
 }
 
+/* Inner / imagen */
 #basicCarousel .carousel-inner {
   position: relative;
   width: 100%;
-  height: 500px; /* altura consistente */
+  height: 500px;
   border-radius: 12px;
   overflow: hidden;
 }
-
 #basicCarousel .carousel-inner img {
   width: 100%;
   height: 100%;
@@ -324,74 +339,92 @@ a:focus {
   border-radius: 12px;
 }
 
-/* Indicadores */
+/* Indicadores: usar flexbox para centrar correctamente */
 #basicCarousel .carousel-indicators {
   position: absolute !important;
-  bottom: 15px !important;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 15;
+  bottom: 18px !important;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* separación entre puntos */
+  padding: 0;
+  list-style: none;
 }
 
-/* Controles (flechas) */
-.carousel-control {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0,0,0,0.3);
+/* Punto indicador - ajusta apariencia */
+#basicCarousel .carousel-indicators li {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: 2px solid rgba(0,0,0,0.2);
+  cursor: pointer;
+  opacity: 0.9;
+}
+#basicCarousel .carousel-indicators .active {
+  background: #fff;
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+/* Controles (flechas) - posiciones fluidas y con buen z-index */
+.carousel-control {
+  position: absolute !important;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(0,0,0,0.35);
+  border-radius: 50%;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  color: black;
-  opacity: 0.8;
-  z-index: 5;
+  font-size: 20px;
+  color: #fff;          /* blanco para iconos sobre fondo oscuro */
+  opacity: 0.95;
+  z-index: 30 !important;
+  text-decoration: none;
+  transition: background-color .15s ease;
 }
-
-
 .carousel-control:hover {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.65);
 }
 
-.left.carousel-control {
-  left: 100px;
-  top: 50%; 
-}
+/* evitar valores fijos que rompan en otras resoluciones */
+.left.carousel-control { left: 10px !important; }
+.right.carousel-control { right: 10px !important; }
 
-.right.carousel-control {
-  right: 100px;
-  top: 50%;
-}
-
-/* Texto dentro del carrusel */
+/* Caption (caja de texto) */
 .carousel-caption {
   position: absolute;
-  bottom: 30px; /* lo sube sobre la imagen */
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 85%;
-  background: rgba(30, 30, 30, 0.6); /* gris translúcido */
-  padding: 15px 25px;
+  width: calc(100% - 60px);
+  max-width: 920px;
+  background: rgba(30, 30, 30, 0.62);
+  padding: 14px 20px;
   border-radius: 10px;
   color: #f1f1f1;
   font-size: 18px;
   line-height: 1.4em;
   text-align: center;
-  z-index: 15;
+  z-index: 25;
 }
 
-#basicCarousel,
-#basicCarousel .carousel-inner {
-  height: 500px; /* o el valor que uses */
-  position: relative;
+/* Ajustes responsive */
+@media (max-width: 900px) {
+  #basicCarousel .carousel-inner { height: 420px; }
+  .carousel-caption { font-size: 16px; width: calc(100% - 40px); bottom: 22px; }
+  .left.carousel-control, .right.carousel-control { width: 40px; height: 40px; left: 8px; right: 8px; }
 }
-
-#basicCarousel .carousel-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+@media (max-width: 600px) {
+  #basicCarousel .carousel-inner { height: 320px; }
+  .carousel-caption { font-size: 14px; padding: 10px 12px; bottom: 14px; }
+  .left.carousel-control, .right.carousel-control { width: 36px; height: 36px; }
 }
 
 
