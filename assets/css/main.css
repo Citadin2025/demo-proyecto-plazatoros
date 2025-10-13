@@ -297,39 +297,103 @@ a:focus {
 
 
 /* =====================
-   CAROUSEL (ajustes)
+   CAROUSEL (ajustes finales)
    ===================== */
 #basicCarousel {
   position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: visible;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
+#basicCarousel .carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 500px; /* altura consistente */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#basicCarousel .carousel-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Indicadores */
 #basicCarousel .carousel-indicators {
   position: absolute !important;
-  bottom: -70px !important;
+  bottom: 15px !important;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 15;
 }
 
+/* Controles (flechas) */
 .carousel-control {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: auto;
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
-  opacity: .5;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: black;
+  opacity: 0.8;
+  z-index: 5;
+}
+
+
+.carousel-control:hover {
+  background-color: rgba(0,0,0,0.7);
 }
 
 .left.carousel-control {
-  left: 0;
+  left: 100px;
+  top: 50%; 
 }
 
 .right.carousel-control {
-  right: 0;
+  right: 100px;
+  top: 50%;
 }
+
+/* Texto dentro del carrusel */
+.carousel-caption {
+  position: absolute;
+  bottom: 30px; /* lo sube sobre la imagen */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  background: rgba(30, 30, 30, 0.6); /* gris translúcido */
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: #f1f1f1;
+  font-size: 18px;
+  line-height: 1.4em;
+  text-align: center;
+  z-index: 15;
+}
+
+#basicCarousel,
+#basicCarousel .carousel-inner {
+  height: 500px; /* o el valor que uses */
+  position: relative;
+}
+
+#basicCarousel .carousel-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 /* =====================
    BUTTONS & FORMS
