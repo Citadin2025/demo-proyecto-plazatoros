@@ -111,7 +111,7 @@ a:focus {
 .navbar-custom .navbar-nav > li > a {
   color: #a7a5a5;
   text-transform: uppercase;
-  font-size: 9px; /* más pequeño */
+  font-size: 13px; /* más pequeño */
   font-weight: 400;
   border-bottom: 1px solid transparent;
   padding: 6px 8px; /* menos espacio horizontal */
