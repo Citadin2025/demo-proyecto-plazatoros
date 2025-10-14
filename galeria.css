@@ -105,3 +105,15 @@ p {
         font-size: 1.6em;
     }
 }
+
+/* Efecto de carga para imágenes lazy */
+.gallery img.lazy {
+    background: #222;          /* color de fondo mientras carga */
+    filter: blur(10px);        /* desenfoque */
+    transition: filter 0.5s ease, transform 0.3s ease;
+}
+
+/* Cuando la imagen se cargue, se quita el blur */
+.gallery img:not(.lazy) {
+    filter: blur(0);
+}
