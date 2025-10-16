@@ -16,6 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   position: relative;
+  transition: background-color 1s ease, color 1s ease;
 }
 
 /* enlaces */
@@ -250,6 +251,47 @@ a:focus {
     letter-spacing: 1px;
     margin: 0 0 60px;
   }
+}
+
+/* =====================
+   ESPACIO ARTE
+   ===================== */
+.espacio-arte {
+  padding: 100px 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.espacio-arte .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.art-piece {
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.art-piece:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+/* This class will activate when the user scrolls into Espacio Arte */
+body.art-mode {
+  background: linear-gradient(135deg, #1a1a1a, #433b6f);
+  color: #fef4e8;
 }
 
 /* =====================

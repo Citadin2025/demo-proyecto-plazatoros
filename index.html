@@ -133,7 +133,7 @@
     <section id="eventos" class="section_eventos">
 
         <!-- Sección de Eventos con Carrusel -->
-         <section id="eventos" class="section_eventos">
+        <section id="eventos" class="section_eventos">
             <div class="container">
                 <h2 class="text-center">EVENTOS</h2>
                 <div id="basicCarousel" class="carousel slide" data-ride="carousel" data-interval="7000">
@@ -277,41 +277,55 @@
         </div>
     </section>
 
+    <!-- ESPACIO ARTE -->
+    <section id="espacio-arte" class="espacio-arte text-center">
+        <div class="container">
+            <h2 class="section-title">Espacio Arte</h2>
+            <p class="section-subtitle">Un espacio dedicado al arte contemporáneo en la Plaza de Toros.</p>
+            <div class="gallery">
+                <img src="images/arte1.jpg" alt="Obra 1" class="art-piece">
+                <img src="images/arte2.jpg" alt="Obra 2" class="art-piece">
+                <img src="images/arte3.jpg" alt="Obra 3" class="art-piece">
+            </div>
+        </div>
+    </section>
+
+
     <!-- GALERÍA -->
     <section id="galeria" class="section_galeria">
         <div class="container">
             <h3 class="section-title">Galeria</h3>
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="assets/images/photos/foto 1.jpg" alt="Imagen 1">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/photos/foto 2.jpg" alt="Imagen 2">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/photos/foto 3.jpg" alt="Imagen 3">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/photos/foto 4.jpg" alt="Imagen 4">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/photos/foto 5.jpg" alt="Imagen 5">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/photos/foto 6.jpg" alt="Imagen 6"> 
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/photos/foto 7.jpg" alt="Imagen 7">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/photos/foto 8.jpg" alt="Imagen 8">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/photos/foto 9.jpg" alt="Imagen 9">
-                    </div>
-                    <!-- más imágenes -->
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="assets/images/photos/foto 1.jpg" alt="Imagen 1">
                 </div>
+                <div class="gallery-item">
+                    <img src="assets/images/photos/foto 2.jpg" alt="Imagen 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/photos/foto 3.jpg" alt="Imagen 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/photos/foto 4.jpg" alt="Imagen 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/photos/foto 5.jpg" alt="Imagen 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/photos/foto 6.jpg" alt="Imagen 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/photos/foto 7.jpg" alt="Imagen 7">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/photos/foto 8.jpg" alt="Imagen 8">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/photos/foto 9.jpg" alt="Imagen 9">
+                </div>
+                <!-- más imágenes -->
             </div>
+        </div>
         </div>
     </section>
 
@@ -516,6 +530,21 @@
                 nav.classList.remove("navbar-scrolled");
             }
         });
+    </script>
+
+    <script>
+        document.addEventListener("scroll", function () {
+            const section = document.getElementById("espacio-arte");
+            const rect = section.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
+
+            if (isVisible) {
+                document.body.classList.add("art-mode");
+            } else {
+                document.body.classList.remove("art-mode");
+            }
+        });
+
     </script>
 </body>
 
