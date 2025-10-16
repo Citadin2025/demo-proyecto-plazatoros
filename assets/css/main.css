@@ -88,6 +88,49 @@ a:focus {
 }
 
 /* =====================
+   HEADER
+   ===================== */
+
+
+.site-header .intro {
+    max-width: 90%;       /* leaves a small margin on the sides */
+    width: 100%;
+    padding: 0 15px;      /* extra padding for small screens */
+    box-sizing: border-box;
+    text-align: center;   /* keeps text centered */
+    word-wrap: break-word; /* breaks long words instead of overflowing */
+}
+
+/* Headings responsive */
+.site-header .intro h1,
+.site-header .intro h2,
+.site-header .intro p {
+    overflow-wrap: break-word; /* modern way to break long text */
+    word-break: break-word;
+}
+
+/* Optional: prevent extremely long words or URLs from breaking layout */
+.site-header .intro h1,
+.site-header .intro h2,
+.site-header .intro p {
+    white-space: normal; /* ensures it wraps */
+}
+
+/* Optional: smaller font on tiny screens */
+@media (max-width: 480px) {
+    .site-header .intro h1 {
+        font-size: 24px;
+    }
+    .site-header .intro h2 {
+        font-size: 18px;
+    }
+    .site-header .intro p {
+        font-size: 16px;
+    }
+}
+
+
+/* =====================
    NAVBAR (custom)
    ===================== */
 .navbar-custom {
@@ -198,6 +241,17 @@ a:focus {
   padding: 0 15px;
 }
 
+/* subtle dark panel behind the intro text to improve legibility over the hero image */
+.site-header .intro::before {
+  content: "";
+  position: absolute;
+  inset: -8px; /* slightly larger than the text block */
+  background: rgba(0,0,0,0.45);
+  border-radius: 8px;
+  z-index: -1; /* place behind text */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
 .site-header .intro h2 {
   margin-top: 0;
   font-size: 25px;
@@ -213,6 +267,22 @@ a:focus {
   font-size: 20px;
   margin-bottom: 10px;
   font-weight: 300;
+}
+
+/* Style the intro CTA button for better contrast */
+#intro-link {
+  display: inline-block;
+  background: #654aff; /* warm accent */
+  color: #fff !important;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+#intro-link:hover, #intro-link:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
 /* alternativa flex (valign helper que usás) */
