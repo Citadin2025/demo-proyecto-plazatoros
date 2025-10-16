@@ -11,6 +11,14 @@ if ($requestMethod == "GET") {
     $solicitud = $_GET["url"];
     $idEvento = $_GET["eventoID"] ?? null;
 
+    if($solicitud === 'eventoRandom'){
+        echo json_encode([
+            'status' => 'success',
+            'response' => obtenerUnEventoRandom()
+        ]);
+        exit;
+    }
+
     if ($solicitud == "eventos" && $idEvento === null) {
         obtenerEventos();
     } else if ($solicitud == "eventos" && $idEvento !== null) {

@@ -6,8 +6,27 @@ $(window).scroll(function(){
 	handleTopNavAnimation();
 });
 
-$(window).load(function(){
+$(window).load(async function(){
 	handleTopNavAnimation();
+
+    const els = {
+        'fecha': document.getElementById('intro-fecha'),
+        'titulo': document.getElementById('intro-titulo'),
+        'descripcion': document.getElementById('intro-descripcion'),
+        'link': document.getElementById('intro-link')
+    };
+
+    const data = await fetch('./backEnd/api/api.php?url=eventoRandom',
+        {
+            method: 'GET'
+        }
+    );
+    const res = await data.json();
+    
+    els.fecha.innerHTML = res.response.fecha;
+    els.titulo.innerHTML = res.response.nombre;
+    els.descripcion.innerHTML = res.response.descripcion;
+    els.link.href = res.response.linkDeCompra;
 });
 
 function handleTopNavAnimation() {

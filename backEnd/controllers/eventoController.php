@@ -16,6 +16,12 @@ function obtenerUnEvento($eventoID)
     echo json_encode($eventoModel->obtenerPorId($eventoID));
 }
 
+function obtenerUnEventoRandom()
+{
+    global $eventoModel;
+    return $eventoModel->obtenerUnEventoRandom();
+}
+
 function agregarEvento($nombre, $descripcion, $fecha, $imagen, $linkDeCompra)
 {
     global $eventoModel;
