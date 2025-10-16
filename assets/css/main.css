@@ -268,6 +268,15 @@ a:focus {
   z-index: 1;
 }
 
+#espacio-arte {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .espacio-arte .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -289,10 +298,19 @@ a:focus {
 }
 
 /* This class will activate when the user scrolls into Espacio Arte */
+/* Espacio Arte mode: cream background and dark text for readability */
 body.art-mode {
-  background: linear-gradient(135deg, #1a1a1a, #433b6f);
-  color: #fef4e8;
+  background: #f7efe6 !important; /* soft cream */
+  color: #222222 !important;      /* dark text for contrast */
+  transition: background-color 0.8s ease, color 0.8s ease;
 }
+
+/* Adapt key elements when art-mode is active */
+body.art-mode a { color: #1a1a1a; }
+body.art-mode .section-title { color: #111111; }
+body.art-mode .navbar-custom { background-color: rgba(0,0,0,0.08); }
+body.art-mode .carousel-caption { background: rgba(255,255,255,0.85); color: #111; }
+body.art-mode .site-footer { background: #f0e8de; color: #111; }
 
 /* =====================
    ABOUT / FIGURE

@@ -47,7 +47,7 @@
                     <li><a data-scroll href="#historia">Historia</a></li>
                     <li><a data-scroll href="#eventos">Eventos</a></li>
                     <li><a data-scroll href="#gastronomia">Gastronomía</a></li>
-                    <li><a data-scroll href="#espacio_arte">Espacio Arte</a></li>
+                    <li><a data-scroll href="#espacio-arte">Espacio Arte</a></li>
                     <li><a data-scroll href="#galeria">Galeria</a></li>
                     <li><a data-scroll href="#preguntas">FAQs</a></li>
                     <li><a data-scroll href="#mapa">Mapa</a></li>
@@ -61,14 +61,13 @@
     <header id="site-header" class="site-header valign-center">
         <div class="intro">
 
-            <h2>31 de mayo / 21 hrs</h2>
+            <h2 id="intro-fecha"></h2>
 
-            <h1>Lucía Severino</h1>
+            <h1 id="intro-titulo"></h1>
 
-            <p><strong>Gira presentación</strong> &nbsp;El tiempo de una canción</p>
+            <p id="intro-descripcion"></p>
 
-            <a class="btn btn-white" target="blank" href="">Comprar
-                ticket</a>
+            <a id="intro-link" class="btn btn-white" target="blank" href="">Comprar ticket</a>
 
         </div>
     </header>
@@ -283,9 +282,9 @@
             <h2 class="section-title">Espacio Arte</h2>
             <p class="section-subtitle">Un espacio dedicado al arte contemporáneo en la Plaza de Toros.</p>
             <div class="gallery">
-                <img src="images/arte1.jpg" alt="Obra 1" class="art-piece">
-                <img src="images/arte2.jpg" alt="Obra 2" class="art-piece">
-                <img src="images/arte3.jpg" alt="Obra 3" class="art-piece">
+                <img src="assets/images/Galería PT/Aereas/a1-.webp" alt="Obra 1" class="art-piece">
+                <img src="assets/images/Galería PT/Escenario/GMHI6803.JPG" alt="Obra 2" class="art-piece">
+                <img src="assets/images/Galería PT/Otros planos/_SSB2141.jpg" alt="Obra 3" class="art-piece">
             </div>
         </div>
     </section>
@@ -533,19 +532,30 @@
     </script>
 
     <script>
-        document.addEventListener("scroll", function () {
+        (function () {
             const section = document.getElementById("espacio-arte");
-            const rect = section.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
+            if (!section) return;
 
-            if (isVisible) {
-                document.body.classList.add("art-mode");
-            } else {
-                document.body.classList.remove("art-mode");
+            function checkArtMode() {
+                const rect = section.getBoundingClientRect();
+                const viewportCenter = window.innerHeight / 2;
+                const isVisible = rect.top < viewportCenter && rect.bottom > viewportCenter;
+
+                if (isVisible) document.body.classList.add('art-mode');
+                else document.body.classList.remove('art-mode');
             }
-        });
 
+            // Run on load, scroll, resize and immediately so the mode is correct from the start
+            window.addEventListener('load', checkArtMode);
+            window.addEventListener('scroll', checkArtMode, { passive: true });
+            window.addEventListener('resize', checkArtMode);
+            document.addEventListener('DOMContentLoaded', checkArtMode);
+
+            // initial invocation
+            checkArtMode();
+        })();
     </script>
+
 </body>
 
 </html>
