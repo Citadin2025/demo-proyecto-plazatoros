@@ -22,6 +22,10 @@ html {
   font-family: 'RSC', Georgia, 'Times New Roman', serif;
 }
 
+/* Mid-size screens tweak: slightly smaller nav text to avoid wrapping */
+@media (max-width: 992px) {
+  .navbar-custom .navbar-nav > li > a { font-size: 12.5px; padding: 9px 12px; }
+}
 body {
   background: #121212;
   color: #f4f4f4; /* slightly softer white for reading */
@@ -157,7 +161,7 @@ a:focus {
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* logo left, nav to the right via margin-left:auto */
 }
 
 /* Navbar sólida al hacer scroll */
@@ -170,11 +174,12 @@ a:focus {
 .navbar-custom .navbar-nav > li > a {
   color: #a7a5a5;
   text-transform: uppercase;
-  font-size: 9px; /* más pequeño */
-  font-weight: 400;
+  font-size: 13px; /* increased for readability */
+  font-weight: 500;
   border-bottom: 1px solid transparent;
-  padding: 6px 8px; /* menos espacio horizontal */
-  letter-spacing: 0.5px;
+  padding: 0 12px; /* horizontal only; vertical centering via line-height */
+  letter-spacing: 0.6px;
+  line-height: 60px; /* match logo height to vertically center text */
 }
 
 .navbar-custom .navbar-nav > li > a:hover,
@@ -192,32 +197,108 @@ a:focus {
 .navbar-toggle {
   border: 0;
   border-radius: 0;
-  margin-top: 2px;
+  margin: 0;
+  height: 60px;
+  display: none; /* hidden on desktop */
+  align-items: center;
+  flex-direction: column; /* stack the three bars vertically when shown */
+  justify-content: center;
 }
 
 .navbar-toggle .icon-bar {
   background-color: #fff;
+  width: 22px;
+  height: 3px;
+  display: block;
+  margin: 3px 0; /* space between bars */
+  border-radius: 2px;
 }
 
 /* LOGO (a la derecha) */
 .navbar-logo {
-  order: 2; /* mueve el logo al final (a la derecha) */
+  order: 0; /* keep logo first (left) */
   height: 60px !important;
   width: auto;
   max-height: 80px;
   padding: 5px 0;
-  margin-left: 15px;
+  margin-left: 0;
 }
+
+.navbar-logo img { display: block; margin: 0; }
 
 /* NAV LIST (a la izquierda del logo) */
 .navbar-custom .navbar-nav {
   order: 1;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: flex-end; /* align nav to the right of the logo */
   margin: 0;
   padding: 0;
   list-style: none;
+  margin-left: auto; /* push nav to the far right */
+}
+
+/* vertically center nav items */
+.navbar-custom .navbar-nav { align-items: center; }
+
+.navbar-custom .navbar-nav > li > a { display: flex; align-items: center; }
+
+/* Mobile-specific navbar adjustments: ensure logo left and collapse stacks neatly */
+@media (max-width: 767px) {
+  .navbar-custom {
+    display: block;
+    padding: 6px 12px;
+  }
+
+  .navbar-custom .navbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* show hamburger in mobile view */
+  .navbar-toggle { display: flex; }
+
+  .navbar-logo {
+    height: 46px !important;
+    max-height: 54px;
+  }
+
+  .navbar-logo img {
+    max-height: 46px;
+    height: auto;
+    width: auto;
+  }
+
+  /* Make collapsed menu full-width and items stack vertically */
+  .navbar-custom .navbar-collapse {
+    width: 100%;
+    clear: both;
+    margin-top: 8px;
+    transition: max-height 0.25s ease;
+  }
+
+  .navbar-custom .navbar-nav {
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 0;
+  }
+
+  .navbar-custom .navbar-nav > li {
+    display: block;
+    width: 100%;
+  }
+
+  .navbar-custom .navbar-nav > li > a {
+    display: block;
+    padding: 10px 15px;
+    border-top: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .navbar-toggle {
+    margin-top: 0;
+  }
 }
 
 /* =====================
@@ -393,6 +474,20 @@ h2.section-title, .section-title {
   position: relative;
   z-index: 1;
 }
+
+/* Normalize typography in Espacio Arte to match site defaults */
+.espacio-arte,
+.espacio-arte p,
+.espacio-arte .section-subtitle,
+.espacio-arte .art-piece + p {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: inherit; /* allow art-mode overrides to take effect */
+  line-height: 1.7;
+}
+
+.espacio-arte .section-subtitle { font-size: 18px; font-weight: 400; }
 
 #espacio-arte {
   min-height: auto;
@@ -966,4 +1061,19 @@ body.art-mode .faq .panel-body {
 
 @media (max-width: 480px) {
   .section_preguntas .section-title { margin-top: 18px; padding-top: 4px; }
+}
+
+/* Gastronomía: spacing between text and the small carousel */
+.section_gastronomia .carousel {
+  /* place vertical gap between the button/text above and the carousel below */
+  margin-top: 24px;
+  margin-left: 0;
+}
+
+@media (max-width: 767px) {
+  .section_gastronomia .carousel {
+    width: 100% !important;
+    margin-left: 0;
+    margin-top: 18px; /* slightly smaller gap on very small screens */
+  }
 }
