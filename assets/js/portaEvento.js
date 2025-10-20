@@ -21,7 +21,7 @@ async function obtenerEventos() {
 function mostrarEventos(eventos) {
     let contenido = "";
     eventos.forEach((evento, index) => {
-        contenido += `<div class="item${index === 0 ? ' active' : ''}">`;
+        contenido += `<div class="item ${index === 0 ? ' active' : ''}">`;
         contenido += `<img src="${evento.imagen}" alt="${evento.nombre}" class="img-responsive">`;
         contenido += `<div class="carousel-caption">`;
         contenido += `<h3>${evento.nombre}</h3>`;
@@ -42,5 +42,6 @@ function generarIndicadores(eventos) {
     return indicadores;
 }
 
-// Ejecutar al cargar la página
-document.addEventListener("DOMContentLoaded", obtenerEventos);
+window.onload(() => {
+    obtenerEventos();
+})
