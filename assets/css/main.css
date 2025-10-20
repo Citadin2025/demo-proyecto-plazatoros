@@ -1192,7 +1192,6 @@ body.art-mode .faq .panel-body {
 
 /* Normalize vertical spacing for common flow content */
 main, section, article, header, footer, nav, aside {
-  margin-top: var(--vspace-lg);
   margin-bottom: var(--vspace-lg);
 }
 
@@ -1230,7 +1229,6 @@ figcaption { margin-top: var(--vspace-xs); font-size: .9rem; color: rgba(255,255
 .mb-3 { margin-bottom: var(--vspace-md) !important; }
 
 /* Adjacent sibling spacing: adds consistent gap between consecutive children inside common containers */
-article > * + *,
 section > * + *,
 main > * + *,
 .container > * + * {
