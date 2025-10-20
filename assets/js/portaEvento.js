@@ -1,35 +1,46 @@
-//aca vamos a hacer que los eventos se muestren en la pagina 
+// Obtener eventos desde la API y mostrarlos en el carrusel
 async function obtenerEventos() {
     try {
         const respuesta = await fetch("./backEnd/api/api.php?url=eventos");
         const eventos = await respuesta.json();
+
+        // Generar slides
         const contenedor = document.getElementById("carousel-inner");
-
         contenedor.innerHTML = mostrarEventos(eventos);
-    }
-    catch (error) {
-        console.error("error al obtener eventos" + error);
-    }
 
+        // Generar indicadores
+        const indicadores = document.getElementById("carousel-indicators");
+        indicadores.innerHTML = generarIndicadores(eventos);
+
+    } catch (error) {
+        console.error("Error al obtener eventos: " + error);
+    }
 }
 
-function mostrarEventos(evento) {
+// Función para generar los slides del carrusel
+function mostrarEventos(eventos) {
     let contenido = "";
-    evento.forEach(evento => {
-        contenido += `<div class="item">`;
-        contenido += `<img src="${evento.imagen}" alt="${evento.nombre}">`;
-        contenido += `<div>`;
-        contenido += `<h3 class="card-title">${evento.nombre}</h3>`;
-        contenido += `<p class="card-text">${evento.descripcion}</p>`;
-        contenido += `<div>`;
-        contenido += `<a href="${evento.linkDeCompra}" class="card-button">Comprar Ticket</a>`;
-        contenido += `</div>`;
-        contenido += `</div>`;
-        contenido += `</div>`;
+    eventos.forEach((evento, index) => {
+        contenido += `<div class="item${index === 0 ? ' active' : ''}">`;
+        contenido += `<img src="${evento.imagen}" alt="${evento.nombre}" class="img-responsive">`;
+        contenido += `<div class="carousel-caption">`;
+        contenido += `<h3>${evento.nombre}</h3>`;
+        contenido += `<p>${evento.descripcion}</p>`;
+        contenido += `<a href="${evento.linkDeCompra}" class="btn btn-primary">Comprar Ticket</a>`;
+        contenido += `</div>`; // cerrar carousel-caption
+        contenido += `</div>`; // cerrar item
     });
     return contenido;
 }
 
-//obtenerEventos();
+// Función para generar los indicadores del carrusel
+function generarIndicadores(eventos) {
+    let indicadores = "";
+    eventos.forEach((_, index) => {
+        indicadores += `<li data-target="#eventosCarousel" data-slide-to="${index}"${index === 0 ? ' class="active"' : ''}></li>`;
+    });
+    return indicadores;
+}
 
-
+// Ejecutar al cargar la página
+document.addEventListener("DOMContentLoaded", obtenerEventos);

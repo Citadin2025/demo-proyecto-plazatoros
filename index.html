@@ -126,26 +126,31 @@
         </div>
     </section>
 
-    <!-- EVENTOS -->
-    <section id="eventos" class="section_eventos">
+ <!-- EVENTOS -->
+<section id="eventos" class="section_eventos">
+  <div class="container">
+    <h2 class="text-center">EVENTOS</h2>
 
-        <!-- Sección de Eventos con Carrusel -->
-        <section id="eventos" class="section_eventos">
-            <div class="container">
-                <h2 class="text-center">EVENTOS</h2>
-                <div id="basicCarousel" class="carousel slide" data-ride="carousel" data-interval="7000">
-                    <ol class="carousel-indicators" id="carousel-indicators"></ol>
-                    <div class="carousel-inner" id="carousel-inner"></div>
-                    <a class="left carousel-control" href="#basicCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#basicCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </section>
+    <!-- Carrusel de Eventos -->
+    <div id="eventosCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicadores -->
+      <ol class="carousel-indicators" id="carousel-indicators"></ol>
+
+      <!-- Contenido dinámico -->
+      <div class="carousel-inner" id="carousel-inner"></div>
+
+      <!-- Controles -->
+      <a class="left carousel-control" href="#eventosCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#eventosCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- GASTRONOMÍA -->
     <section id="gastronomia" class="section_gastronomia">
@@ -488,45 +493,6 @@
     <script src="assets/js/main.js"></script>
     <script src="script.js" defer></script>
     <script src="assets/js/portaEvento.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("backEnd/api/api.php?url=eventos", { method: "GET" })
-                .then(response => response.json())
-                .then(data => {
-                    const indicators = document.getElementById("carousel-indicators");
-                    const inner = document.getElementById("carousel-inner");
-
-                    data.forEach((evento, index) => {
-                        const li = document.createElement("li");
-                        li.setAttribute("data-target", "#basicCarousel");
-                        li.setAttribute("data-slide-to", index);
-                        if (index === 0) li.classList.add("active");
-                        indicators.appendChild(li);
-
-                        const item = document.createElement("div");
-                        item.className = "item" + (index === 0 ? " active" : "");
-
-                        const img = document.createElement("img");
-                        img.src = evento.imagen || "assets/images/default.jpg";
-                        img.alt = evento.nombre;
-                        img.style.width = "100%";
-
-                        const caption = document.createElement("div");
-                        caption.className = "carousel-caption";
-                        caption.innerHTML = `<h3>${evento.nombre}</h3><p>${evento.descripcion}</p>`;
-
-                        item.appendChild(img);
-                        item.appendChild(caption);
-                        inner.appendChild(item);
-                    });
-                })
-                .catch(err => {
-                    console.error("Error al cargar eventos:", err);
-                });
-        });
-    </script>
 
     <script>
         document.addEventListener("scroll", function () {

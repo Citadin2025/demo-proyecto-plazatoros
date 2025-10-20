@@ -362,7 +362,6 @@ a:focus {
     margin: 0 0 60px;
   }
 }
-
 /* =====================
    ESPACIO ARTE
    ===================== */
@@ -465,181 +464,54 @@ body.art-mode .site-footer { background: #f0e8de; color: #111; }
   /* efecto de zoom al pasar el mouse */
 }
 
-
 /* =====================
-   CAROUSEL (ajustes finales)
+    CAROUSEL / ARREGLADO
    ===================== */
-#basicCarousel {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow: hidden; /* keep carousel visuals contained */
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  margin-bottom: 140px; /* space so indicators/caption don't overlap next section */
-  z-index: 15;
-}
 
-#basicCarousel .carousel-inner {
-  position: relative;
-  width: 100%;
-  height: 500px; /* altura consistente */
-  border-radius: 12px;
+   .carousel-container {
+  max-width: 900px;
+  max-height: 550px;
+  margin: 40px auto;
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
-#basicCarousel .carousel-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-}
+  .carousel-inner > .item > img {
+    width: 100%;
+    height: 600px;
+    display: block;
+    object-fit: contain; /* show the whole image inside the slide */
+    background-color: #000; /* fallback background when aspect ratios differ */
+  }
 
-/* Indicadores: colocados por encima de la caja de caption para no solaparse con secciones siguientes */
-#basicCarousel .carousel-indicators {
-  position: absolute !important;
-  /* sit above the caption (caption bottom ~30px + caption height ~60-80px) */
-  bottom: 90px !important;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 35; /* over captions and controls */
-  display: flex;
-  gap: 10px;
-  padding: 0;
-  list-style: none;
-}
-
-/* slightly larger hit target for touch devices */
-#basicCarousel .carousel-indicators li {
-  width: 12px;
-  height: 12px;
-  margin: 0 4px;
-}
-
-/* Controles (flechas) */
-.carousel-control {
-  position: absolute !important;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0,0,0,0.3);
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: black;
-  opacity: 0.8;
-  z-index: 5;
-}
-
-
-.carousel-control:hover {
-  background-color: rgba(0,0,0,0.7);
-}
-
-.left.carousel-control {
-  left: 18px !important; /* keep inside the rounded frame, not touching the edge */
-  top: 50%;
-}
-
-.right.carousel-control {
-  right: 18px !important; /* keep inside the rounded frame, not touching the edge */
-  top: 50%;
-}
-
-/* On very small screens keep arrows usable but slightly further in */
-@media (max-width: 480px) {
-  .left.carousel-control { left: 10px !important; }
-  .right.carousel-control { right: 10px !important; }
-}
-
-/* Texto dentro del carrusel */
 .carousel-caption {
   position: absolute;
-  bottom: 30px; /* lo sube sobre la imagen */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 85%;
-  background: rgba(30, 30, 30, 0.6); /* gris translúcido */
-  padding: 15px 25px;
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  color: #f1f1f1;
-  font-size: 18px;
-  line-height: 1.4em;
+  padding: 20px;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  color: rgb(194, 194, 194);
   text-align: center;
-  z-index: 15;
 }
 
-#basicCarousel,
-#basicCarousel .carousel-inner {
-  height: 500px; /* o el valor que uses */
-  position: relative;
-}
-
-#basicCarousel .carousel-inner img {
+/* Asegurar que el carrusel respete el contenedor */
+#eventosCarousel {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  
+}
+
+/* Opcional: ajustar altura de las imágenes si querés uniformidad */
+#eventosCarousel .carousel-inner > .item > img {
+  max-height: none; /* allow natural image height */
+  object-fit: contain; /* show the whole image */
+  width: 100%;
 }
 
 
-/* =====================
-   BUTTONS & FORMS
-   ===================== */
-.btn {
-  border: 0;
-  border-radius: 0;
-  padding: 6px 28px;
-  text-transform: uppercase;
-  transform: translateZ(0);
-  transition-duration: 0.3s;
-  transition-property: transform;
-  cursor: pointer;
-}
-
-.btn:hover {
-  transform: scale(0.98);
-}
-
-.btn-white {
-  color: #000;
-  background-color: #fff;
-}
-
-.btn-white:hover,
-.btn-white:focus {
-  color: #000;
-  background-color: #fff;
-}
-
-.btn-black {
-  color: #fff;
-  background-color: #000;
-}
-
-.btn-black:hover,
-.btn-black:focus {
-  color: #fff;
-  background-color: #000;
-}
-
-.form-control {
-  border-radius: 0;
-  box-shadow: none;
-  height: 48px;
-  padding: 10px 12px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.form-control:focus {
-  box-shadow: none;
-  border-color: #ccc;
-  background-color: #f8f8f8;
-}
 
 /* =====================
    FAQ / PANEL (accordion)
