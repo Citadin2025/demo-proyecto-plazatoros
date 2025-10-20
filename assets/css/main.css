@@ -22,6 +22,15 @@ html {
   font-family: 'RSC', Georgia, 'Times New Roman', serif;
 }
 
+/* Explicit Eventos heading styling (kept near heading rules) */
+section#eventos .section-title,
+#eventos h2 {
+  font-family: 'RSC', Georgia, 'Times New Roman', serif !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 /* Mid-size screens tweak: slightly smaller nav text to avoid wrapping */
 @media (max-width: 992px) {
   .navbar-custom .navbar-nav>li>a {
@@ -175,8 +184,7 @@ a:focus {
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  /* logo left, nav to the right via margin-left:auto */
+  justify-content: flex-start; /* logo left, nav to the right via margin-left:auto */
 }
 
 /* Navbar sólida al hacer scroll */
@@ -1123,6 +1131,11 @@ body.art-mode .faq .panel-body {
   margin-left: 0;
 }
 
+/* Ensure the Gastronomía section title has space below it so it never touches the carousel */
+.section_gastronomia .section-title {
+  margin-bottom: 18px;
+}
+
 @media (max-width: 767px) {
   .section_gastronomia .carousel {
     width: 100% !important;
@@ -1130,4 +1143,37 @@ body.art-mode .faq .panel-body {
     margin-top: 18px;
     /* slightly smaller gap on very small screens */
   }
+  .section_gastronomia .section-title { margin-bottom: 12px; }
+}
+
+/* Additional targeted spacing: the title is in its own row, followed by a nested container/row
+   which holds the carousel. Add extra gap after the title row and a small top offset for the
+   nested container to ensure the carousel can't visually touch the heading. */
+.section_gastronomia > .container > .row:first-child {
+  margin-bottom: 26px; /* larger gap after the title row */
+}
+
+.section_gastronomia > .container > .container {
+  margin-top: 6px; /* nudge nested container downward */
+}
+
+@media (max-width: 767px) {
+  .section_gastronomia > .container > .row:first-child { margin-bottom: 16px; }
+  .section_gastronomia > .container > .container { margin-top: 4px; }
+}
+
+/* Strong fallback rules to ensure separation if other styles override margins */
+.section_gastronomia .section-title {
+  margin-bottom: 36px !important;
+}
+
+/* If the carousel uses #carousel id (inline small carousel), push it down explicitly */
+#gastronomia #carousel,
+.section_gastronomia #carousel {
+  margin-top: 28px !important;
+}
+
+/* Also ensure the large carousel wrapper in this section (if present) respects a top offset */
+.section_gastronomia .carousel {
+  margin-top: 28px !important;
 }
