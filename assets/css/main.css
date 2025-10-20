@@ -825,7 +825,7 @@ body.art-mode .site-header .intro::before {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   padding: 20px;
-  bottom: 90px;
+  bottom: 30px;
   position: absolute;
   left: 0;
   right: 0;
@@ -1177,4 +1177,69 @@ body.art-mode .faq .panel-body {
 /* Also ensure the large carousel wrapper in this section (if present) respects a top offset */
 .section_gastronomia .carousel {
   margin-top: 28px !important;
+}
+
+/* === Global vertical rhythm / normalization ===
+   Adds conservative, consistent spacing between semantic blocks across the site.
+   These rules are intentionally gentle to avoid breaking Bootstrap layout components.
+*/
+:root {
+  --vspace-xs: 6px;
+  --vspace-sm: 12px;
+  --vspace-md: 18px;
+  --vspace-lg: 28px;
+}
+
+/* Normalize vertical spacing for common flow content */
+main, section, article, header, footer, nav, aside {
+  margin-top: var(--vspace-lg);
+  margin-bottom: var(--vspace-lg);
+}
+
+/* Headings: keep stronger top spacing and balanced bottom spacing */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: calc(var(--vspace-lg) - 6px);
+  margin-bottom: var(--vspace-sm);
+}
+
+p, ul, ol, blockquote, pre, figure {
+  margin-top: 0;
+  margin-bottom: var(--vspace-md);
+}
+
+/* Lists inside smaller components should keep a tighter rhythm */
+li p { margin-bottom: var(--vspace-sm); }
+
+/* Forms and inputs get small vertical gaps */
+label { display: block; margin-bottom: var(--vspace-xs); }
+input, select, textarea, button { margin-bottom: var(--vspace-sm); }
+
+/* Figures and images */
+figure { margin: 0 0 var(--vspace-md); }
+figcaption { margin-top: var(--vspace-xs); font-size: .9rem; color: rgba(255,255,255,0.7); }
+
+/* Exceptions: don't interfere with Bootstrap/utility layout components */
+.navbar, .navbar-custom, .carousel, .row, .container, .container-fluid { margin-top: 0; margin-bottom: 0; }
+
+/* Keep small helpers consistent */
+.mt-1 { margin-top: var(--vspace-xs) !important; }
+.mt-2 { margin-top: var(--vspace-sm) !important; }
+.mt-3 { margin-top: var(--vspace-md) !important; }
+.mb-1 { margin-bottom: var(--vspace-xs) !important; }
+.mb-2 { margin-bottom: var(--vspace-sm) !important; }
+.mb-3 { margin-bottom: var(--vspace-md) !important; }
+
+/* Adjacent sibling spacing: adds consistent gap between consecutive children inside common containers */
+article > * + *,
+section > * + *,
+main > * + *,
+.container > * + * {
+  margin-top: var(--vspace-md);
+}
+
+/* Avoid applying sibling spacing to grid layout rows or nav lists */
+.row > * + *,
+.navbar-custom .navbar-nav > li + li,
+.carousel .carousel-inner > .item + .item {
+  margin-top: 0;
 }
