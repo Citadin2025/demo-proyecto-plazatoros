@@ -116,13 +116,13 @@
 
             <div class="row mt-4">
                 <div class="col-md-6 mb-3">
-                    <img src="./assets/images/photos/Plaza de Toros 1910.jpg" class="img-fluid rounded shadow" loading="lazy"
-                        alt="Plaza de Toros en 1910">
+                    <img src="./assets/images/photos/Plaza de Toros 1910.jpg" class="img-fluid rounded shadow"
+                        loading="lazy" alt="Plaza de Toros en 1910">
                     <p class="mt-2"><small>Plaza de Toros en 1910</small></p>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <img src="./assets/images/photos/Plaza de Toros 2025.jpg" class="img-fluid rounded shadow" loading="lazy"
-                        alt="Plaza de Toros en la Actualidad">
+                    <img src="./assets/images/photos/Plaza de Toros 2025.jpg" class="img-fluid rounded shadow"
+                        loading="lazy" alt="Plaza de Toros en la Actualidad">
                     <p class="mt-2"><small>Plaza de Toros en la Actualidad</small></p>
                 </div>
             </div>
@@ -131,25 +131,28 @@
 
     <!-- EVENTOS -->
     <section id="eventos" class="section_eventos">
+        <div class="container">
+            <h2 class="text-center">EVENTOS</h2>
 
-        <!-- Sección de Eventos con Carrusel -->
-        <section id="eventos" class="section_eventos">
-            <div class="container">
-                <h2 class="text-center">EVENTOS</h2>
-                <div id="basicCarousel" class="carousel slide" data-ride="carousel" data-interval="7000">
-                    <ol class="carousel-indicators" id="carousel-indicators"></ol>
-                    <div class="carousel-inner" id="carousel-inner"></div>
-                    <a class="left carousel-control" href="#basicCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#basicCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
-                </div>
+            <!-- Carrusel de Eventos -->
+            <div id="eventosCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicadores -->
+                <ol class="carousel-indicators" id="carousel-indicators"></ol>
+
+                <!-- Contenido dinámico -->
+                <div class="carousel-inner" id="carousel-inner"></div>
+
+                <!-- Controles -->
+                <a class="left carousel-control" href="#eventosCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#eventosCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
             </div>
-        </section>
+        </div>
     </section>
-
+    
     <!-- GASTRONOMÍA -->
     <section id="gastronomia" class="section_gastronomia">
         <div class="container">
@@ -185,12 +188,12 @@
                             <!-- Carrusel de imágenes -->
                             <div id="carousel" class="carousel">
                                 <div class="carousel-container">
-                    <div class="carousel-slide"><img src="assets/images/gastronomy/Quinton 1.png " loading="lazy"
-                        alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="assets/images/gastronomy/Quinton 2.png" loading="lazy"
-                        alt="Imagen 2"></div>
-                    <div class="carousel-slide"><img src="assets/images/gastronomy/Quinton 3.png" loading="lazy"
-                        alt="Imagen 3"></div>
+                                    <div class="carousel-slide"><img src="assets/images/gastronomy/Quinton 1.png "
+                                            loading="lazy" alt="Imagen 1"></div>
+                                    <div class="carousel-slide"><img src="assets/images/gastronomy/Quinton 2.png"
+                                            loading="lazy" alt="Imagen 2"></div>
+                                    <div class="carousel-slide"><img src="assets/images/gastronomy/Quinton 3.png"
+                                            loading="lazy" alt="Imagen 3"></div>
                                 </div>
                                 <button class="prev">❮</button>
                                 <button class="next">❯</button>
@@ -285,16 +288,23 @@
             <div class="row arte-row align-items-start">
                 <!-- Left: description + gallery -->
                 <div class="col-md-7 arte-left text-left">
-                    <p class="section-subtitle">Un centro cultural y artistico, ubicado en la Plaza de Toros Real de San Carlos.
-                        Este espacio ofrece eventos artísticos mostrando distintos tipos de obras. Además, se destaca por su
-                        ambiente amplio y acogedor, ideal para disfrutar del arte y cultura que ele espacio ofrece en el marco
+                    <p class="section-subtitle">Un centro cultural y artistico, ubicado en la Plaza de Toros Real de San
+                        Carlos.
+                        Este espacio ofrece eventos artísticos mostrando distintos tipos de obras. Además, se destaca
+                        por su
+                        ambiente amplio y acogedor, ideal para disfrutar del arte y cultura que ele espacio ofrece en el
+                        marco
                         de diversos eventos</p>
 
                     <div class="gallery arte-gallery">
-                        <img src="assets/images/espacio_arte/SAV07827.jpg" alt="Obra 1" class="art-piece" loading="lazy">
-                        <img src="assets/images/espacio_arte/SAV07836.jpg" alt="Obra 2" class="art-piece" loading="lazy">
-                        <img src="assets/images/espacio_arte/SAV07842.jpg" alt="Obra 3" class="art-piece" loading="lazy">
-                        <img src="assets/images/espacio_arte/SAV07853.jpg" alt="Obra 4" class="art-piece" loading="lazy">
+                        <img src="assets/images/espacio_arte/SAV07827.jpg" alt="Obra 1" class="art-piece"
+                            loading="lazy">
+                        <img src="assets/images/espacio_arte/SAV07836.jpg" alt="Obra 2" class="art-piece"
+                            loading="lazy">
+                        <img src="assets/images/espacio_arte/SAV07842.jpg" alt="Obra 3" class="art-piece"
+                            loading="lazy">
+                        <img src="assets/images/espacio_arte/SAV07853.jpg" alt="Obra 4" class="art-piece"
+                            loading="lazy">
                     </div>
                 </div>
 
@@ -317,7 +327,7 @@
     <section id="galeria" class="section_galeria">
         <div class="container">
             <h3 class="section-title">Galeria</h3>
-                <div class="gallery">
+            <div class="gallery">
                 <div class="gallery-item">
                     <img src="assets/images/photos/foto 1.jpg" alt="Imagen 1" loading="lazy">
                 </div>
@@ -375,7 +385,9 @@
                             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingOne">
                                 <div class="panel-body">
-                                    <p>Se encuentra en el Real de San Carlos, a pocos minutos del centro histórico de Colonia del Sacramento, Uruguay. El acceso puede realizarse en vehículo, bicicleta o incluso caminando desde la rambla costera.</p>
+                                    <p>Se encuentra en el Real de San Carlos, a pocos minutos del centro histórico de
+                                        Colonia del Sacramento, Uruguay. El acceso puede realizarse en vehículo,
+                                        bicicleta o incluso caminando desde la rambla costera.</p>
                                 </div>
                             </div>
                         </div>
@@ -385,13 +397,17 @@
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse"
                                         data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">¿Qué actividades o servicios se ofrecen actualmente?</a>
+                                        aria-controls="collapseTwo">¿Qué actividades o servicios se ofrecen
+                                        actualmente?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingTwo">
-                                <div class="panel-body">Actualmente, la Plaza de Toros ha sido restaurada y funciona como un espacio cultural, turístico y de eventos. Se realizan visitas guiadas, espectáculos, exposiciones y actividades educativas, además de contar con servicios de información turística.</div>
+                                <div class="panel-body">Actualmente, la Plaza de Toros ha sido restaurada y funciona
+                                    como un espacio cultural, turístico y de eventos. Se realizan visitas guiadas,
+                                    espectáculos, exposiciones y actividades educativas, además de contar con servicios
+                                    de información turística.</div>
                             </div>
                         </div>
 
@@ -400,14 +416,17 @@
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse"
                                         data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">¿Cómo puedo obtener más información o realizar una reserva?</a>
+                                        aria-controls="collapseThree">¿Cómo puedo obtener más información o realizar una
+                                        reserva?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    Podés comunicarte a través de los canales oficiales de la Intendencia de Colonia o visitar el sitio web oficial de la Plaza de Toros, donde se publican los horarios, precios y actividades vigentes.
+                                    Podés comunicarte a través de los canales oficiales de la Intendencia de Colonia o
+                                    visitar el sitio web oficial de la Plaza de Toros, donde se publican los horarios,
+                                    precios y actividades vigentes.
                                 </div>
                             </div>
                         </div>
@@ -417,13 +436,17 @@
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse"
                                         data-parent="#accordion" href="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour">¿La Plaza de Toros cuenta con accesibilidad para personas con movilidad reducida?</a>
+                                        aria-controls="collapseFour">¿La Plaza de Toros cuenta con accesibilidad para
+                                        personas con movilidad reducida?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingFour">
-                                <div class="panel-body">Sí. La restauración del edificio contempló criterios de accesibilidad universal, incluyendo rampas, ascensores y señalización adecuada, para que todas las personas puedan disfrutar del recorrido de forma segura y cómoda.</div>
+                                <div class="panel-body">Sí. La restauración del edificio contempló criterios de
+                                    accesibilidad universal, incluyendo rampas, ascensores y señalización adecuada, para
+                                    que todas las personas puedan disfrutar del recorrido de forma segura y cómoda.
+                                </div>
                             </div>
                         </div>
 
@@ -432,13 +455,17 @@
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse"
                                         data-parent="#accordion" href="#collapseFive" aria-expanded="false"
-                                        aria-controls="collapseFive">¿Se pueden realizar eventos privados o institucionales en la Plaza de Toros?</a>
+                                        aria-controls="collapseFive">¿Se pueden realizar eventos privados o
+                                        institucionales en la Plaza de Toros?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingFive">
-                                <div class="panel-body">Sí. El espacio puede alquilarse para eventos culturales, empresariales o institucionales, siempre que se coordine previamente con la administración. La Plaza ofrece infraestructura moderna y un entorno histórico único para la realización de actividades especiales.</div>
+                                <div class="panel-body">Sí. El espacio puede alquilarse para eventos culturales,
+                                    empresariales o institucionales, siempre que se coordine previamente con la
+                                    administración. La Plaza ofrece infraestructura moderna y un entorno histórico único
+                                    para la realización de actividades especiales.</div>
                             </div>
                         </div>
                     </div>
@@ -452,7 +479,10 @@
             <div class="row">
                 <div class="col-sm-3">
                     <h3 class="section-title">Localizacion de la Plaza</h3>
-                        <p>La Plaza de Toros Real de San Carlos se encuentra en el barrio Real de San Carlos, al oeste de Colonia del Sacramento, Uruguay. Está a unos 5 minutos del centro histórico, sobre la Rambla Costanera, rodeada de un entorno natural y con fácil acceso por las principales avenidas de la ciudad.</p>
+                    <p>La Plaza de Toros Real de San Carlos se encuentra en el barrio Real de San Carlos, al oeste de
+                        Colonia del Sacramento, Uruguay. Está a unos 5 minutos del centro histórico, sobre la Rambla
+                        Costanera, rodeada de un entorno natural y con fácil acceso por las principales avenidas de la
+                        ciudad.</p>
                 </div>
                 <div class="col-sm-9">
                     <iframe
@@ -476,16 +506,22 @@
                     <h3 class="section-title">Información y Contactos</h3>
                     <p class="site-info">Designed and Developed <br> by Citadin Web Team</p>
                     <ul class="social-block">
-                            <li><a href="https://www.facebook.com/plazadetorosRSC/?locale=es_LA" aria-label="Facebook"><i class="ion-social-facebook"></i></a></li>
-                            <li><a href="https://es.wikipedia.org/wiki/Plaza_de_toros_Real_de_San_Carlos" aria-label="Wikipedia">
+                        <li><a href="https://www.facebook.com/plazadetorosRSC/?locale=es_LA" aria-label="Facebook"><i
+                                    class="ion-social-facebook"></i></a></li>
+                        <li><a href="https://es.wikipedia.org/wiki/Plaza_de_toros_Real_de_San_Carlos"
+                                aria-label="Wikipedia">
                                 <!-- Simple accessible SVG 'W' mark approximating a Wikipedia glyph -->
-                                <svg role="img" aria-labelledby="wikiTitle" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                                <svg role="img" aria-labelledby="wikiTitle" viewBox="0 0 64 64"
+                                    xmlns="http://www.w3.org/2000/svg" focusable="false">
                                     <title id="wikiTitle">Wikipedia</title>
                                     <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2" />
-                                    <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="currentColor">W</text>
+                                    <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle"
+                                        font-family="Georgia, 'Times New Roman', serif" font-size="28"
+                                        fill="currentColor">W</text>
                                 </svg>
                             </a></li>
-                            <li><a href="https://www.instagram.com/plazadetoroscolonia/?hl=en" aria-label="Instagram"><i class="ion-social-instagram"></i></a></li>
+                        <li><a href="https://www.instagram.com/plazadetoroscolonia/?hl=en" aria-label="Instagram"><i
+                                    class="ion-social-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>
