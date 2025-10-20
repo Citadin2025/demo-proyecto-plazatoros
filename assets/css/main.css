@@ -16,7 +16,7 @@ html {
 
 /* Apply the RSC display font only to headings and the navbar */
 .navbar-custom,
-.navbar-custom .navbar-nav > li > a,
+.navbar-custom .navbar-nav>li>a,
 .section-title,
 .header-title {
   font-family: 'RSC', Georgia, 'Times New Roman', serif;
@@ -24,13 +24,19 @@ html {
 
 /* Mid-size screens tweak: slightly smaller nav text to avoid wrapping */
 @media (max-width: 992px) {
-  .navbar-custom .navbar-nav > li > a { font-size: 12.5px; padding: 9px 12px; }
+  .navbar-custom .navbar-nav>li>a {
+    font-size: 12.5px;
+    padding: 9px 12px;
+  }
 }
+
 body {
   background: #121212;
-  color: #f4f4f4; /* slightly softer white for reading */
+  color: #f4f4f4;
+  /* slightly softer white for reading */
   font-weight: 300;
-  line-height: 1.7; /* improved readability */
+  line-height: 1.7;
+  /* improved readability */
   margin: 0;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -112,40 +118,48 @@ a:focus {
 
 
 .site-header .intro {
-    max-width: 90%;       /* leaves a small margin on the sides */
-    width: 100%;
-    padding: 0 15px;      /* extra padding for small screens */
-    box-sizing: border-box;
-    text-align: center;   /* keeps text centered */
-    word-wrap: break-word; /* breaks long words instead of overflowing */
+  max-width: 90%;
+  /* leaves a small margin on the sides */
+  width: 100%;
+  padding: 0 15px;
+  /* extra padding for small screens */
+  box-sizing: border-box;
+  text-align: center;
+  /* keeps text centered */
+  word-wrap: break-word;
+  /* breaks long words instead of overflowing */
 }
 
 /* Headings responsive */
 .site-header .intro h1,
 .site-header .intro h2,
 .site-header .intro p {
-    overflow-wrap: break-word; /* modern way to break long text */
-    word-break: break-word;
+  overflow-wrap: break-word;
+  /* modern way to break long text */
+  word-break: break-word;
 }
 
 /* Optional: prevent extremely long words or URLs from breaking layout */
 .site-header .intro h1,
 .site-header .intro h2,
 .site-header .intro p {
-    white-space: normal; /* ensures it wraps */
+  white-space: normal;
+  /* ensures it wraps */
 }
 
 /* Optional: smaller font on tiny screens */
 @media (max-width: 480px) {
-    .site-header .intro h1 {
-        font-size: 24px;
-    }
-    .site-header .intro h2 {
-        font-size: 18px;
-    }
-    .site-header .intro p {
-        font-size: 16px;
-    }
+  .site-header .intro h1 {
+    font-size: 24px;
+  }
+
+  .site-header .intro h2 {
+    font-size: 18px;
+  }
+
+  .site-header .intro p {
+    font-size: 16px;
+  }
 }
 
 
@@ -161,7 +175,8 @@ a:focus {
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* logo left, nav to the right via margin-left:auto */
+  justify-content: flex-start;
+  /* logo left, nav to the right via margin-left:auto */
 }
 
 /* Navbar sólida al hacer scroll */
@@ -171,25 +186,28 @@ a:focus {
 }
 
 /* NAV LINKS */
-.navbar-custom .navbar-nav > li > a {
+.navbar-custom .navbar-nav>li>a {
   color: #a7a5a5;
   text-transform: uppercase;
-  font-size: 13px; /* increased for readability */
+  font-size: 13px;
+  /* increased for readability */
   font-weight: 500;
   border-bottom: 1px solid transparent;
-  padding: 0 12px; /* horizontal only; vertical centering via line-height */
+  padding: 0 12px;
+  /* horizontal only; vertical centering via line-height */
   letter-spacing: 0.6px;
-  line-height: 60px; /* match logo height to vertically center text */
+  line-height: 60px;
+  /* match logo height to vertically center text */
 }
 
-.navbar-custom .navbar-nav > li > a:hover,
-.navbar-custom .navbar-nav > li > a:focus {
+.navbar-custom .navbar-nav>li>a:hover,
+.navbar-custom .navbar-nav>li>a:focus {
   background-color: transparent;
   border-color: #fff;
   color: #fff;
 }
 
-.navbar-custom .navbar-nav > .active > a {
+.navbar-custom .navbar-nav>.active>a {
   border-color: #fff;
 }
 
@@ -199,9 +217,11 @@ a:focus {
   border-radius: 0;
   margin: 0;
   height: 60px;
-  display: none; /* hidden on desktop */
+  display: none;
+  /* hidden on desktop */
   align-items: center;
-  flex-direction: column; /* stack the three bars vertically when shown */
+  flex-direction: column;
+  /* stack the three bars vertically when shown */
   justify-content: center;
 }
 
@@ -210,13 +230,15 @@ a:focus {
   width: 22px;
   height: 3px;
   display: block;
-  margin: 3px 0; /* space between bars */
+  margin: 3px 0;
+  /* space between bars */
   border-radius: 2px;
 }
 
 /* LOGO (a la derecha) */
 .navbar-logo {
-  order: 0; /* keep logo first (left) */
+  order: 0;
+  /* keep logo first (left) */
   height: 60px !important;
   width: auto;
   max-height: 80px;
@@ -224,24 +246,34 @@ a:focus {
   margin-left: 0;
 }
 
-.navbar-logo img { display: block; margin: 0; }
+.navbar-logo img {
+  display: block;
+  margin: 0;
+}
 
 /* NAV LIST (a la izquierda del logo) */
 .navbar-custom .navbar-nav {
   order: 1;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-end; /* align nav to the right of the logo */
+  justify-content: flex-end;
+  /* align nav to the right of the logo */
   margin: 0;
   padding: 0;
   list-style: none;
-  margin-left: auto; /* push nav to the far right */
+  margin-left: auto;
+  /* push nav to the far right */
 }
 
 /* vertically center nav items */
-.navbar-custom .navbar-nav { align-items: center; }
+.navbar-custom .navbar-nav {
+  align-items: center;
+}
 
-.navbar-custom .navbar-nav > li > a { display: flex; align-items: center; }
+.navbar-custom .navbar-nav>li>a {
+  display: flex;
+  align-items: center;
+}
 
 /* Mobile-specific navbar adjustments: ensure logo left and collapse stacks neatly */
 @media (max-width: 767px) {
@@ -258,7 +290,9 @@ a:focus {
   }
 
   /* show hamburger in mobile view */
-  .navbar-toggle { display: flex; }
+  .navbar-toggle {
+    display: flex;
+  }
 
   .navbar-logo {
     height: 46px !important;
@@ -285,15 +319,15 @@ a:focus {
     margin-left: 0;
   }
 
-  .navbar-custom .navbar-nav > li {
+  .navbar-custom .navbar-nav>li {
     display: block;
     width: 100%;
   }
 
-  .navbar-custom .navbar-nav > li > a {
+  .navbar-custom .navbar-nav>li>a {
     display: block;
     padding: 10px 15px;
-    border-top: 1px solid rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
   }
 
   .navbar-toggle {
@@ -307,7 +341,8 @@ a:focus {
 .site-header {
   position: relative;
   width: 100%;
-  height: 100vh; /* full screen height */
+  height: 100vh;
+  /* full screen height */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -330,7 +365,8 @@ a:focus {
   z-index: -1;
   /* brighten the video a bit (was quite dark). Keep slight dim for text legibility */
   filter: brightness(95%);
-  pointer-events: none; /* allow clicks through the video */
+  pointer-events: none;
+  /* allow clicks through the video */
 }
 
 /* Keep your content above the video */
@@ -338,11 +374,14 @@ a:focus {
   position: relative;
   z-index: 1;
 }
-.site-header .intro { /* ensure intro is centered over the video */
+
+.site-header .intro {
+  /* ensure intro is centered over the video */
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
 }
+
 .site-header::before {
   /* reduce overlay darkness so the hero appears lighter while preserving contrast */
   content: "";
@@ -369,11 +408,13 @@ a:focus {
   /* make the intro panel more subtle so it doesn't overly darken the hero */
   content: "";
   position: absolute;
-  inset: -8px; /* slightly larger than the text block */
-  background: rgba(0,0,0,0.18);
+  inset: -8px;
+  /* slightly larger than the text block */
+  background: rgba(0, 0, 0, 0.18);
   border-radius: 8px;
-  z-index: -1; /* place behind text */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  z-index: -1;
+  /* place behind text */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 .site-header .intro h2 {
@@ -405,17 +446,20 @@ a:focus {
 /* Style the intro CTA button for better contrast */
 #intro-link {
   display: inline-block;
-  background: #654aff; /* warm accent */
+  background: #654aff;
+  /* warm accent */
   color: #fff !important;
   padding: 10px 18px;
   border-radius: 6px;
   text-decoration: none;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-#intro-link:hover, #intro-link:focus {
+
+#intro-link:hover,
+#intro-link:focus {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* alternativa flex (valign helper que usás) */
@@ -444,7 +488,8 @@ a:focus {
 }
 
 /* Force RSC on section headings (extra specificity) */
-h2.section-title, .section-title {
+h2.section-title,
+.section-title {
   font-family: 'RSC', Georgia, 'Times New Roman', serif;
 }
 
@@ -462,13 +507,15 @@ h2.section-title, .section-title {
     margin: 0 0 60px;
   }
 }
+
 /* =====================
    ESPACIO ARTE
    ===================== */
 
 .espacio-arte {
   padding: 60px 0;
-  display: block; /* allow section to size with content */
+  display: block;
+  /* allow section to size with content */
   background: transparent;
   position: relative;
   z-index: 1;
@@ -478,15 +525,19 @@ h2.section-title, .section-title {
 .espacio-arte,
 .espacio-arte p,
 .espacio-arte .section-subtitle,
-.espacio-arte .art-piece + p {
+.espacio-arte .art-piece+p {
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   font-weight: 300;
-  color: inherit; /* allow art-mode overrides to take effect */
+  color: inherit;
+  /* allow art-mode overrides to take effect */
   line-height: 1.7;
 }
 
-.espacio-arte .section-subtitle { font-size: 18px; font-weight: 400; }
+.espacio-arte .section-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+}
 
 #espacio-arte {
   min-height: auto;
@@ -499,7 +550,7 @@ h2.section-title, .section-title {
   width: 100%;
   max-width: 1100px;
   margin: 20px auto;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -525,7 +576,7 @@ h2.section-title, .section-title {
   aspect-ratio: 4/3;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -538,71 +589,130 @@ h2.section-title, .section-title {
 
 .art-piece:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Two-column layout for the Arte section */
-.arte-row { margin-top: 16px; }
-.arte-left { padding-right: 24px; }
-.arte-right { padding-left: 12px; }
+.arte-row {
+  margin-top: 16px;
+}
+
+.arte-left {
+  padding-right: 24px;
+}
+
+.arte-right {
+  padding-left: 12px;
+}
 
 .section-subtitle {
   font-size: 18px;
-  color: rgba(244,244,244,0.92);
+  color: rgba(244, 244, 244, 0.92);
   line-height: 1.6;
   margin-bottom: 18px;
 }
 
 .video-reel {
-  width: 380px; /* enlarged portrait width for better balance */
+  width: 380px;
+  /* enlarged portrait width for better balance */
   max-width: 44vw;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.20);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
   background: #000;
-  margin-left: 8px; /* small offset so it doesn't hug the edge */
+  margin-left: 8px;
+  /* small offset so it doesn't hug the edge */
   align-self: center;
 }
 
 .video-reel video {
   width: 100%;
   height: auto;
-  aspect-ratio: 9/16; /* portrait orientation */
+  aspect-ratio: 9/16;
+  /* portrait orientation */
   object-fit: cover;
   display: block;
 }
 
 /* Stack on small screens: video below the content */
 @media (max-width: 767px) {
-  .arte-left, .arte-right { padding: 0; }
-  .video-reel { width: 70vw; max-width: 360px; margin-top: 18px; }
-  .arte-row { display: block; }
+
+  .arte-left,
+  .arte-right {
+    padding: 0;
+  }
+
+  .video-reel {
+    width: 70vw;
+    max-width: 360px;
+    margin-top: 18px;
+  }
+
+  .arte-row {
+    display: block;
+  }
 }
 
 /* Center the two columns within the container when there's extra space */
-.arte-row { display: flex; justify-content: center; gap: 24px; }
-.arte-left { flex: 0 1 56%; }
-.arte-right { flex: 0 1 36%; display: flex; align-items: center; justify-content: center; }
+.arte-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.arte-left {
+  flex: 0 1 56%;
+}
+
+.arte-right {
+  flex: 0 1 36%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @media (max-width: 991px) {
-  .arte-row { gap: 18px; }
-  .video-reel { max-width: 42vw; }
+  .arte-row {
+    gap: 18px;
+  }
+
+  .video-reel {
+    max-width: 42vw;
+  }
 }
 
 /* This class will activate when the user scrolls into Espacio Arte */
 /* Espacio Arte mode: cream background and dark text for readability */
 body.art-mode {
-  background: #f7efe6 !important; /* soft cream */
-  color: #222222 !important;      /* dark text for contrast */
+  background: #f7efe6 !important;
+  /* soft cream */
+  color: #222222 !important;
+  /* dark text for contrast */
   transition: background-color 0.8s ease, color 0.8s ease;
 }
 
 /* Adapt key elements when art-mode is active */
-body.art-mode a { color: #1a1a1a; }
-body.art-mode .section-title { color: #111111; }
-body.art-mode .navbar-custom { background-color: rgba(0,0,0,0.08); }
-body.art-mode .carousel-caption { background: rgba(255,255,255,0.85); color: #111; }
-body.art-mode .site-footer { background: #f0e8de; color: #111; }
+body.art-mode a {
+  color: #1a1a1a;
+}
+
+body.art-mode .section-title {
+  color: #111111;
+}
+
+body.art-mode .navbar-custom {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+body.art-mode .carousel-caption {
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+}
+
+body.art-mode .site-footer {
+  background: #f0e8de;
+  color: #111;
+}
 
 /* Espacio Arte: ensure dark text on cream background */
 body.art-mode .espacio-arte,
@@ -610,7 +720,7 @@ body.art-mode #espacio-arte,
 body.art-mode .espacio-arte .section-title,
 body.art-mode .espacio-arte .section-subtitle,
 body.art-mode .espacio-arte p,
-body.art-mode .espacio-arte .art-piece + p,
+body.art-mode .espacio-arte .art-piece+p,
 body.art-mode .espacio-arte .gallery img {
   color: #222 !important;
 }
@@ -632,12 +742,12 @@ body.art-mode .site-header .intro p {
 
 /* Lighten the site-header overlay in art-mode so the cream background reads naturally */
 body.art-mode .site-header::before {
-  background-color: rgba(255,255,255,0.18) !important;
+  background-color: rgba(255, 255, 255, 0.18) !important;
 }
 
 /* Make the intro subtle panel lighter to avoid an overly dark block on cream */
 body.art-mode .site-header .intro::before {
-  background: rgba(255,255,255,0.75) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
   box-shadow: none !important;
 }
 
@@ -687,62 +797,41 @@ body.art-mode .site-header .intro::before {
 /* =====================
     CAROUSEL / ARREGLADO
    ===================== */
-#basicCarousel {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow: hidden; /* keep carousel visuals contained */
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  margin-bottom: 140px; /* space so indicators/caption don't overlap next section */
-  z-index: 15;
-}
 
-#basicCarousel .carousel-inner {
-  position: relative;
-  width: 100%;
-  height: 500px; /* altura consistente */
-  border-radius: 12px;
+.carousel-container {
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  height: auto;
 }
 
-  .carousel-inner > .item > img {
-    width: 100%;
-    height: 600px;
-    display: block;
-    object-fit: contain; /* show the whole image inside the slide */
-    background-color: #000; /* fallback background when aspect ratios differ */
-  }
+.carousel-inner>.item>img {
+  width: 100%;
+
+}
 
 .carousel-caption {
-  position: absolute;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   padding: 20px;
   bottom: 30px;
+  position: absolute;
   left: 0;
   right: 0;
-  color: rgb(194, 194, 194);
   text-align: center;
+  color: white; 
 }
+
 
 /* Asegurar que el carrusel respete el contenedor */
 #eventosCarousel {
   width: 100%;
-  height: auto;
-  
+  height: 550px;
+
+
 }
-
-/* Opcional: ajustar altura de las imágenes si querés uniformidad */
-#eventosCarousel .carousel-inner > .item > img {
-  max-height: none; /* allow natural image height */
-  object-fit: contain; /* show the whole image */
-  width: 100%;
-}
-
-
 
 /* =====================
    FAQ / PANEL (accordion)
@@ -848,7 +937,7 @@ body.art-mode .faq .panel-body {
 }
 
 .site-footer .social-block li a:hover i {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-3px);
 }
 
@@ -859,12 +948,13 @@ body.art-mode .faq .panel-body {
   display: inline-block;
   vertical-align: middle;
   border-radius: 50%;
-  color: #fff; /* use currentColor in svg so this applies */
+  color: #fff;
+  /* use currentColor in svg so this applies */
   transition: background-color 0.18s ease, transform 0.15s ease;
 }
 
 .site-footer .social-block li a:hover svg {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-3px);
 }
 
@@ -893,47 +983,124 @@ body.art-mode .faq .panel-body {
 
 /* Responsive breakpoints */
 @media (max-width: 1200px) {
-  #basicCarousel { max-width: 900px; }
-  .site-header .intro h1 { font-size: 34px; }
+  #basicCarousel {
+    max-width: 900px;
+  }
+
+  .site-header .intro h1 {
+    font-size: 34px;
+  }
 }
 
 @media (max-width: 992px) {
-  .site-header { height: 85vh; }
-  .site-header .intro h1 { font-size: 32px; }
-  .section-title { font-size: 20px; }
-  #basicCarousel .carousel-inner { height: 420px; }
-  .video-reel { width: 34vw; max-width: 320px; }
+  .site-header {
+    height: 85vh;
+  }
+
+  .site-header .intro h1 {
+    font-size: 32px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  #basicCarousel .carousel-inner {
+    height: 420px;
+  }
+
+  .video-reel {
+    width: 34vw;
+    max-width: 320px;
+  }
 }
 
 @media (max-width: 768px) {
+
   /* Stack header intro content and reduce hero height */
-  .site-header { height: 70vh; padding: 10px 0; }
-  .site-header .intro h1 { font-size: 28px; }
-  .site-header .intro p { font-size: 16px; }
+  .site-header {
+    height: 70vh;
+    padding: 10px 0;
+  }
+
+  .site-header .intro h1 {
+    font-size: 28px;
+  }
+
+  .site-header .intro p {
+    font-size: 16px;
+  }
 
   /* Carousel adjustments */
-  #basicCarousel, #basicCarousel .carousel-inner { height: 320px; }
-  .carousel-control { width: 44px; height: 44px; font-size: 20px; }
-  .left.carousel-control { left: 8px !important; }
-  .right.carousel-control { right: 8px !important; }
+  #basicCarousel,
+  #basicCarousel .carousel-inner {
+    height: 320px;
+  }
+
+  .carousel-control {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .left.carousel-control {
+    left: 8px !important;
+  }
+
+  .right.carousel-control {
+    right: 8px !important;
+  }
 
   /* Arte layout stacks naturally due to existing rules, ensure spacing */
-  .arte-row { display: block; }
-  .arte-left, .arte-right { width: 100%; }
+  .arte-row {
+    display: block;
+  }
+
+  .arte-left,
+  .arte-right {
+    width: 100%;
+  }
 
   /* Gallery: fewer columns */
-  .espacio-arte .gallery { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  .espacio-arte .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
 }
 
 @media (max-width: 480px) {
-  html { font-size: 15px; }
-  .site-header { height: 60vh; }
-  .site-header .intro h1 { font-size: 22px; }
-  .section { padding: 50px 0; }
-  .section-title { font-size: 18px; }
-  #basicCarousel .carousel-inner { height: 240px; }
-  .video-reel { width: 70vw; max-width: 280px; }
-  .navbar-custom .navbar-nav > li > a { font-size: 11px; padding: 8px 6px; }
+  html {
+    font-size: 15px;
+  }
+
+  .site-header {
+    height: 60vh;
+  }
+
+  .site-header .intro h1 {
+    font-size: 22px;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  #basicCarousel .carousel-inner {
+    height: 240px;
+  }
+
+  .video-reel {
+    width: 70vw;
+    max-width: 280px;
+  }
+
+  .navbar-custom .navbar-nav>li>a {
+    font-size: 11px;
+    padding: 8px 6px;
+  }
 }
 
 /* Space FAQ title from content above to avoid overlap */
@@ -943,7 +1110,10 @@ body.art-mode .faq .panel-body {
 }
 
 @media (max-width: 480px) {
-  .section_preguntas .section-title { margin-top: 18px; padding-top: 4px; }
+  .section_preguntas .section-title {
+    margin-top: 18px;
+    padding-top: 4px;
+  }
 }
 
 /* Gastronomía: spacing between text and the small carousel */
@@ -957,6 +1127,7 @@ body.art-mode .faq .panel-body {
   .section_gastronomia .carousel {
     width: 100% !important;
     margin-left: 0;
-    margin-top: 18px; /* slightly smaller gap on very small screens */
+    margin-top: 18px;
+    /* slightly smaller gap on very small screens */
   }
 }
