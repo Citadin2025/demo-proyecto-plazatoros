@@ -817,6 +817,7 @@ body.art-mode .site-header .intro::before {
 
 .carousel-inner>.item>img {
   width: 100%;
+  max-height: 600px;
 
 }
 
@@ -824,7 +825,7 @@ body.art-mode .site-header .intro::before {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   padding: 20px;
-  bottom: 30px;
+  bottom: 90px;
   position: absolute;
   left: 0;
   right: 0;
