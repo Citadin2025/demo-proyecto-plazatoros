@@ -86,3 +86,25 @@ $('#registration-form').submit(function(e){
 */
 
 smoothScroll.init();
+
+// Defensive: ensure FAQ accordion toggles correctly even if scripts load in odd order
+;(function ($) {
+    $(function () {
+        // Only bind once
+        if ($.fn.collapse && !window.__faqAccordionInitialized) {
+            window.__faqAccordionInitialized = true;
+            // Make sure clicking the panel title toggles via Bootstrap collapse
+            $('.faq .panel-heading a[data-toggle="collapse"]').on('click', function (e) {
+                var $this = $(this);
+                var target = $this.attr('href');
+                // let bootstrap handle the toggle; but ensure others close (accordion behavior)
+                if ($(target).hasClass('in')) {
+                    // it's open, let bootstrap close it
+                } else {
+                    // open this and close siblings (data-parent should handle it, but be explicit)
+                    $('.panel-collapse.in').collapse('hide');
+                }
+            });
+        }
+    });
+})(jQuery);
