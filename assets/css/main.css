@@ -3,15 +3,15 @@
 @font-face {
   font-family: 'RSC';
   src: url('../fonts/RSC_V06.ttf') format('truetype');
-  font-weight: 300 700;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 /* Use system fonts as the site default for legibility */
 html {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
+  font-family: system-ui, -apple-system, 'Roboto';
+  font-size: 22px;
 }
 
 /* Apply the RSC display font only to headings and the navbar */
@@ -51,6 +51,10 @@ body {
   overflow-x: hidden;
   position: relative;
   transition: background-color 0.6s ease, color 0.6s ease;
+  font-family: "Roboto", sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.42857143 !important;
+  color: #fff !important;
 }
 
 /* enlaces */
@@ -184,7 +188,8 @@ a:focus {
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* logo left, nav to the right via margin-left:auto */
+  justify-content: flex-start;
+  /* logo left, nav to the right via margin-left:auto */
 }
 
 /* Navbar sólida al hacer scroll */
@@ -341,6 +346,51 @@ a:focus {
   .navbar-toggle {
     margin-top: 0;
   }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  .navbar-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo img {
+    height: 40px;
+  }
+
+  .navbar-collapse {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .navbar-login {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-login {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-login:hover {
+    opacity: 0.7;
+  }
+
+  .login-icon {
+    width: 28px;
+    /* adjust based on your icon */
+    height: 28px;
+  }
+
 }
 
 /* =====================
@@ -501,8 +551,7 @@ h2.section-title,
 }
 
 @media (min-width: 768px) {
-  .section {
-  }
+  .section {}
 
   .section-title {
     width: 100%;
@@ -548,8 +597,6 @@ h2.section-title,
   min-height: auto;
   display: block;
 }
-
-
 
 .espacio-arte .videoarte {
   width: 100%;
@@ -827,7 +874,7 @@ body.art-mode .site-header .intro::before {
   left: 0;
   right: 0;
   text-align: center;
-  color: white; 
+  color: white;
 }
 
 
@@ -1141,23 +1188,33 @@ body.art-mode .faq .panel-body {
     margin-top: 18px;
     /* slightly smaller gap on very small screens */
   }
-  .section_gastronomia .section-title { margin-bottom: 12px; }
+
+  .section_gastronomia .section-title {
+    margin-bottom: 12px;
+  }
 }
 
 /* Additional targeted spacing: the title is in its own row, followed by a nested container/row
    which holds the carousel. Add extra gap after the title row and a small top offset for the
    nested container to ensure the carousel can't visually touch the heading. */
-.section_gastronomia > .container > .row:first-child {
-  margin-bottom: 26px; /* larger gap after the title row */
+.section_gastronomia>.container>.row:first-child {
+  margin-bottom: 26px;
+  /* larger gap after the title row */
 }
 
-.section_gastronomia > .container > .container {
-  margin-top: 6px; /* nudge nested container downward */
+.section_gastronomia>.container>.container {
+  margin-top: 6px;
+  /* nudge nested container downward */
 }
 
 @media (max-width: 767px) {
-  .section_gastronomia > .container > .row:first-child { margin-bottom: 16px; }
-  .section_gastronomia > .container > .container { margin-top: 4px; }
+  .section_gastronomia>.container>.row:first-child {
+    margin-bottom: 16px;
+  }
+
+  .section_gastronomia>.container>.container {
+    margin-top: 4px;
+  }
 }
 
 /* Strong fallback rules to ensure separation if other styles override margins */
@@ -1187,53 +1244,120 @@ body.art-mode .faq .panel-body {
 }
 
 /* Normalize vertical spacing for common flow content */
-main, section, article, header, footer, nav, aside {
+main,
+section,
+article,
+header,
+footer,
+nav,
+aside {
   margin-bottom: var(--vspace-lg);
 }
 
 /* Headings: keep stronger top spacing and balanced bottom spacing */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: calc(var(--vspace-lg) - 6px);
   margin-bottom: var(--vspace-sm);
 }
 
-p, ul, ol, blockquote, pre, figure {
+p,
+ul,
+ol,
+blockquote,
+pre,
+figure {
   margin-top: 0;
   margin-bottom: var(--vspace-md);
 }
 
 /* Lists inside smaller components should keep a tighter rhythm */
-li p { margin-bottom: var(--vspace-sm); }
+li p {
+  margin-bottom: var(--vspace-sm);
+}
 
 /* Forms and inputs get small vertical gaps */
-label { display: block; margin-bottom: var(--vspace-xs); }
-input, select, textarea, button { margin-bottom: var(--vspace-sm); }
+label {
+  display: block;
+  margin-bottom: var(--vspace-xs);
+}
+
+input,
+select,
+textarea,
+button {
+  margin-bottom: var(--vspace-sm);
+}
 
 /* Figures and images */
-figure { margin: 30px; }
-figcaption { margin-top: var(--vspace-xs); font-size: .9rem; color: rgba(255,255,255,0.7); }
+figure {
+  margin: 30px;
+}
+
+figcaption {
+  margin-top: var(--vspace-xs);
+  font-size: .9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
 
 /* Exceptions: don't interfere with Bootstrap/utility layout components */
-.navbar, .navbar-custom, .carousel, .row, .container, .container-fluid { margin-top: 0; margin-bottom: 0; }
+.navbar,
+.navbar-custom,
+.carousel,
+.row,
+.container,
+.container-fluid {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 /* Keep small helpers consistent */
-.mt-1 { margin-top: var(--vspace-xs) !important; }
-.mt-2 { margin-top: var(--vspace-sm) !important; }
-.mt-3 { margin-top: var(--vspace-md) !important; }
-.mb-1 { margin-bottom: var(--vspace-xs) !important; }
-.mb-2 { margin-bottom: var(--vspace-sm) !important; }
-.mb-3 { margin-bottom: var(--vspace-md) !important; }
+.mt-1 {
+  margin-top: var(--vspace-xs) !important;
+}
+
+.mt-2 {
+  margin-top: var(--vspace-sm) !important;
+}
+
+.mt-3 {
+  margin-top: var(--vspace-md) !important;
+}
+
+.mb-1 {
+  margin-bottom: var(--vspace-xs) !important;
+}
+
+.mb-2 {
+  margin-bottom: var(--vspace-sm) !important;
+}
+
+.mb-3 {
+  margin-bottom: var(--vspace-md) !important;
+}
 
 /* Adjacent sibling spacing: adds consistent gap between consecutive children inside common containers */
-section > * + *,
-main > * + *,
-.container > * + * {
+section>*+*,
+main>*+*,
+.container>*+* {
   margin-top: var(--vspace-md);
 }
 
 /* Avoid applying sibling spacing to grid layout rows or nav lists */
-.row > * + *,
-.navbar-custom .navbar-nav > li + li,
-.carousel .carousel-inner > .item + .item {
+.row>*+*,
+.navbar-custom .navbar-nav>li+li,
+.carousel .carousel-inner>.item+.item {
   margin-top: 0;
+}
+
+/* =====================
+   BOTÓN HISTORIA
+   ===================== */
+
+.btn {
+  background-color: #D5CEB4 !important;
 }

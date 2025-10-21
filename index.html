@@ -21,15 +21,14 @@
 
     <!-- NAV BAR -->
     <nav id="site-nav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
-
-                <!-- logo -->
+                <!-- Logo -->
                 <a class="navbar-logo" href="index.html">
                     <img src="assets/images/logo.png" class="navbar-logo" alt="Logo">
                 </a>
 
-                <!-- botón hamburguesa -->
+                <!-- Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-items"
                     aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
@@ -37,10 +36,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
             </div>
 
-            <!-- menú desplegable -->
+            <!-- Menu items -->
             <div class="collapse navbar-collapse" id="navbar-items">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a data-scroll href="#about">Introducción</a></li>
@@ -48,14 +46,23 @@
                     <li><a data-scroll href="#eventos">Eventos</a></li>
                     <li><a data-scroll href="#gastronomia">Gastronomía</a></li>
                     <li><a data-scroll href="#espacio-arte">Espacio Arte</a></li>
-                    <li><a data-scroll href="#galeria">Galeria</a></li>
+                    <li><a data-scroll href="#galeria">Galería</a></li>
                     <li><a data-scroll href="#preguntas">FAQs</a></li>
                     <li><a data-scroll href="#mapa">Mapa</a></li>
                     <li><a data-scroll href="#contactos">Contactos</a></li>
                 </ul>
             </div>
+
+            <!-- Login button (always visible, right side) -->
+            <div class="navbar-login">
+                <button type="button" class="btn btn-login" id="login-button">
+                    <img src="assets/images/icons/login-icon.png" alt="Login" class="login-icon">
+                </button>
+            </div>
         </div>
     </nav>
+
+
 
     <!-- MAIN PAGE -->
     <header id="site-header" class="site-header valign-center">
@@ -100,7 +107,7 @@
     <section id="historia" class="section_historia">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" style="padding: 20px" ;>
                     <h3 class="section-title">Historia</h3>
                     <p>
                         Inaugurada en 1910, la Plaza de Toros Real de San Carlos fue parte de un ambicioso proyecto
@@ -114,7 +121,7 @@
                 </div>
             </div>
 
-            <div class="row mt-4">
+            <div class="row mt-4" style="padding: 20px" ;>
                 <div class="col-md-6 mb-3">
                     <img src="./assets/images/photos/Plaza de Toros 1910.jpg" class="img-fluid rounded shadow"
                         loading="lazy" alt="Plaza de Toros en 1910">
@@ -152,7 +159,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- GASTRONOMÍA -->
     <section id="gastronomia" class="section_gastronomia">
         <div class="container">
