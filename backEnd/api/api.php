@@ -31,6 +31,7 @@ if ($requestMethod == "GET") {
         echo json_encode(['error' => 'Unauthorized']);
         exit;
     }
+    
     $solicitud = $_GET["url"];
     if ($solicitud == "masEventos") {
 
@@ -51,6 +52,12 @@ if ($requestMethod == "GET") {
         exit;
     }
 } elseif ($requestMethod == "DELETE") {
+    if (!checkLogin()) {
+        http_response_code(401);
+        echo json_encode(['error' => 'Unauthorized']);
+        exit;
+    }
+
     $solicitud = $_GET["url"];
     if ($solicitud == "eliminarEvento") {
         $eventoID = $_GET["eventoID"];
@@ -66,6 +73,12 @@ if ($requestMethod == "GET") {
         "message" => "You can't do that."
     ]);
 } elseif ($requestMethod == "PUT") {
+    if (!checkLogin()) {
+        http_response_code(401);
+        echo json_encode(['error' => 'Unauthorized']);
+        exit;
+    }
+
     $solicitud = $_GET["url"] ?? null;
 
     if ($solicitud === "modificarEvento") {
