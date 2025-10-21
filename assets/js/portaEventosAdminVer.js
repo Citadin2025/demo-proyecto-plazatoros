@@ -2,6 +2,7 @@ fetch('./backEnd/api/apiLogin.php?action=checkLogin', {
   method: 'GET',
   credentials: 'include'
 }).then(res => res.json()).then(data => {
+    console.log(data); 
   if (!data.ok) window.location.href = './login.html';
 })
 
