@@ -2,11 +2,21 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require "../controllers/loginController.php";
+require_once "./checkLogin.php";
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 $solicitud = $_GET["url"] ?? "";
 
+if ($requestMethod === 'GET') {
+    if ($_GET['action'] === 'checkLogin') {
+        echo json_encode(['ok' => true, 'message' => 'loggedIn']);
+        exit;
+    }
+    exit;
+}
+
 if ($requestMethod === "POST") {
+
     if ($_GET['action'] === 'logout') {
         $_SESSION = [];
         session_destroy();
@@ -15,12 +25,10 @@ if ($requestMethod === "POST") {
         echo json_encode(["status" => "ok", "message" => "Logged out"]);
         exit;
     }
-    if ($_GET['action'] === "login") {
-        $json = file_get_contents("php://input");
-        $datos = json_decode($json, true);
-
-        $usuario = trim($datos["nombre"] ?? '');
-        $password = trim($datos["password"] ?? '');
+    if ($_GET['action'] === 'login') {
+        $input = json_decode(file_get_contents('php://input'), true);
+        $username = trim($input['nombre'] ?? '');
+        $password = trim($input['password'] ?? '');
 
         if (empty($username) || empty($password)) {
             http_response_code(400);
@@ -28,15 +36,18 @@ if ($requestMethod === "POST") {
             exit;
         }
 
-        $user = autenticarUsuario($username, $password);
+    //    echo $username;
+    //    echo $password;
 
-        if ($user) {
-            echo json_encode(['success' => true, 'user' => $user]);
+        if (autenticarUsuario($username, $password)) {
+            echo json_encode(['ok' => true, 'user' => [
+                'id' => $_SESSION['user_id'],
+                'username' => $_SESSION['username']
+            ]]);
         } else {
             http_response_code(401);
-            echo json_encode(["ok" => false, "error" => "Credenciales inválidas"]);
+            echo json_encode(['error' => 'Invalid username or password.']);
         }
-        exit;
     }
     if ($solicitud == 'logout') {
     }

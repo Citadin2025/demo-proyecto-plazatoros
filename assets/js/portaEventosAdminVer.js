@@ -1,3 +1,10 @@
+fetch('./backEnd/api/apiLogin.php?action=checkLogin', {
+  method: 'GET',
+  credentials: 'include'
+}).then(res => res.json()).then(data => {
+  if (!data.ok) window.location.href = './login.html';
+})
+
 async function obtenerEventos() {
     document.getElementById("nombre").value = "";
     document.getElementById("descripcion").value = "";
