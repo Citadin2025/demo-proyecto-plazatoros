@@ -20,11 +20,21 @@ class Login
         $dummy = '$2y$10$usesomesillystringforsalt$';
         if (!$user) password_verify($password, $dummy);
 
-        if ($user && password_verify($password, $user['password'])) {
-            unset($user['password']); // Remove password hash before returning user data
-            return $user;
+        if (password_verify($password, $user['password'])) {
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+
+            unset($user['password']); // remove sensitive info
+
+            // store safe values in session
+            $_SESSION['user_id'] = $user['administradorID'];
+            $_SESSION['username'] = $user['nombreAdministrador'];
+
+            session_regenerate_id(true);
+            return 1;
         } else {
-            return false;
+            return 0;
         }
     }
 }
