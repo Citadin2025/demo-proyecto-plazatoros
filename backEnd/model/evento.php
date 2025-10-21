@@ -53,12 +53,13 @@ class Evento
     // Método para agregar un nuevo evento a la base de datos
     public function agregar($nombre, $descripcion, $fecha, $imagen, $linkDeCompra)
     {
+        $adminId = $_SESSION['user_id'];
         // Prepara la consulta SQL para insertar un nuevo registro en la tabla 'eventos'
-        $stmt = $this->pdo->prepare("INSERT INTO evento (nombre, descripcion, fecha, imagen, linkDeCompra, administradorID) VALUES (:nombre, :descripcion, :fecha, :imagen, :linkDeCompra, 1)"); //IMPORTANTE, AHORA MISMO LA ID DEL ADMIN ESTA HARDCODEADA, UNA VEZ QUE SE TERMINE EL LOGIN VAMOS A HACERLA LINDA (UWU)
+        $stmt = $this->pdo->prepare("INSERT INTO evento (nombre, descripcion, fecha, imagen, linkDeCompra, administradorID) VALUES (:nombre, :descripcion, :fecha, :imagen, :linkDeCompra, :administradorID)"); //IMPORTANTE, AHORA MISMO LA ID DEL ADMIN ESTA HARDCODEADA, UNA VEZ QUE SE TERMINE EL LOGIN VAMOS A HACERLA LINDA (UWU)
 
         // Ejecuta la consulta con los parámetros proporcionados en la llamada al método
         // Los valores del evento se pasan en un array asociativo
-        return $stmt->execute(["nombre" => $nombre, "descripcion" => $descripcion, "fecha" => $fecha, "imagen" => $imagen, "linkDeCompra" => $linkDeCompra]);
+        return $stmt->execute(["nombre" => $nombre, "descripcion" => $descripcion, "fecha" => $fecha, "imagen" => $imagen, "linkDeCompra" => $linkDeCompra, "administradorID" => $adminId]);
     }
 
     // name date description imageLink buyLink adminId timeStamp
