@@ -803,6 +803,26 @@ body.art-mode .site-header .intro::before {
 
 }
 
+.carousel-caption .btn {
+  margin-top: 10px;
+  position: relative;
+  z-index: 10;
+}
+
+.carousel-caption .btn.btn-primary {
+  background-color: #d4af37 !important; /* dorado */
+  border-color: #b8860b !important;
+  color: #fff !important;
+}
+
+.carousel-caption .btn.btn-primary:hover {
+  background-color: #b8860b !important;
+  border-color: #8b6508 !important;
+}
+
+
+
+
 /* =====================
    FAQ / PANEL (accordion)
    ===================== */
