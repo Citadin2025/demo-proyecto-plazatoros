@@ -9,8 +9,11 @@ $solicitud = $_GET["url"] ?? "";
 
 if ($requestMethod === 'GET') {
     if ($_GET['action'] === 'checkLogin') {
-        echo json_encode(['ok' => true, 'message' => 'loggedIn']);
-        exit;
+        if (!checkLogin()) {
+            http_response_code(401);
+            echo json_encode(['error' => 'Unauthorized']);
+            exit;
+        }
     }
     exit;
 }
@@ -36,8 +39,8 @@ if ($requestMethod === "POST") {
             exit;
         }
 
-    //    echo $username;
-    //    echo $password;
+        //    echo $username;
+        //    echo $password;
 
         if (autenticarUsuario($username, $password)) {
             echo json_encode(['ok' => true, 'user' => [
@@ -48,7 +51,5 @@ if ($requestMethod === "POST") {
             http_response_code(401);
             echo json_encode(['error' => 'Invalid username or password.']);
         }
-    }
-    if ($solicitud == 'logout') {
     }
 }
