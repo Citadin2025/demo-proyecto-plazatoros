@@ -481,7 +481,6 @@ a:focus {
    SECCIONES / TITULOS
    ===================== */
 .section {
-  padding: 80px 0;
   background-color: transparent;
 }
 
@@ -503,7 +502,6 @@ h2.section-title,
 
 @media (min-width: 768px) {
   .section {
-    padding: 90px 0;
   }
 
   .section-title {
@@ -512,7 +510,6 @@ h2.section-title,
     text-align: left;
     color: #fff;
     letter-spacing: 1px;
-    margin: 0 0 60px;
   }
 }
 
@@ -1186,7 +1183,6 @@ body.art-mode .faq .panel-body {
 :root {
   --vspace-xs: 6px;
   --vspace-sm: 12px;
-  --vspace-md: 18px;
   --vspace-lg: 28px;
 }
 
@@ -1214,7 +1210,7 @@ label { display: block; margin-bottom: var(--vspace-xs); }
 input, select, textarea, button { margin-bottom: var(--vspace-sm); }
 
 /* Figures and images */
-figure { margin: 0 0 var(--vspace-md); }
+figure { margin: 30px; }
 figcaption { margin-top: var(--vspace-xs); font-size: .9rem; color: rgba(255,255,255,0.7); }
 
 /* Exceptions: don't interfere with Bootstrap/utility layout components */
