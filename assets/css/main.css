@@ -180,218 +180,136 @@ a:focus {
    NAVBAR (custom)
    ===================== */
 .navbar-custom {
-  border: 0;
+  border: none;
   margin: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 20px;
   background-color: rgba(0, 0, 0, 0.5);
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  /* logo left, nav to the right via margin-left:auto */
+  justify-content: space-between; /* space-between for logo and menu */
 }
 
-/* Navbar sólida al hacer scroll */
+/* Solid background on scroll */
 .navbar-custom.scrolled,
 .navbar-scrolled {
   background-color: rgba(0, 0, 0, 1) !important;
 }
 
-/* NAV LINKS */
+/* Nav links styling */
 .navbar-custom .navbar-nav>li>a {
   color: #a7a5a5;
   text-transform: uppercase;
   font-size: 13px;
-  /* increased for readability */
   font-weight: 500;
-  border-bottom: 1px solid transparent;
-  padding: 0 12px;
-  /* horizontal only; vertical centering via line-height */
+  border-bottom: 2px solid transparent;
+  padding: 10px 15px;
   letter-spacing: 0.6px;
   line-height: 60px;
-  /* match logo height to vertically center text */
+  transition: color 0.3s, border-bottom-color 0.3s;
 }
 
 .navbar-custom .navbar-nav>li>a:hover,
 .navbar-custom .navbar-nav>li>a:focus {
-  background-color: transparent;
-  border-color: #fff;
+  border-bottom-color: #fff;
   color: #fff;
 }
 
+/* Active link styling */
 .navbar-custom .navbar-nav>.active>a {
-  border-color: #fff;
+  border-bottom-color: #fff;
+  color: #fff;
 }
 
-/* Toggle */
+/* Toggle button styles */
 .navbar-toggle {
-  border: 0;
-  border-radius: 0;
-  margin: 0;
+  border: none;
+  background: transparent;
   height: 60px;
-  display: none;
-  /* hidden on desktop */
-  align-items: center;
-  flex-direction: column;
-  /* stack the three bars vertically when shown */
-  justify-content: center;
+  display: none; /* hidden on desktop, shown in media query */
+  cursor: pointer;
 }
 
 .navbar-toggle .icon-bar {
   background-color: #fff;
   width: 22px;
   height: 3px;
-  display: block;
-  margin: 3px 0;
-  /* space between bars */
+  margin: 4px 0;
   border-radius: 2px;
 }
 
-/* LOGO (a la derecha) */
+/* Logo styles */
 .navbar-logo {
-  order: 0;
-  /* keep logo first (left) */
-  height: 60px !important;
-  width: auto;
+  height: 60px;
   max-height: 80px;
   padding: 5px 0;
-  margin-left: 0;
+  margin-right: 30px;
 }
 
-.navbar-logo img {
-  display: block;
-  margin: 0;
-}
-
-/* NAV LIST (a la izquierda del logo) */
-.navbar-custom .navbar-nav {
-  order: 1;
+/* Main container flex layout for desktop */
+.container-fluid {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  /* align nav to the right of the logo */
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation menu styles */
+.navbar-custom .navbar-nav {
+  display: flex;
+  align-items: center;
   margin-left: auto;
-  /* push nav to the far right */
 }
 
-/* vertically center nav items */
-.navbar-custom .navbar-nav {
-  align-items: center;
-}
-
-.navbar-custom .navbar-nav>li>a {
-  display: flex;
-  align-items: center;
-}
-
-/* Mobile-specific navbar adjustments: ensure logo left and collapse stacks neatly */
+/* Mobile styles */
 @media (max-width: 767px) {
   .navbar-custom {
-    display: block;
+    flex-direction: column;
     padding: 6px 12px;
   }
 
-  .navbar-custom .navbar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  /* show hamburger in mobile view */
-  .navbar-toggle {
-    display: flex;
-  }
-
-  .navbar-logo {
-    height: 46px !important;
-    max-height: 54px;
-  }
-
-  .navbar-logo img {
-    max-height: 46px;
-    height: auto;
-    width: auto;
-  }
-
-  /* Make collapsed menu full-width and items stack vertically */
-  .navbar-custom .navbar-collapse {
-    width: 100%;
-    clear: both;
-    margin-top: 8px;
-    transition: max-height 0.25s ease;
-  }
-
-  .navbar-custom .navbar-nav {
-    flex-direction: column;
-    align-items: stretch;
-    margin-left: 0;
-  }
-
-  .navbar-custom .navbar-nav>li {
-    display: block;
-    width: 100%;
-  }
-
-  .navbar-custom .navbar-nav>li>a {
-    display: block;
-    padding: 10px 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
-  }
-
-  .navbar-toggle {
-    margin-top: 0;
-  }
-
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
-  }
-
   .navbar-header {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
+  /* Show hamburger button */
+  .navbar-toggle {
+    display: flex;
+  }
+
+  /* Collapse menu styles */
+  .navbar-collapse {
+    width: 100%;
+    transition: max-height 0.3s ease;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    margin: 0;
+  }
+
+  .navbar-nav>li {
+    width: 100%;
+  }
+
+  .navbar-nav>li>a {
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: block;
+  }
+
+  /* Logo size adjustment */
   .navbar-logo img {
     height: 40px;
   }
 
-  .navbar-collapse {
-    flex: 1;
-    justify-content: flex-end;
+  .navbar-login .login-button {
+    margin-right: 30px !important;
   }
-
-  .navbar-login {
-    display: flex;
-    align-items: center;
-  }
-
-  .btn-login {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px;
-    transition: opacity 0.3s ease;
-  }
-
-  .btn-login:hover {
-    opacity: 0.7;
-  }
-
-  .login-icon {
-    width: 28px;
-    /* adjust based on your icon */
-    height: 28px;
-  }
-
-}
 
 /* =====================
    SITE HEADER / HERO
@@ -551,8 +469,6 @@ h2.section-title,
 }
 
 @media (min-width: 768px) {
-  .section {}
-
   .section-title {
     width: 100%;
     max-width: 1148px;

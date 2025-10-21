@@ -54,10 +54,11 @@
             </div>
 
             <!-- Login button (always visible, right side) -->
-            <div class="navbar-login">
-                <button type="button" class="btn btn-login" id="login-button">
+            <div class="navbar-login" style="padding-left: 50px;">
+                <a class="login-button" href="login.html">
                     <img src="assets/images/icons/login-icon.png" alt="Login" class="login-icon">
-                </button>
+                    <p id="textLogin" mouseover="overLogin()" style="display: none;">Login</p>
+                </a>
             </div>
         </div>
     </nav>
@@ -546,6 +547,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
+        function overLogin() {
+            alert("Iniciar sesión");
+            document.getElementById("textLogin").style.display = "block";
+        }
         document.addEventListener("DOMContentLoaded", function () {
             fetch("backEnd/api/api.php?url=eventos", { method: "GET" })
                 .then(response => response.json())
