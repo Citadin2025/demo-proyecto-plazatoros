@@ -1,132 +1,196 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería Plaza de Toros</title>
+  <title>Galería Plaza de Toros RSC</title>
+
+  <!-- Reuse main site styles so navbar matches index -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Page-only tweaks -->
   <link rel="stylesheet" href="assets/css/galeria.css">
+  <style>
+    /* --- Local font (RSC) --- */
+    @font-face {
+      font-family: 'RSC';
+      src: url('assets/fonts/RSC_V06.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      background-color: #000E1F#f8f8f8; /* Placeholder background color */
+    }
+
+    h1 {
+      font-family: 'RSC', sans-serif;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #3a215b;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      padding: 20px 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-category {
+      margin-bottom: 50px;
+    }
+
+    .gallery-category h3 {
+      text-align: left;
+      margin-bottom: 15px;
+      border-left: 4px solid #6E22B4;
+      padding-left: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .gallery img {
+        max-width: 100%;
+        height: 180px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Galería Plaza de Toros Real de San Carlos</h1>
-  <p>Un recorrido visual por la emblemática plaza de Colonia del Sacramento</p>
 
-  <section class="gallery">
-    <!-- ======== Aéreas ======== -->
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a1-.webp" alt="img1" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a2.jpg" alt="img2" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a3.jpg" alt="img3" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a4.jpg" alt="img4" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a5.jpg" alt="img5" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a6.jpg" alt="img6" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a7.jpg" alt="img7" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a8.jpg" alt="img8" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a9.jpg" alt="img9" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a10.jpg" alt="img10" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a11.jpg" alt="img11" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a12.jpg" alt="img12" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a13.jpg" alt="img13" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a14.jpg" alt="img14" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a15.jpg" alt="img15" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a16.jpg" alt="img16" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a17.jpg" alt="img17" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a18.jpg" alt="img18" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Aereas/a19.jpg" alt="img19" class="lazy">
+  <!-- NAV BAR -->
+  <nav id="site-nav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-logo" href="index.html">
+          <img src="assets/images/logo.png" class="navbar-logo" alt="Logo">
+        </a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- ======== Escenario ======== -->
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/231118 - Plaza de Toros - La Vela Puerca - Aerea-4.jpg" alt="img21" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/GMHI6803.JPG" alt="img22" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/IMG_3576.JPG" alt="img23" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/IMG_3579.JPG" alt="img24" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/IZJI7441.JPG" alt="img25" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/PHOTO-2024-01-26-19-42-43(1).jpg" alt="img26" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/PHOTO-2024-01-26-19-42-43.jpg" alt="img27" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/PHOTO-2024-01-26-20-02-55.jpg" alt="img28" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/XCJT9933.JPG" alt="img29" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/XLYP6817.JPG" alt="img30" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Escenario/YBEX8029.JPG" alt="img31" class="lazy">
+  <main class="main container" style="margin-top:100px;">
 
-    <!-- ======== Otros planos/Estructura ======== -->
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-11.jpg" alt="img32" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-12.jpg" alt="img33" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-14.jpg" alt="img34" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-15.jpg" alt="img35" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-17.jpg" alt="img36" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-18.jpg" alt="img37" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-20.jpg" alt="img38" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-21.jpg" alt="img39" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-22.jpg" alt="img40" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-23.jpg" alt="img41" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-24.jpg" alt="img42" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-25.jpg" alt="img43" class="lazy">
+    <h1>Galería Plaza de Toros Real de San Carlos</h1>
+    <p>Un recorrido visual por la emblemática plaza de Colonia del Sacramento</p>
 
-    <!-- ======== Otros planos ======== -->
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/_SSB2087.jpg" alt="img44" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/_SSB2141.jpg" alt="img45" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/IMG_2994.JPG" alt="img46" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/IMG_2996.JPG" alt="img47" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/IMG_2997.JPG" alt="img48" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/IMG_2998.JPG" alt="img49" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/IMG_2999.JPG" alt="img50" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/IMG_3226.JPG" alt="img51" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/IMG_3577.JPG" alt="img52" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/IMG_3578.JPG" alt="img53" class="lazy">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>" 
-         data-src="assets/images/Galería PT/Otros planos/Plaza 01.jpg" alt="img54" class="lazy">
+    <!-- ======== Categorías ======== -->
+    <section class="gallery-category" id="aereas">
+      <h3>Aéreas</h3>
+      <div class="gallery">
+        <img src="assets/images/Galería PT/Aereas/a1-.webp" alt="Aérea 1">
+        <img src="assets/images/Galería PT/Aereas/a2.jpg" alt="Aérea 2">
+        <img src="assets/images/Galería PT/Aereas/a3.jpg" alt="Aérea 3">
+        <img src="assets/images/Galería PT/Aereas/a4.jpg" alt="Aérea 4">
+        <img src="assets/images/Galería PT/Aereas/a5.jpg" alt="Aérea 5">
+        <img src="assets/images/Galería PT/Aereas/a6.jpg" alt="Aérea 6">
+        <img src="assets/images/Galería PT/Aereas/a7.jpg" alt="Aérea 7">
+        <img src="assets/images/Galería PT/Aereas/a8.jpg" alt="Aérea 8">
+        <img src="assets/images/Galería PT/Aereas/a9.jpg" alt="Aérea 9">
+        <img src="assets/images/Galería PT/Aereas/a10.jpg" alt="Aérea 10">
+        <img src="assets/images/Galería PT/Aereas/a11.jpg" alt="Aérea 11">
+        <img src="assets/images/Galería PT/Aereas/a12.jpg" alt="Aérea 12">
+        <img src="assets/images/Galería PT/Aereas/a13.jpg" alt="Aérea 13">
+        <img src="assets/images/Galería PT/Aereas/a14.jpg" alt="Aérea 14">
+        <img src="assets/images/Galería PT/Aereas/a15.jpg" alt="Aérea 15">
+        <img src="assets/images/Galería PT/Aereas/a16.jpg" alt="Aérea 16">
+        <img src="assets/images/Galería PT/Aereas/a17.jpg" alt="Aérea 17">
+        <img src="assets/images/Galería PT/Aereas/a18.jpg" alt="Aérea 18">
+        <img src="assets/images/Galería PT/Aereas/a19.jpg" alt="Aérea 19">
+      </div>
+    </section>
 
-  </section>
+    <section class="gallery-category" id="escenario">
+      <h3>Escenario</h3>
+      <div class="gallery">
+        <img src="assets/images/Galería PT/Escenario/231118 - Plaza de Toros - La Vela Puerca - Aerea-4.jpg" alt="Escenario 1">
+        <img src="assets/images/Galería PT/Escenario/GMHI6803.JPG" alt="Escenario 2">
+        <img src="assets/images/Galería PT/Escenario/IMG_3576.JPG" alt="Escenario 3">
+        <img src="assets/images/Galería PT/Escenario/IMG_3579.JPG" alt="Escenario 4">
+        <img src="assets/images/Galería PT/Escenario/IZJI7441.JPG" alt="Escenario 5">
+        <img src="assets/images/Galería PT/Escenario/PHOTO-2024-01-26-19-42-43(1).jpg" alt="Escenario 6">
+        <img src="assets/images/Galería PT/Escenario/PHOTO-2024-01-26-20-02-55.jpg" alt="Escenario 7">
+        <img src="assets/images/Galería PT/Escenario/XCJT9933.JPG" alt="Escenario 8">
+        <img src="assets/images/Galería PT/Escenario/XLYP6817.JPG" alt="Escenario 9">
+        <img src="assets/images/Galería PT/Escenario/YBEX8029.JPG" alt="Escenario 10">
+      </div>
+    </section>
 
-  <script src="assets/js/galeria.js"></script>
+    <section class="gallery-category" id="estructura">
+      <h3>Estructura</h3>
+      <div class="gallery">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-11.jpg" alt="Estructura 1">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-12.jpg" alt="Estructura 2">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-13.jpg" alt="Estructura 3">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-14.jpg" alt="Estructura 4">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-15.jpg" alt="Estructura 5">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-17.jpg" alt="Estructura 6">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-18.jpg" alt="Estructura 7">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-20.jpg" alt="Estructura 8">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-21.jpg" alt="Estructura 9">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-22.jpg" alt="Estructura 10">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-23.jpg" alt="Estructura 11">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-24.jpg" alt="Estructura 12">
+        <img src="assets/images/Galería PT/Otros planos/Estructura/@photolechu-25.jpg" alt="Estructura 13">
+      </div>
+    </section>
+
+    <section class="gallery-category" id="otros">
+      <h3>Otros Planos</h3>
+      <div class="gallery">
+        <img src="assets/images/Galería PT/Otros planos/_SSB2087.jpg" alt="Otros 1">
+        <img src="assets/images/Galería PT/Otros planos/_SSB2141.jpg" alt="Otros 2">
+        <img src="assets/images/Galería PT/Otros planos/IMG_2994.JPG" alt="Otros 3">
+        <img src="assets/images/Galería PT/Otros planos/IMG_2996.JPG" alt="Otros 4">
+        <img src="assets/images/Galería PT/Otros planos/IMG_2997.JPG" alt="Otros 5">
+        <img src="assets/images/Galería PT/Otros planos/IMG_2998.JPG" alt="Otros 6">
+        <img src="assets/images/Galería PT/Otros planos/IMG_2999.JPG" alt="Otros 7">
+        <img src="assets/images/Galería PT/Otros planos/IMG_3226.JPG" alt="Otros 8">
+        <img src="assets/images/Galería PT/Otros planos/IMG_3577.JPG" alt="Otros 9">
+        <img src="assets/images/Galería PT/Otros planos/IMG_3578.JPG" alt="Otros 10">
+        <img src="assets/images/Galería PT/Otros planos/Plaza 01.jpg" alt="Otros 11">
+        <img src="assets/images/Galería PT/Otros planos/Plaza 05.jpg" alt="Otros 12">
+        <img src="assets/images/Galería PT/Otros planos/Plaza 06.jpg" alt="Otros 13">
+        <img src="assets/images/Galería PT/Otros planos/Plaza 07.jpg" alt="Otros 14">
+        <img src="assets/images/Galería PT/Otros planos/Plaza 08.jpg" alt="Otros 15">
+        <img src="assets/images/Galería PT/Otros planos/Plaza 09.jpg" alt="Otros 16">
+        <img src="assets/images/Galería PT/Otros planos/Plaza 10.jpg" alt="Otros 17">
+        <img src="assets/images/Galería PT/Otros planos/Plaza 11.jpg" alt="Otros 18">
+        <img src="assets/images/Galería PT/Otros planos/Plaza 13.jpg" alt="Otros 19">
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
 </body>
 </html>
