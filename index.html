@@ -65,7 +65,7 @@
 
     <!-- MAIN PAGE -->
     <header id="site-header" class="site-header valign-center">
-        <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/images/video-poster.jpg">
+        <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/videos/Plaza_noche_02.mp4">
             <source src="assets/videos/Plaza_noche_02.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -201,8 +201,8 @@
                                     <div class="carousel-slide"><img src="assets/images/gastronomy/Quinton 3.png"
                                             loading="lazy" alt="Imagen 3"></div>
                                 </div>
-                                <button class="prev">❮</button>
-                                <button class="next">❯</button>
+                                <button class="prev-quinton">❮</button>
+                                <button class="next-quinton">❯</button>
                             </div>
 
                             <style>
@@ -234,8 +234,8 @@
                                     object-fit: cover;
                                 }
 
-                                .prev,
-                                .next {
+                                .prev-quinton,
+                                .next-quinton {
                                     position: absolute;
                                     top: 50%;
                                     transform: translateY(-50%);
@@ -248,11 +248,11 @@
                                     border-radius: 50%;
                                 }
 
-                                .prev {
+                                .prev-quinton {
                                     left: 10px;
                                 }
 
-                                .next {
+                                .next-quinton {
                                     right: 10px;
                                 }
                             </style>
@@ -260,8 +260,8 @@
                             <script>
                                 const carousel = document.querySelector('.carousel-container');
                                 const slides = document.querySelectorAll('.carousel-slide');
-                                const prevBtn = document.querySelector('.prev');
-                                const nextBtn = document.querySelector('.next');
+                                const prevBtn = document.querySelector('.prev-quinton');
+                                const nextBtn = document.querySelector('.next-quinton');
 
                                 let index = 0;
 
@@ -317,7 +317,7 @@
                 <!-- Right: portrait Reel video -->
                 <div class="col-md-5 arte-right d-flex justify-content-center">
                     <div class="video-reel">
-                        <video controls playsinline preload="metadata" poster="assets/images/video-poster-reel.jpg">
+                        <video controls playsinline preload="metadata" poster="">
                             <source src="assets/videos/Reel Sinergia.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -546,7 +546,6 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="script.js" defer></script>
     <script src="assets/js/portaEvento.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
