@@ -6,11 +6,6 @@ require_once "./checkLogin.php";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod == "GET") {
-    if (!checkLogin()) {
-        http_response_code(401);
-        echo json_encode(['error' => 'Unauthorized']);
-        exit;
-    }
     $solicitud = $_GET["url"];
     $idEvento = $_GET["eventoID"] ?? null;
 
