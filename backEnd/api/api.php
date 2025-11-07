@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 require "../logging/log.php"; // Importar el archivo de logging para manejar errores
 require "../controllers/eventoController.php"; // Importar el controlador que maneja la lógica de negocio
+require_once '../controllers/contactoController.php';
 require_once "./checkLogin.php";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
@@ -17,6 +18,19 @@ if ($requestMethod == "GET") {
         exit;
     }
 
+    if ($solicitud === 'contactos') {
+        if (!checkLogin()) {
+            http_response_code(401);
+            echo json_encode(['error' => 'Unauthorized']);
+            exit;
+        } else {
+            echo json_encode([
+                'status' => 'success',
+                'response' => obtenerContactos()
+            ]);
+        }
+    }
+
     if ($solicitud == "eventos" && $idEvento === null) {
         obtenerEventos();
     } else if ($solicitud == "eventos" && $idEvento !== null) {
@@ -26,6 +40,40 @@ if ($requestMethod == "GET") {
         "message" => "You can't do that."
     ]);
 } elseif ($requestMethod == "POST") {
+    $solicitud = $_GET["url"];
+
+    if ($solicitud === 'contacto') {
+
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        $nombre = $data['nombre'] ?? '';
+        $email = $data['email'] ?? '';
+        $mensaje = $data['mensaje'] ?? '';
+        $asunto = $data['asunto'] ?? '';
+
+        if (empty($nombre) || empty($email) || empty($mensaje) || empty($asunto)) {
+            echo json_encode([
+                "status" => "failed",
+                "message" => "All fields are required."
+            ]);
+            exit;
+        }
+
+        if (agregarContacto($nombre, $email, $asunto, $mensaje)) {
+            echo json_encode([
+                'status' => 'success',
+                'message' => 'Contacto agregado exitosamente.'
+            ]);
+            exit;
+        } else {
+            echo json_encode([
+                'status' => 'failed',
+                'message' => 'Error al agregar el contacto.'
+            ]);
+            exit;
+        }
+    }
+
     if (!checkLogin()) {
         http_response_code(401);
         echo json_encode(['error' => 'Unauthorized']);
