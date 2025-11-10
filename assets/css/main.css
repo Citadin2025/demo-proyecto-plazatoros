@@ -293,10 +293,21 @@ a:focus {
     align-items: center;
   }
 
-  /* Collapse menu styles */
+  /* Collapse menu styles (mobile) */
   .navbar-collapse {
     width: 100%;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.32s cubic-bezier(.2,.9,.2,1);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 60px;
+    z-index: 1100;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(0,0,0,0.96);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border-radius: 0;
   }
 
   .navbar-nav {
@@ -314,6 +325,59 @@ a:focus {
     padding: 12px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     display: block;
+  }
+
+  /* Full-width mobile overlay (changed from centered card to edge-to-edge overlay) */
+  .navbar-collapse.mobile-panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100vw; /* ensure full viewport width */
+    box-sizing: border-box;
+    max-width: none;
+    top: 60px; /* sits directly below the fixed header */
+    background: rgba(18,18,18,0.98);
+    border-radius: 0;
+    padding: 0; /* remove extra horizontal padding so overlay is edge-to-edge */
+    margin: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    left: 0; /* explicit */
+    right: 0;
+    overflow: hidden;
+  }
+
+  .navbar-collapse.mobile-panel.open {
+    max-height: calc(100vh - 60px);
+  }
+
+  .mobile-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 6px 12px 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 8px;
+  }
+
+  .mobile-panel-logo img {
+    height: 36px;
+    display: block;
+  }
+
+  .mobile-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    padding: 6px 8px;
+    cursor: pointer;
+    opacity: 0.95;
+  }
+
+  .navbar-nav>li:first-of-type>a {
+    border-top: none;
+    padding-top: 8px;
   }
 
   /* Logo size adjustment */
