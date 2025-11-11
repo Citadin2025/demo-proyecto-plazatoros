@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Administrar Eventos</h1>
-
+        <button type="button" id="btn-contacto-notif">Notificaciones Contacto</button>
         <div>
             <h2>Añadir Evento</h2>
 
@@ -64,6 +64,23 @@
             </table>
         </div>
     </div>
+
+    <dialog id="modal-notificaciones">
+        <div class="cont">
+            <table>
+                <thead>
+                    <th>Email</th>
+                    <th>Nombre</th>
+                    <th>Asunto</th>
+                    <th>Mensaje</th>
+                </thead>
+                <tbody id="tbl-contactos">
+                    
+                </tbody>
+            </table>
+            <button type="button" id="cerrar-contacto-notif">Cerrar</button>
+        </div>
+    </dialog>
 </body>
 
 <script src="./assets/js/portaEventosAdminVer.js" defer></script>

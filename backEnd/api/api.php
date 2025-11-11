@@ -28,6 +28,7 @@ if ($requestMethod == "GET") {
                 'status' => 'success',
                 'response' => obtenerContactos()
             ]);
+            exit;
         }
     }
 

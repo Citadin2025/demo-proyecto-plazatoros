@@ -6,6 +6,53 @@ fetch('./backEnd/api/apiLogin.php?action=checkLogin', {
   if (!data.ok) window.location.href = './login.html';
 })
 
+const modalContactoNotif = document.getElementById("modal-notificaciones");
+const btnContactoNotif = document.getElementById("btn-contacto-notif");
+const spanCerrarContactoNotif = document.getElementById("cerrar-contacto-notif");
+const tblContactos = document.getElementById("tbl-contactos");
+
+spanCerrarContactoNotif.addEventListener('click', () => {
+    modalContactoNotif.close();
+});
+
+btnContactoNotif.addEventListener('click', () => {
+    modalContactoNotif.showModal();
+    cargarConsultas();
+});
+
+async function cargarConsultas() {
+    const consultas = await obtenerContactos();
+    if (!consultas) return;
+
+    tblContactos.innerHTML = ""; // prevent duplicate rows
+
+    consultas.forEach(consulta => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+            <td>${consulta.email}</td>
+            <td>${consulta.nombre}</td>
+            <td>${consulta.asunto}</td>
+            <td>${consulta.mensaje}</td>
+        `;
+        tblContactos.appendChild(fila);
+    });
+}
+
+async function obtenerContactos() {
+    try {
+        const respuesta = await fetch("./backEnd/api/api.php?url=contactos", {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const contactos = await respuesta.json();
+        console.log(contactos);
+        return contactos.response || contactos; // fallback
+    } catch (error) {
+        console.error("Error al obtener contactos:", error);
+    }
+}
+
+
 async function obtenerEventos() {
     document.getElementById("nombre").value = "";
     document.getElementById("descripcion").value = "";
