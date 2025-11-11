@@ -32,8 +32,10 @@
     collapse.style.maxHeight = collapse.scrollHeight + 'px';
     collapse.setAttribute('aria-hidden', 'false');
     toggle.setAttribute('aria-expanded', 'true');
+    // add body class (used to lock scroll in CSS) and create backdrop
     document.body.classList.add('mobile-panel-open');
-    // trap clicks outside to close
+    ensureBackdrop(true);
+    // trap clicks outside to close and keyboard
     setTimeout(function () {
       document.addEventListener('click', outsideClick);
       document.addEventListener('keydown', onKeyDown);
@@ -45,6 +47,8 @@
     collapse.style.maxHeight = '0px';
     collapse.setAttribute('aria-hidden', 'true');
     toggle.setAttribute('aria-expanded', 'false');
+    // remove backdrop and body lock
+    ensureBackdrop(false);
     document.body.classList.remove('mobile-panel-open');
     document.removeEventListener('click', outsideClick);
     document.removeEventListener('keydown', onKeyDown);
@@ -85,7 +89,11 @@
 
   // initialize on load and on resize
   function init() {
-    if (isMobile()) preparePanel();
+    if (isMobile()) {
+      preparePanel();
+      // ensure panel is closed on initial load
+      closePanel();
+    }
     else {
       // ensure panel closed and remove mobile class on larger screens
       collapse.classList.remove('mobile-panel', 'open');
@@ -100,5 +108,36 @@
     if (!isMobile()) closePanel();
     init();
   });
+
+  /* Backdrop management ------------------------------------------------ */
+  var backdropEl = null;
+
+  function ensureBackdrop(show) {
+    if (show) {
+      if (!backdropEl) {
+        backdropEl = document.createElement('div');
+        backdropEl.className = 'mobile-backdrop';
+        backdropEl.setAttribute('aria-hidden', 'true');
+        backdropEl.addEventListener('click', function (e) {
+          e.stopPropagation();
+          closePanel();
+        });
+        document.body.appendChild(backdropEl);
+        // allow transition to kick in
+        requestAnimationFrame(function () { backdropEl.classList.add('visible'); });
+      } else {
+        backdropEl.classList.add('visible');
+      }
+    } else {
+      if (backdropEl) {
+        backdropEl.classList.remove('visible');
+        // remove from DOM after transition
+        setTimeout(function () {
+          if (backdropEl && backdropEl.parentNode) backdropEl.parentNode.removeChild(backdropEl);
+          backdropEl = null;
+        }, 260);
+      }
+    }
+  }
 
 })();

@@ -10,7 +10,8 @@
 
 /* Use system fonts as the site default for legibility */
 html {
-  font-family: system-ui, -apple-system, 'Roboto';
+  /* Use the same system font stack as the Espacio Arte section for body text */
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 22px;
 }
 
@@ -51,7 +52,7 @@ body {
   overflow-x: hidden;
   position: relative;
   transition: background-color 0.6s ease, color 0.6s ease;
-  font-family: "Roboto", sans-serif !important;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px !important;
   line-height: 1.42857143 !important;
   color: #fff !important;
@@ -336,7 +337,7 @@ a:focus {
     box-sizing: border-box;
     max-width: none;
     top: 60px; /* sits directly below the fixed header */
-    background: rgba(18,18,18,0.98);
+    background: rgba(12,12,12,0.98);
     border-radius: 0;
     padding: 0; /* remove extra horizontal padding so overlay is edge-to-edge */
     margin: 0;
@@ -344,10 +345,16 @@ a:focus {
     left: 0; /* explicit */
     right: 0;
     overflow: hidden;
+    /* transition: slide + fade for smooth open/close */
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 260ms cubic-bezier(.2,.9,.2,1), transform 260ms cubic-bezier(.2,.9,.2,1);
   }
 
   .navbar-collapse.mobile-panel.open {
     max-height: calc(100vh - 60px);
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .mobile-panel-header {
@@ -373,6 +380,58 @@ a:focus {
     padding: 6px 8px;
     cursor: pointer;
     opacity: 0.95;
+  }
+
+  /* larger tap area and visually stronger close icon */
+  .mobile-close {
+    padding: 8px 12px;
+    font-size: 24px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 6px;
+    /* nudge down slightly to visually center the icon with the header */
+    transform: translateY(3px);
+  }
+
+  /* make nav links larger and more tappable */
+  .navbar-nav>li>a {
+    padding: 18px 20px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.92);
+    display: block;
+    transition: background 160ms ease, color 160ms ease;
+  }
+
+  .navbar-nav>li>a:hover,
+  .navbar-nav>li>a:focus {
+    background: rgba(255,255,255,0.02);
+    color: #fff;
+  }
+
+  /* slightly stronger separators between items */
+  .navbar-nav>li + li { border-top: 1px solid rgba(255,255,255,0.06); }
+
+  /* small subtle backdrop behind the overlay to dim content */
+  .mobile-backdrop {
+    position: fixed;
+    inset: 0 0 0 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1090; /* just below the panel (panel z-index is 1100) */
+    opacity: 0;
+    transition: opacity 220ms linear;
+    pointer-events: none;
+  }
+
+  .mobile-backdrop.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* lock body scroll when panel is open */
+  body.mobile-panel-open {
+    overflow: hidden;
+    height: 100vh;
+    touch-action: none;
   }
 
   .navbar-nav>li:first-of-type>a {
@@ -562,7 +621,8 @@ h2.section-title,
    ===================== */
 
 .espacio-arte {
-  padding: 60px 0;
+  /* keep generous vertical spacing but add horizontal padding so content doesn't touch screen edges */
+  padding: 60px 15px;
   display: block;
   /* allow section to size with content */
   background: transparent;
@@ -687,6 +747,11 @@ h2.section-title,
   .arte-left,
   .arte-right {
     padding: 0;
+  }
+
+  /* slightly reduce vertical spacing on small screens for better fit */
+  .espacio-arte {
+    padding: 40px 15px;
   }
 
   .video-reel {
@@ -946,6 +1011,26 @@ body.art-mode .faq .panel-body {
   border-color: #000;
   border-radius: 0;
   padding: 0;
+}
+
+/* make panels a bit more rounded and add a subtle border */
+.faq .panel-default {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(0,0,0,0.55);
+}
+
+.faq .panel-default>.panel-heading {
+  /* heading keeps rounded top corners */
+  border-radius: 10px 10px 0 0;
+}
+
+.faq .panel-default .panel-body {
+  /* rounded bottom corners for the body */
+  border-radius: 0 0 10px 10px;
+  padding: 16px 18px;
+  background: transparent;
 }
 
 .faq .panel-default>.panel-heading a {
