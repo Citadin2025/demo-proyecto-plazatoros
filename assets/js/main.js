@@ -30,6 +30,30 @@ $(window).load(async function () {
     els.link.href = res.response.linkDeCompra; */
 });
 
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    try {
+        const formData = new FormData(e.target);
+        const response = await fetch('./backEnd/api/api.php?url=contacto', {
+            method: 'POST',
+            body: formData,
+            credentials: 'include'
+        });
+
+        const text = await response.text(); // read raw text first
+        console.log('Raw response:', text);
+
+        const res = JSON.parse(text);
+        alert(res.message || 'Mensaje enviado correctamente.');
+    } catch (err) {
+        console.error('Error:', err);
+        alert('Error al enviar el mensaje.');
+    }
+});
+
+
+
 function handleTopNavAnimation() {
     var top = $(window).scrollTop();
 
@@ -40,46 +64,6 @@ function handleTopNavAnimation() {
         $('#site-nav').removeClass('navbar-solid');
     }
 }
-
-/*
- * Registration Form
-*/
-
-$('#registration-form').submit(function (e) {
-    e.preventDefault();
-
-    var postForm = { //Fetch form data
-        'fname': $('#registration-form #fname').val(),
-        'lname': $('#registration-form #lname').val(),
-        'email': $('#registration-form #email').val(),
-        'cell': $('#registration-form #cell').val(),
-        'address': $('#registration-form #address').val(),
-        'zip': $('#registration-form #zip').val(),
-        'city': $('#registration-form #city').val(),
-        'program': $('#registration-form #program').val()
-    };
-
-    $.ajax({
-        type: 'POST',
-        url: './assets/php/contact.php',
-        data: postForm,
-        dataType: 'json',
-        success: function (data) {
-            if (data.success) {
-                $('#registration-msg .alert').html("Registration Successful");
-                $('#registration-msg .alert').removeClass("alert-danger");
-                $('#registration-msg .alert').addClass("alert-success");
-                $('#registration-msg').show();
-            }
-            else {
-                $('#registration-msg .alert').html("Registration Failed");
-                $('#registration-msg .alert').removeClass("alert-success");
-                $('#registration-msg .alert').addClass("alert-danger");
-                $('#registration-msg').show();
-            }
-        }
-    });
-});
 
 /*
  * SmoothScroll
