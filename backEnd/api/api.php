@@ -44,12 +44,10 @@ if ($requestMethod == "GET") {
 
     if ($solicitud === 'contacto') {
 
-        $data = json_decode(file_get_contents('php://input'), true);
-
-        $nombre = $data['nombre'] ?? '';
-        $email = $data['email'] ?? '';
-        $mensaje = $data['mensaje'] ?? '';
-        $asunto = $data['asunto'] ?? '';
+        $nombre = $_POST['name'] ?? '';
+        $email = $_POST['email'] ?? '';
+        $mensaje = $_POST['message'] ?? '';
+        $asunto = $_POST['subject'] ?? '';
 
         if (empty($nombre) || empty($email) || empty($mensaje) || empty($asunto)) {
             echo json_encode([
@@ -62,13 +60,13 @@ if ($requestMethod == "GET") {
         if (agregarContacto($nombre, $email, $asunto, $mensaje)) {
             echo json_encode([
                 'status' => 'success',
-                'message' => 'Contacto agregado exitosamente.'
+                'message' => 'Mensaje enviado exitosamente.'
             ]);
             exit;
         } else {
             echo json_encode([
                 'status' => 'failed',
-                'message' => 'Error al agregar el contacto.'
+                'message' => 'Error al enviar el mensaje.'
             ]);
             exit;
         }
