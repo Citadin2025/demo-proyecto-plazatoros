@@ -29,7 +29,8 @@
                 </a>
 
                 <!-- Hamburger (custom, not bootstrap collapse) -->
-                <button type="button" id="mobile-toggle" class="navbar-toggle" aria-expanded="false" aria-controls="navbar-items">
+                <button type="button" id="mobile-toggle" class="navbar-toggle" aria-expanded="false"
+                    aria-controls="navbar-items">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -54,7 +55,9 @@
                     <li><a data-scroll href="#mapa">Mapa</a></li>
                     <li><a data-scroll href="#contactos">Contactos</a></li>
                     <li class="lang-dropdown" style="position:relative;">
-                        <select id="lang-redirect" onchange="if(this.value) window.location.href=this.value;" title="Seleccionar idioma" style="background:transparent;color:inherit;border:none;padding:10px 12px;font-weight:700;">
+                        <select id="lang-redirect" onchange="if(this.value) window.location.href=this.value;"
+                            title="Seleccionar idioma"
+                            style="background:transparent;color:inherit;border:none;padding:10px 12px;font-weight:700;">
                             <option value="index.html">ES</option>
                             <option value="index_EN.html">EN</option>
                             <option value="index_PT.html">PT</option>
@@ -581,12 +584,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" placeholder="Nombre" required>
+                                        <input type="text" class="form-control" name="name" placeholder="Nombre"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                        <input type="email" class="form-control" name="email" placeholder="Email"
+                                            required>
                                     </div>
                                 </div>
                             </div>
@@ -594,9 +599,14 @@
                                 <input type="text" class="form-control" name="subject" placeholder="Asunto" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="4" placeholder="Mensaje" required></textarea>
+                                <textarea class="form-control" name="message" rows="4" placeholder="Mensaje"
+                                    required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+
+                            <div class="g-recaptcha" data-sitekey="6Le5ygssAAAAALiGisBmT1zFy206J6d4QkPq0TLN"></div>
+                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
                         </form>
                     </div>
                 </div>
