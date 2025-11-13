@@ -28,13 +28,30 @@ async function cargarConsultas() {
 
     consultas.forEach(consulta => {
         const fila = document.createElement("tr");
+        // determine id field (API may return different id property names)
+        const contactoId = consulta.contactoID || consulta.id || consulta.contacto_id || consulta.contactoId || consulta.contactoId;
         fila.innerHTML = `
             <td>${consulta.email}</td>
             <td>${consulta.nombre}</td>
             <td>${consulta.asunto}</td>
             <td>${consulta.mensaje}</td>
+            <td><button class="btn-eliminar-contacto" data-id="${contactoId}">Eliminar</button></td>
         `;
         tblContactos.appendChild(fila);
+    });
+
+    // attach delete handlers (event delegation would also work)
+    const deleteButtons = tblContactos.querySelectorAll('.btn-eliminar-contacto');
+    deleteButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            const id = this.getAttribute('data-id');
+            if (!id) {
+                alert('No se encontró el identificador del mensaje.');
+                return;
+            }
+            if (!confirm('¿Eliminar este mensaje? Esta acción no se puede deshacer.')) return;
+            eliminarContacto(id);
+        });
     });
 }
 
@@ -207,4 +224,26 @@ function eliminarEvento(eventoID) {
                 console.error("Error al eliminar el evento");
             }
         })
+}
+
+// Delete a contacto by id
+async function eliminarContacto(contactoID) {
+    try {
+        const respuesta = await fetch(`./backEnd/api/api.php?url=contactos&contactoID=${encodeURIComponent(contactoID)}`, {
+            method: 'DELETE',
+            credentials: 'include'
+        });
+
+        if (respuesta.ok) {
+            // refresh the list
+            cargarConsultas();
+        } else {
+            const text = await respuesta.text();
+            console.error('Error al eliminar contacto:', respuesta.status, text);
+            alert('No se pudo eliminar el mensaje.');
+        }
+    } catch (err) {
+        console.error('Error de red al eliminar contacto:', err);
+        alert('Error de red al eliminar el mensaje.');
+    }
 }

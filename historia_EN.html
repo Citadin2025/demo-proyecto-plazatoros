@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - Plaza de Toros RSC</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.jpg">
+
+    <!-- Reuse main site styles so navbar matches index -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Page-only tweaks -->
+    <style>
+        #historia {
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        #historia .section-title {
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-left: 4px solid #6E22B4;
+            padding-left: 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        /* Agregar + */
+        #historia .section-title::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            font-weight: bold;
+            color: #6E22B4;
+            transition: transform 0.3s ease;
+        }
+
+        #historia .section-title.active::after {
+            content: '–';
+            transform: rotate(180deg);
+        }
+
+        /* Pararafos desplegables */
+        #historia .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease, opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        /* Parrafos */
+        #historia .section-content.open {
+            max-height: 2000px;
+            /* Suficiente para mostrar todo el contenido */
+            opacity: 1;
+        }
+
+        #historia p {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* Placeholder de imagen */
+        .photo-placeholder {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background-color: #ccc;
+            border: 2px dashed #888;
+            margin: 20px auto;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        /* Container spacing */
+        .main {
+            margin-top: 100px;
+        }
+
+        @media (min-width: 768px) {
+            #historia {
+                padding: 60px 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <nav id="site-nav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-logo" href="index.html">
+                    <img src="assets/images/logo.png" class="navbar-logo" alt="Logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-items" aria-hidden="true">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="lang-dropdown" style="position:relative;">
+                        <select id="lang-redirect" onchange="if(this.value) window.location.href=this.value;"
+                            title="Seleccionar idioma"
+                            style="background:transparent;color:inherit;border:none;padding:10px 12px;font-weight:700;">
+                            <option value="historia.html">ES</option>
+                            <option value="historia_EN.html">EN</option>
+                            <option value="historia_PT.html">PT</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section id="historia" class="section about">
+            <div class="container">
+                <div class="col">
+
+                    <h3 class="section-title">History</h3>
+                    <div class="section-content">
+                        <img src="assets/images/history/Plaza fachada 1910.jpg" alt="Imagen 1" class="photo-placeholder">
+                        <p>
+                            On January 9, 1910, with 36°C heat, the Plaza de Toros (Bullring) of Real de San Carlos was
+                            inaugurated with Spanish bullfighters the Torres brothers, "Bombita Grande" and "Bombita Chico."
+                            Eight thousand people filled the Plaza, arriving on the paddle steamers of the Mihanovich
+                            company: "Tritón," "Rivadavia," and "Colonia," which took five to six hours from Buenos Aires
+                            to Real de San Carlos.
+                        </p>
+                        <p>
+                            Although the Uruguayan public was not as fond of bullfights, many people traveled from San José,
+                            Montevideo and other cities in Colonia by train, carriage and automobile. Earlier bullfights had
+                            been held in Colonia since 1895, and in 1908 a new project driven by Nicolás Mihanovich Jr.
+                            proposed the construction of a larger bullring as part of a tourist complex.
+                        </p>
+                    </div>
+
+                    <h3 class="section-title">Construction of the Bullring</h3>
+                    <div class="section-content">
+                        <img src="assets/images/history/Plaza interior 2.jpeg" alt="Imagen 2" class="photo-placeholder">
+                        <p>
+                            In 1909 Nicolás Mihanovich Jr. obtained permits to begin construction of the complex. Bricks
+                            were supplied by a nearby factory and the iron structure was imported from Great Britain and
+                            assembled on site. The bullring had a diameter of 100 meters, an arena of 50 meters and two tiers
+                            of stands; the main portico reached 22 meters in height. The project was completed in eight months.
+                        </p>
+                        <p>
+                            The Bullring hosted bullfights, boxing, musical performances, comedy and other entertainments. It
+                            also included a chapel, restaurant, theater, infirmary and other facilities beneath the stands.
+                        </p>
+                    </div>
+
+                    <h3 class="section-title">The Bullring Without Bullfights</h3>
+                    <div class="section-content">
+                        <img src="assets/images/history/4,6M.jpg" alt="Imagen 3" class="photo-placeholder">
+                        <p>
+                            After the prohibition of bullfights the complex continued to operate centered around the hotel's
+                            casino. In the 1920s, economic and regulatory problems reduced tourism. In 1935 there was an
+                            attempt to revive bullfights, but the Spanish Civil War and other issues frustrated the plans.
+                        </p>
+                        <p>
+                            From 1943 onward, ownership passed to the Municipal Intendancy of Colonia and the complex
+                            gradually fell into disrepair; material theft and lack of maintenance accelerated deterioration.
+                            From 1957 car races were held around the Plaza until 1985 when they ceased for safety reasons.
+                        </p>
+                    </div>
+
+                    <h3 class="section-title">Reconstruction Projects</h3>
+                    <div class="section-content">
+                        <img src="assets/images/history/DJI_0972.jpg" alt="Imagen 4" class="photo-placeholder">
+                        <p>
+                            Several restoration proposals were studied over the decades. A 1958 study looked at techniques
+                            used for the Colosseum, and in 1977 the Bullring was declared a National Historical Monument.
+                            Later attempts to secure funding stalled until a major restoration project began in 2019 and
+                            the plaza reopened to the public in 2021 after extensive work.
+                        </p>
+                    </div>
+
+                </div>
+                           
+            </div>
+                   
+        </section>
+           
+    </main>
+
+           
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+       
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+     
+    <script src="assets/js/main.js"></script>
+
+           
+    <script>
+        document.querySelectorAll('#historia .section-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const content = title.nextElementSibling;
+
+                // Toggle icon
+                title.classList.toggle('active');
+
+                // Toggle open/close
+                if (content.classList.contains('open')) {
+                    content.classList.remove('open');
+                } else {
+                    // Close all others for cleaner look
+                    document.querySelectorAll('#historia .section-content').forEach(c => c.classList.remove('open'));
+                    document.querySelectorAll('#historia .section-title').forEach(t => t.classList.remove('active'));
+                    // Open clicked one
+                    content.classList.add('open');
+                    title.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

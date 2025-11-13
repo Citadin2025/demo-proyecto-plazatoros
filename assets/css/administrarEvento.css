@@ -110,3 +110,12 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background: rgba(255,255,255,0.15);
 }
+
+dialog#modal-notificaciones {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 0px !important;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0px;
+    color: #fff;
+}

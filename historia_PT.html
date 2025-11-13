@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História - Plaza de Toros RSC</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.jpg">
+
+    <!-- Reuse main site styles so navbar matches index -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Page-only tweaks -->
+    <style>
+        #historia {
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        #historia .section-title {
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-left: 4px solid #6E22B4;
+            padding-left: 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        /* Agregar + */
+        #historia .section-title::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            font-weight: bold;
+            color: #6E22B4;
+            transition: transform 0.3s ease;
+        }
+
+        #historia .section-title.active::after {
+            content: '–';
+            transform: rotate(180deg);
+        }
+
+        /* Pararafos desplegables */
+        #historia .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease, opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        /* Parrafos */
+        #historia .section-content.open {
+            max-height: 2000px;
+            /* Suficiente para mostrar todo el contenido */
+            opacity: 1;
+        }
+
+        #historia p {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* Placeholder de imagen */
+        .photo-placeholder {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background-color: #ccc;
+            border: 2px dashed #888;
+            margin: 20px auto;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        /* Container spacing */
+        .main {
+            margin-top: 100px;
+        }
+
+        @media (min-width: 768px) {
+            #historia {
+                padding: 60px 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <nav id="site-nav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-logo" href="index.html">
+                    <img src="assets/images/logo.png" class="navbar-logo" alt="Logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-items" aria-hidden="true">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="lang-dropdown" style="position:relative;">
+                        <select id="lang-redirect" onchange="if(this.value) window.location.href=this.value;"
+                            title="Seleccionar idioma "
+                            style="background:transparent;color:inherit;border:none;padding:10px 12px;font-weight:700;">
+                            <option value="historia.html">ES</option>
+                            <option value="historia_EN.html">EN</option>
+                            <option value="historia_PT.html">PT</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section id="historia" class="section about">
+            <div class="container">
+                <div class="col">
+
+                    <h3 class="section-title">História</h3>
+                                        <div class="section-content">
+                                                <img src="assets/images/history/Plaza fachada 1910.jpg" alt="Imagen 1"
+                            class="photo-placeholder">
+                                                <p>Em 9 de janeiro de 1910, com 36 graus de calor, para desgraça
+                            daqueles que compraram a econômica entrada "de Sol", foi inaugurada a Praça de Touros do
+                            Real de San Carlos, com a atuação dos toureiros espanhóis, os irmãos Torres "Bombita Grande"
+                            e "Bombita Chico". Oito mil pessoas lotaram a capacidade da Praça, chegadas nos vapores a
+                            paleta da companhia de Mihanovich: "Tritón", "Rivadavia" e "Colonia", que demoravam entre
+                            cinco a seis horas para fazer o trajeto Buenos Aires-Real de San Carlos. Embora o público
+                            uruguaio não fosse tão aficionado às touradas, nesta tourada inaugural, veio gente de San
+                            José, de Montevidéu e de todas as cidades do departamento de Colonia, em trens, carruagens e
+                            automóveis que já circulavam na época. Também chegou ao cais o "Salto", que vinha do litoral
+                            do país, e o "Helios" de Montevidéu. Em 1895, já se realizavam touradas em Colonia, em um
+                            terreno baldio onde mais tarde se construiria Palácio Municipal. Ali, um investidor
+                            argentino instalou uma praça com arquibancadas de madeira, que funcionou durante cinco anos.
+                            Em 1908, surgiu um novo projeto impulsionado por Nicolás Mihanovich filho, que inicialmente
+                            contemplava a construção de uma praça de touros na ilha de San Gabriel. Juan Manuel
+                            Caballero, filho do cônsul da Espanha em Colonia e posterior agente da empresa de navegação
+                            Mihanovich, solicitou a permissão para a criação de um complexo turístico no Real de San
+                            Carlos. Começa deste modo a gestão para criar o que hoje conhecemos como o antigo Complexo
+                            Mihanovich. Foi construído um cais, um frontão de pelota basca, um Hotel Cassino, a Praça de
+                            Touros, uma usina elétrica que abasteceu também toda a cidade de Colonia, uma delegacia,
+                            estradas e um local para tiro ao pombo. Houve dois Nicolás Mihanovich, pai e filho. O pai,
+                            originário da Croácia, foi quem teve uma grande companhia de navegação, para transportar
+                            passageiros, gado e grãos, que percorria Argentina, Uruguai, Brasil e Paraguai. Participou
+                            da Conquista do Deserto na Argentina transportando colonos. Adquiriu numerosas estâncias e
+                            campos, e seus filhos integraram as diretorias de importantes empresas em desenvolvimento da
+                            época. Nicolás Mihanovich filho, esteve encarregado do projeto turístico em Colonia.
+                        </p>
+                            </div>
+
+                            <h3 class="section-title">Construção da Praça de Touros</h3>
+                            <div class="section-content">
+                            <img src="assets/images/history/Plaza interior 2.jpeg" alt="Imagen 2"
+                            class="photo-placeholder">
+                                                <p>
+
+                            Em 1909, Nicolás Mihanovich Filho obteve as permissões do município e do parlamento uruguaio
+                            para começar a construção do complexo no Real de San Carlos. A cerca de 4 km do local,
+                            funcionava uma fábrica de mosaicos e tijolos chamada La Arenisca, que forneceu os tijolos
+                            refratários utilizados na obra. A estrutura de ferro foi importada desmontada da
+                            Grã-Bretanha e montada no local. Utilizaram um milhão de quilos de ferro. Foi erguida uma
+                            praça com um diâmetro total de 100 metros, uma arena de 50 metros de diâmetro, com duas
+                            séries de arquibancadas e uma fila de camarotes. O pórtico principal tem 22 metros de
+                            altura. Os encarregados da obra foram o arquiteto Marcovich e o engenheiro Dupuy, ambos
+                            argentinos, que lhe deram à Praça um estilo mourisco, muito semelhante às praças de touros
+                            do sul da Espanha. A construção terminou em oito meses.
+
+                            Nas primeiras touradas, trouxeram-se toureiros e touros da Espanha, mas depois trouxeram
+                            touros do Peru, até que no final os touros eram de Colônia. Ao que parece, o nível dos
+                            toureiros também foi baixando. Em um programa de uma tourada, onde os protagonistas eram
+                            locais, apresentava-se a estreia da "Juventude Suicida". O programa oficial da tourada
+                            advertia: "recorda-se ao público que não haverá direito a protestar, por aquilo de que a
+                            cavalo dado não se olha o dente. Não olhar, pois, no domingo, o pelo à festa. Pede-se não
+                            atirar à arena objetos nem pessoas; não assobiar nem trazer à tona a família dos lutadores,
+                            que não têm nada a ver com o assunto".
+
+                            Na galeria da Praça, isto é, no anel que está debaixo das arquibancadas, havia uma capela
+                            para os toureiros, um restaurante, um palco onde atuava uma orquestra, bar, escritórios,
+                            teatro e enfermaria. A Praça de Touros não era usada apenas para espetáculos tauromáquicos,
+                            mas também foi palco de lutas de boxe, apresentações de rondallas (grupos musicais
+                            semelhantes às murgas espanholas), atuações cômicas, luta livre e outros tipos de
+                            entretenimento. Em 1913, apresentou-se ali a dupla Gardel-Razzano quando ainda eram
+                            completamente desconhecidos. Além disso, o aviador italiano Bartolomé Cattáneo ofereceu um
+                            espetáculo com uma máquina de duplo plano que cativou o público presente.
+
+                            No total, houve oito touradas oficiais, mas estima-se que houve cerca de 80, porque se
+                            continuou com os espetáculos mesmo após a proibição de Batlle y Ordoñez em 1912.
+                        </p>
+                              </div>
+
+                           <h3 class="section-title">A Praça de Touros sem Touradas</h3>
+                        <div class="section-content">
+                              <img src="assets/images/history/4,6M.jpg" alt="Imagen 3" class="photo-placeholder">
+                            <p> Após a proibição das touradas, o complexo continuou funcionando, tendo como centro
+                            cassino do hotel. Mas na década de vinte, depois de alguns suicídios de jogadores que
+                            perderam grandes somas na roleta, o governo argentino dificultou a vinda de visitantes,
+                            aplicando impostos excessivos a todos os barcos com destino ao Real de San Carlos. Em 1935,
+                            houve uma tentativa de reativar o complexo turístico, quando os espanhóis Enrique Queirolo e
+                            Carlos Lavarello assinaram contrato com a Intendência Municipal de Colonia (IMC) para
+                            reiniciar as touradas na Praça. Conseguiram inclusivamente uma modificação da lei que
+                            proibia as touradas, onde se autorizavam estes espetáculos "limitados ao Departamento de
+                            Colonia". Em 1936, eclodiu a guerra civil em Espanha e o projeto foi frustrado. Em 1943,
+                            após uma série de litígios com a Sociedade Real de San Carlos, todos os bens do antigo
+                            Complex Mihanovich, incluindo a Praça de Touros, passaram para as mãos da Intendência
+                            Municipal de Colonia. A partir de então, começou o abandono da infraestrutura: o edifício
+                            foi-se deteriorando por falta de manutenção, roubaram-se chapas de zinco e outros materiais.
+                            Durante o encerramento do Real de San Carlos, houve inclusivamente pessoas que tiravam
+                            objetos que ficavam intactos, como pratos, danificando ainda mais o local. Desde 1957,
+                            correram-se corridas automobilísticas ao redor da Praça, até que em 1985 cessaram devido ao
+                            perigo de desabamento que aumentava com a vibração dos motores.</p>
+                            </div>
+
+                            <h3 class="section-title">Projetos de Reconstrução</h3>
+                        <div class="section-content">
+                            <img src="assets/images/history/DJI_0972.jpg" alt="Imagen 4" class="photo-placeholder">
+                            <p>Em 1958, o engenheiro civil Francisco Gonnet realizou um estudo de restauração inspirado
+                            nas técnicas de conservação aplicadas ao Coliseu de Roma. No entanto, seu projeto de
+                            reconstrução nunca chegou a materializar-se. Em 1977, a Praça de Touros foi declarada
+                            Monumento Histórico Nacional, embora esta distinção não tenha conseguido assegurar a sua
+                            preservação. Mais tarde, em 2004, o então intendente de Colônia, Carlos Moreira, juntamente
+                            com o ministro de Turismo e Desporto, Pedro Bordaberry, assumiram publicamente o compromisso
+                            de restaurar a praça, apresentando inclusivamente uma maquete que ilustrava o projeto. No
+                            entanto, ao terminar esse governo, o seguinte anunciou que não se tinham deixado os recursos
+                            econômicos necessários para continuar com a iniciativa. Em 2008, a Intendência de Colônia
+                            retomou a proposta com um novo projeto de recuperação para a Praça de Touros do Real de San
+                            Carlos. Contudo, a busca por investidores complicou-se devido à necessidade de estabelecer
+                            um modelo de usufruto que garantisse a recuperação do investimento, e o projeto voltou a
+                            ficar sem se concretizar. Só em 2019 começou um projeto com investimento real que permitiu
+                            restaurar a praça, e em 2021, finalmente abriu as suas portas ao público após décadas de
+                            abandono.</p>
+                            </div>
+
+                       
+                </div>
+                   
+            </div>
+               
+        </section>
+           
+    </main>
+
+           
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+       
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+       
+    <script src="assets/js/main.js"></script>
+
+           
+    <script>
+        document.querySelectorAll('#historia .section-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const content = title.nextElementSibling;
+
+                // Toggle icon
+                title.classList.toggle('active');
+
+                // Toggle open/close
+                if (content.classList.contains('open')) {
+                    content.classList.remove('open');
+                } else {
+                    // Close all others for cleaner look
+                    document.querySelectorAll('#historia .section-content').forEach(c => c.classList.remove('open'));
+                    document.querySelectorAll('#historia .section-title').forEach(t => t.classList.remove('active'));
+                    // Open clicked one
+                    content.classList.add('open');
+                    title.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

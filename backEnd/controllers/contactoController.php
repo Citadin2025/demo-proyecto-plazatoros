@@ -12,3 +12,8 @@ function obtenerContactos(){
     global $contactoModel;
     return $contactoModel->obtenerTodos();
 }
+
+function eliminarContacto($contactoID){
+    global $contactoModel;
+    return $contactoModel->eliminarContacto($contactoID);
+}

@@ -115,6 +115,28 @@ if ($requestMethod == "GET") {
             "status" => "success",
             "message" => "Evento eliminado correctamente"
         ]);
+    } else if ($solicitud == "contactos") {
+        // delete a contact message
+        $contactoID = $_GET["contactoID"] ?? null;
+        if (!$contactoID) {
+            echo json_encode([
+                "status" => "failed",
+                "message" => "Missing contactoID"
+            ]);
+            exit;
+        }
+        $deleted = eliminarContacto($contactoID);
+        if ($deleted) {
+            echo json_encode([
+                "status" => "success",
+                "message" => "Mensaje eliminado correctamente"
+            ]);
+        } else {
+            echo json_encode([
+                "status" => "failed",
+                "message" => "No se pudo eliminar el mensaje"
+            ]);
+        }
     } else echo json_encode([
         "status" => "failed",
         "message" => "You can't do that."
