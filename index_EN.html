@@ -48,7 +48,9 @@
                     <li><a data-scroll href="#mapa">Map</a></li>
                     <li><a data-scroll href="#contactos">Contact</a></li>
                     <li class="lang-dropdown" style="position:relative;">
-                        <select id="lang-redirect" onchange="if(this.value) window.location.href=this.value;" title="Select language" style="background:transparent;color:inherit;border:none;padding:10px 12px;font-weight:700;">
+                        <select id="lang-redirect" onchange="if(this.value) window.location.href=this.value;"
+                            title="Select language"
+                            style="background:transparent;color:inherit;border:none;padding:10px 12px;font-weight:700;">
                             <option value="index.html">ES</option>
                             <option value="index_EN.html" selected>EN</option>
                             <option value="index_PT.html">PT</option>
@@ -574,6 +576,10 @@
                                     required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Send Message</button>
+                            <div class="g-recaptcha" data-sitekey="6Le5ygssAAAAALiGisBmT1zFy206J6d4QkPq0TLN"></div>
+                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
                         </form>
                     </div>
                 </div>

@@ -45,33 +45,60 @@ if ($requestMethod == "GET") {
 
     if ($solicitud === 'contacto') {
 
-        $nombre = $_POST['name'] ?? '';
-        $email = $_POST['email'] ?? '';
-        $mensaje = $_POST['message'] ?? '';
-        $asunto = $_POST['subject'] ?? '';
+    $nombre = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $mensaje = $_POST['message'] ?? '';
+    $asunto = $_POST['subject'] ?? '';
 
-        if (empty($nombre) || empty($email) || empty($mensaje) || empty($asunto)) {
-            echo json_encode([
-                "status" => "failed",
-                "message" => "All fields are required."
-            ]);
-            exit;
-        }
-
-        if (agregarContacto($nombre, $email, $asunto, $mensaje)) {
-            echo json_encode([
-                'status' => 'success',
-                'message' => 'Mensaje enviado exitosamente.'
-            ]);
-            exit;
-        } else {
-            echo json_encode([
-                'status' => 'failed',
-                'message' => 'Error al enviar el mensaje.'
-            ]);
-            exit;
-        }
+    // 🔹 Validar campos vacíos
+    if (empty($nombre) || empty($email) || empty($mensaje) || empty($asunto)) {
+        echo json_encode([
+            "status" => "failed",
+            "message" => "Todos los campos son obligatorios."
+        ]);
+        exit;
     }
+
+    // 🔹 Validar reCAPTCHA
+    $captcha = $_POST['g-recaptcha-response'] ?? '';
+    $secretKey = '6Le5ygssAAAAAFZBwHprALZgGDUM6Oth3Aagdj-0'; // 👉 Reemplazá esto por tu clave secreta de Google
+
+    if (empty($captcha)) {
+        echo json_encode([
+            "status" => "failed",
+            "message" => "Por favor verifica el captcha."
+        ]);
+        exit;
+    }
+
+    // Verificación con Google
+    $verifyResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secretKey}&response={$captcha}");
+    $responseData = json_decode($verifyResponse);
+
+    if (!$responseData->success) {
+        echo json_encode([
+            "status" => "failed",
+            "message" => "Captcha inválido. Inténtalo de nuevo."
+        ]);
+        exit;
+    }
+
+    // 🔹 Si todo está bien, procesar el mensaje normalmente
+    if (agregarContacto($nombre, $email, $asunto, $mensaje)) {
+        echo json_encode([
+            'status' => 'success',
+            'message' => 'Mensaje enviado exitosamente.'
+        ]);
+        exit;
+    } else {
+        echo json_encode([
+            'status' => 'failed',
+            'message' => 'Error al enviar el mensaje.'
+        ]);
+        exit;
+    }
+}
+
 
     if (!checkLogin()) {
         http_response_code(401);

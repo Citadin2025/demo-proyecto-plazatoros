@@ -1535,3 +1535,10 @@ main>*+*,
     width: 100%;
   }
 }
+
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 30px 0 0px 0;
+}
