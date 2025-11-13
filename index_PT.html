@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-m">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Plaza de Toros RSC</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.jpg">
 
-    <!-- css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
@@ -19,51 +17,45 @@
 
 <body data-spy="scroll" data-target="#site-nav">
 
-    <!-- NAV BAR -->
     <nav id="site-nav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container-fluid">
             <div class="navbar-header">
-                <!-- Logo -->
                 <a class="navbar-logo" href="index.html">
                     <img src="assets/images/logo.png" class="navbar-logo" alt="Logo">
                 </a>
 
-                <!-- Hamburger (custom, not bootstrap collapse) -->
                 <button type="button" id="mobile-toggle" class="navbar-toggle" aria-expanded="false" aria-controls="navbar-items">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Alternar navegação</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
             </div>
 
-            <!-- Menu items -->
             <div class="collapse navbar-collapse" id="navbar-items" aria-hidden="true">
-                <!-- Mobile panel header (logo + close) -->
                 <div class="mobile-panel-header hidden-lg hidden-md">
-                    <button type="button" id="mobile-close" class="mobile-close" aria-label="Cerrar menú">✕</button>
+                    <button type="button" id="mobile-close" class="mobile-close" aria-label="Fechar menu">✕</button>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a data-scroll href="#about">Introducción</a></li>
-                    <li><a data-scroll href="#historia">Historia</a></li>
+                    <li><a data-scroll href="#about">Introdução</a></li>
+                    <li><a data-scroll href="#historia">História</a></li>
                     <li><a data-scroll href="#eventos">Eventos</a></li>
-                    <li><a data-scroll href="#gastronomia">Gastronomía</a></li>
-                    <li><a data-scroll href="#espacio-arte">Espacio Arte</a></li>
-                    <li><a data-scroll href="#galeria">Galería</a></li>
+                    <li><a data-scroll href="#gastronomia">Gastronomia</a></li>
+                    <li><a data-scroll href="#espacio-arte">Espaço Arte</a></li>
+                    <li><a data-scroll href="#galeria">Galeria</a></li>
                     <li><a data-scroll href="#preguntas">FAQs</a></li>
                     <li><a data-scroll href="#mapa">Mapa</a></li>
-                    <li><a data-scroll href="#contactos">Contactos</a></li>
+                    <li><a data-scroll href="#contactos">Contato</a></li>
                     <li class="lang-dropdown" style="position:relative;">
-                        <select id="lang-redirect" onchange="if(this.value) window.location.href=this.value;" title="Seleccionar idioma" style="background:transparent;color:inherit;border:none;padding:10px 12px;font-weight:700;">
+                        <select id="lang-redirect" onchange="if(this.value) window.location.href=this.value;" title="Selecionar idioma" style="background:transparent;color:inherit;border:none;padding:10px 12px;font-weight:700;">
                             <option value="index.html">ES</option>
                             <option value="index_EN.html">EN</option>
-                            <option value="index_PT.html">PT</option>
+                            <option value="index_PT.html" selected>PT</option>
                         </select>
                     </li>
                 </ul>
             </div>
 
-            <!-- Login button (always visible, right side) -->
             <div class="navbar-login" style="padding-left: 50px;">
                 <a class="login-button" href="login.html">
                     <img src="assets/images/icons/login-icon.png" alt="Login" class="login-icon">
@@ -73,59 +65,55 @@
         </div>
     </nav>
 
-    <!-- MAIN PAGE -->
     <header id="site-header" class="site-header valign-center">
         <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/videos/Plaza_noche_02.mp4">
             <source src="assets/videos/Plaza_noche_02.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Seu navegador não suporta a tag de vídeo.
         </video>
 
         <div class="header-content text-center">
             <h1 class="header-title">Plaza de Toros RSC</h1>
-            <p class="header-subtitle">Bienvenidos</p>
+            <p class="header-subtitle">Bem-vindos</p>
 
-    </header>
+        </header>
 
-    <!-- INTRO -->
     <section id="about" class="section about">
         <div class="container">
 
             <div class="col">
 
                 <h3 class="section-title">Plaza de Toros RSC</h3>
-                Ubicada en la emblemática zona de Real de San Carlos, Colonia del Sacramento, la Plaza de Toros RSC
-                es uno de los íconos históricos y arquitectónicos más fascinantes del Uruguay. Inaugurada en 1910,
-                esta plaza se construyó como parte de un ambicioso complejo turístico impulsado por el empresario
+                Localizada na emblemática zona de Real de San Carlos, Colonia del Sacramento, a Plaza de Toros RSC
+                é um dos ícones históricos e arquitetônicos mais fascinantes do Uruguai. Inaugurada em 1910,
+                esta praça de touros foi construída como parte de um ambicioso complexo turístico impulsionado pelo empresário
                 Nicolás Mihanovich.
 
-                Su estilo morisco y su estructura en hierro y ladrillo le otorgan una presencia imponente, siendo
-                única en Sudamérica por su diseño y legado. A pesar de haber estado cerrada durante más de un siglo,
-                hoy la Plaza de Toros ha renacido como un espacio cultural y turístico de primer nivel, donde
-                convergen historia, espectáculos y actividades para toda la familia.</p>
+                O seu estilo mourisco e a sua estrutura em ferro e tijolo conferem-lhe uma presença imponente, sendo
+                única na América do Sul pelo seu design e legado. Apesar de ter estado fechada por mais de um século,
+                hoje a Plaza de Toros renasceu como um espaço cultural e turístico de primeiro nível, onde
+                convergem história, espetáculos e atividades para toda a família.</p>
 
                 <figure>
                     <img alt="" class="img-responsive" src="assets/images/about-us.jpg" loading="lazy">
                 </figure>
 
-            </div><!-- /.col-sm-6 -->
-
-        </div><!-- /.container -->
+            </div>
+        </div>
     </section>
 
-    <!-- HISTORIA -->
     <section id="historia" class="section_historia">
         <div class="container">
             <div class="row">
                 <div class="col-md-12" style="padding: 20px" ;>
-                    <h3 class="section-title">Historia</h3>
+                    <h3 class="section-title">História</h3>
                     <p>
-                        Inaugurada en 1910, la Plaza de Toros Real de San Carlos fue parte de un ambicioso proyecto
-                        turístico en Colonia. Tras décadas de abandono y el paso del tiempo, el emblemático edificio fue
-                        restaurado, recuperando su esplendor. Hoy, combina su imponente historia con un nuevo rol: ser
-                        escenario de espectáculos, cultura y eventos que miran al futuro.
+                        Inaugurada em 1910, a Plaza de Toros Real de San Carlos fez parte de um ambicioso projeto
+                        turístico em Colonia. Após décadas de abandono e com o passar do tempo, o emblemático edifício foi
+                        restaurado, recuperando o seu esplendor. Hoje, combina a sua imponente história com um novo papel: ser
+                        palco de espetáculos, cultura e eventos que olham para o futuro.
                     </p>
                     <p>
-                        <a href="historia.html" class="btn btn-white" role="button">Leer más</a>
+                        <a href="historia.html" class="btn btn-white" role="button">Ler mais</a>
                     </p>
                 </div>
             </div>
@@ -133,32 +121,27 @@
             <div class="row mt-4" style="padding: 20px" ;>
                 <div class="col-md-6 mb-3">
                     <img src="./assets/images/photos/Plaza de Toros 1910.jpg" class="img-fluid rounded shadow"
-                        loading="lazy" alt="Plaza de Toros en 1910">
-                    <p class="mt-2"><small>Plaza de Toros en 1910</small></p>
+                        loading="lazy" alt="Plaza de Toros em 1910">
+                    <p class="mt-2"><small>Plaza de Toros em 1910</small></p>
                 </div>
                 <div class="col-md-6 mb-3">
                     <img src="./assets/images/photos/Plaza de Toros 2025.jpg" class="img-fluid rounded shadow"
-                        loading="lazy" alt="Plaza de Toros en la Actualidad">
-                    <p class="mt-2"><small>Plaza de Toros en la Actualidad</small></p>
+                        loading="lazy" alt="Plaza de Toros Atualmente">
+                    <p class="mt-2"><small>Plaza de Toros Atualmente</small></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EVENTOS -->
     <section id="eventos" class="section_eventos">
         <div class="container">
             <h3 class="section-title">Eventos</h3>
 
-            <!-- Carrusel de Eventos -->
             <div id="eventosCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicadores -->
                 <ol class="carousel-indicators" id="carousel-indicators"></ol>
 
-                <!-- Contenido dinámico -->
                 <div class="carousel-inner" id="carousel-inner"></div>
 
-                <!-- Controles -->
                 <a class="left carousel-control" href="#eventosCarousel" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
@@ -169,50 +152,46 @@
         </div>
     </section>
 
-    <!-- GASTRONOMÍA -->
     <section id="gastronomia" class="section_gastronomia">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">Gastronomía</h3>
+                    <h3 class="section-title">Gastronomia</h3>
                 </div>
 
                 <div class="container">
                     <div class="row">
 
-                        <!-- Imagen del restaurante -->
                         <div class="col-md-6">
                             <img src="assets/images/gastronomy/Logo Quintón PdT.png" alt="Restaurante Plaza de Toros"
                                 class="img-responsive img-rounded shadow" loading="lazy">
                         </div>
 
-                        <!-- Texto descriptivo -->
                         <div class="col-md-6">
                             <h3 class="section-title">Quintón Plaza de Toros</h3>
                             <p>
-                                Catas, maridajes, arte y gastronomía de excelencia 🍽️ <br>
-                                🕦 Horarios: <br>
-                                Jueves a lunes de 10:30 a 20hs <br>
-                                Con y sin reserva
+                                Degustações, harmonizações, arte e gastronomia de excelência 🍽️ <br>
+                                🕦 Horários: <br>
+                                Quinta a segunda, das 10:30 às 20:00 <br>
+                                Com e sem reserva
                             </p>
                             <a href="https://www.instagram.com/quintonbistro/?hl=en"
-                                class="btn btn-primary mt-3">Conocenos</a>
+                                class="btn btn-primary mt-3">Saiba mais</a>
                         </div>
 
-                        <!-- Carrusel de imágenes -->
                         <div class="col-md-6 mt-4">
                             <div id="carousel-quinton" class="carousel">
                                 <div class="carousel-track">
                                     <div class="carousel-slide">
-                                        <img src="assets/images/gastronomy/ElQuinton1.png" alt="Imagen 1"
+                                        <img src="assets/images/gastronomy/ElQuinton1.png" alt="Imagem 1"
                                             loading="lazy">
                                     </div>
                                     <div class="carousel-slide">
-                                        <img src="assets/images/gastronomy/ElQuinton2.png" alt="Imagen 2"
+                                        <img src="assets/images/gastronomy/ElQuinton2.png" alt="Imagem 2"
                                             loading="lazy">
                                     </div>
                                     <div class="carousel-slide">
-                                        <img src="assets/images/gastronomy/ElQuinton3.png" alt="Imagen 3"
+                                        <img src="assets/images/gastronomy/ElQuinton3.png" alt="Imagem 3"
                                             loading="lazy">
                                     </div>
                                 </div>
@@ -247,7 +226,7 @@
 
         .carousel-slide {
             flex: 0 0 100%;
-            /* 👈 cada slide ocupa el 100% del carrusel */
+            /* 👈 cada slide ocupa 100% do carrossel */
             height: 100%;
         }
 
@@ -305,7 +284,7 @@
             let index = 0;
             const total = slides.length;
 
-            // 💡 Cada slide ocupa 100%, así que movemos por múltiplos de 100%
+            // 💡 Cada slide ocupa 100%, então movemos por múltiplos de 100%
             function showSlide(i) {
                 index = (i + total) % total; // loop infinito
                 const moveAmount = -index * 100;
@@ -318,46 +297,43 @@
             // Auto-play
             setInterval(() => showSlide(index + 1), 4000);
 
-            // Inicializa en la primera
+            // Inicializa no primeiro
             showSlide(0);
         });
     </script>
 
 
-    <!-- ESPACIO ARTE -->
     <section id="espacio-arte" class="espacio-arte">
         <div class="container">
-            <h2 class="section-title">Espacio Arte</h2>
+            <h2 class="section-title">Espaço Arte</h2>
 
             <div class="row arte-row align-items-start">
-                <!-- Left: description + gallery -->
                 <div class="col-md-7 arte-left text-left">
-                    <p class="section-subtitle">Un centro cultural y artistico, ubicado en la Plaza de Toros Real de San
+                    <p class="section-subtitle">Um centro cultural e artístico, localizado na Plaza de Toros Real de San
                         Carlos.
-                        Este espacio ofrece eventos artísticos mostrando distintos tipos de obras. Además, se destaca
-                        por su
-                        ambiente amplio y acogedor, ideal para disfrutar del arte y cultura que ele espacio ofrece en el
-                        marco
+                        Este espaço oferece eventos artísticos que exibem diferentes tipos de obras. Além disso, destaca-se
+                        pelo seu
+                        ambiente amplo e acolhedor, ideal para desfrutar da arte e cultura que o espaço oferece no
+                        âmbito
                         de diversos eventos</p>
 
                     <div class="gallery arte-gallery">
-                        <img src="assets/images/espacio_arte/SAV07827.jpg" alt="Obra 1" class="art-piece"
+                        <img src="assets/images/espacio_arte/SAV07827.jpg" alt="Obra de Arte 1" class="art-piece"
                             loading="lazy">
-                        <img src="assets/images/espacio_arte/SAV07836.jpg" alt="Obra 2" class="art-piece"
+                        <img src="assets/images/espacio_arte/SAV07836.jpg" alt="Obra de Arte 2" class="art-piece"
                             loading="lazy">
-                        <img src="assets/images/espacio_arte/SAV07842.jpg" alt="Obra 3" class="art-piece"
+                        <img src="assets/images/espacio_arte/SAV07842.jpg" alt="Obra de Arte 3" class="art-piece"
                             loading="lazy">
-                        <img src="assets/images/espacio_arte/SAV07853.jpg" alt="Obra 4" class="art-piece"
+                        <img src="assets/images/espacio_arte/SAV07853.jpg" alt="Obra de Arte 4" class="art-piece"
                             loading="lazy">
                     </div>
                 </div>
 
-                <!-- Right: portrait Reel video -->
                 <div class="col-md-5 arte-right d-flex justify-content-center">
                     <div class="video-reel">
                         <video controls playsinline preload="metadata" poster="">
                             <source src="assets/videos/Reel Sinergia.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
+                            Seu navegador não suporta a tag de vídeo.
                         </video>
                     </div>
                 </div>
@@ -367,41 +343,40 @@
     </section>
 
 
-    <!-- GALERÍA -->
     <section id="galeria" class="section_galeria">
         <div class="container">
             <h3 class="section-title">Galeria</h3>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="assets/images/photos/foto 1.jpg" alt="Imagen 1" loading="lazy">
+                    <img src="assets/images/photos/foto 1.jpg" alt="Imagem 1" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/photos/foto 2.jpg" alt="Imagen 2" loading="lazy">
+                    <img src="assets/images/photos/foto 2.jpg" alt="Imagem 2" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/photos/foto 3.jpg" alt="Imagen 3" loading="lazy">
+                    <img src="assets/images/photos/foto 3.jpg" alt="Imagem 3" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/photos/foto 4.jpg" alt="Imagen 4" loading="lazy">
+                    <img src="assets/images/photos/foto 4.jpg" alt="Imagem 4" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/photos/foto 5.jpg" alt="Imagen 5" loading="lazy">
+                    <img src="assets/images/photos/foto 5.jpg" alt="Imagem 5" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/photos/foto 6.jpg" alt="Imagen 6" loading="lazy">
+                    <img src="assets/images/photos/foto 6.jpg" alt="Imagem 6" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/photos/foto 7.jpg" alt="Imagen 7" loading="lazy">
+                    <img src="assets/images/photos/foto 7.jpg" alt="Imagem 7" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/photos/foto 8.jpg" alt="Imagen 8" loading="lazy">
+                    <img src="assets/images/photos/foto 8.jpg" alt="Imagem 8" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/images/photos/foto 9.jpg" alt="Imagen 9" loading="lazy">
+                    <img src="assets/images/photos/foto 9.jpg" alt="Imagem 9" loading="lazy">
                 </div>
 
                 <a href="galeria.html" class="gallery-item">
-                    <img src="assets/images/photos/plus.png" alt="Más fotos" loading="lazy">
+                    <img src="assets/images/photos/plus.png" alt="Mais fotos" loading="lazy">
                 </a>
 
             </div>
@@ -411,12 +386,11 @@
 
     </section>
 
-    <!-- FAQs -->
     <section id="preguntas" class="section_preguntas">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">Preguntas Frecuentes</h3>
+                    <h3 class="section-title">Perguntas Frequentes</h3>
                 </div>
             </div>
             <div class="row">
@@ -428,16 +402,16 @@
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse"
                                         data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                                        aria-controls="collapseOne"> ¿Dónde está ubicada la Plaza de Toros?</a>
+                                        aria-controls="collapseOne"> Onde fica a Plaza de Toros?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingOne">
                                 <div class="panel-body">
-                                    <p>Se encuentra en el Real de San Carlos, a pocos minutos del centro histórico de
-                                        Colonia del Sacramento, Uruguay. El acceso puede realizarse en vehículo,
-                                        bicicleta o incluso caminando desde la rambla costera.</p>
+                                    <p>Está localizada em Real de San Carlos, a poucos minutos do centro histórico de
+                                        Colonia del Sacramento, Uruguai. O acesso pode ser feito de veículo,
+                                        bicicleta ou até mesmo a pé a partir da rambla costeira.</p>
                                 </div>
                             </div>
                         </div>
@@ -447,17 +421,17 @@
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse"
                                         data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">¿Qué actividades o servicios se ofrecen
-                                        actualmente?</a>
+                                        aria-controls="collapseTwo">Quais atividades ou serviços são oferecidos
+                                        atualmente?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingTwo">
-                                <div class="panel-body">Actualmente, la Plaza de Toros ha sido restaurada y funciona
-                                    como un espacio cultural, turístico y de eventos. Se realizan visitas guiadas,
-                                    espectáculos, exposiciones y actividades educativas, además de contar con servicios
-                                    de información turística.</div>
+                                <div class="panel-body">Atualmente, a Plaza de Toros foi restaurada e funciona
+                                    como um espaço cultural, turístico e de eventos. São realizadas visitas guiadas,
+                                    espetáculos, exposições e atividades educativas, além de contar com serviços
+                                    de informação turística.</div>
                             </div>
                         </div>
 
@@ -466,7 +440,7 @@
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse"
                                         data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">¿Cómo puedo obtener más información o realizar una
+                                        aria-controls="collapseThree">Como posso obter mais informações ou fazer uma
                                         reserva?</a>
                                 </h4>
                             </div>
@@ -474,9 +448,9 @@
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    Podés comunicarte a través de los canales oficiales de la Intendencia de Colonia o
-                                    visitar el sitio web oficial de la Plaza de Toros, donde se publican los horarios,
-                                    precios y actividades vigentes.
+                                    Você pode comunicar-se através dos canais oficiais da Intendência de Colonia ou
+                                    visitar o site oficial da Plaza de Toros, onde são publicados os horários,
+                                    preços e atividades vigentes.
                                 </div>
                             </div>
                         </div>
@@ -486,16 +460,16 @@
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse"
                                         data-parent="#accordion" href="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour">¿La Plaza de Toros cuenta con accesibilidad para
-                                        personas con movilidad reducida?</a>
+                                        aria-controls="collapseFour">A Plaza de Toros é acessível para
+                                        pessoas com mobilidade reduzida?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingFour">
-                                <div class="panel-body">Sí. La restauración del edificio contempló criterios de
-                                    accesibilidad universal, incluyendo rampas, ascensores y señalización adecuada, para
-                                    que todas las personas puedan disfrutar del recorrido de forma segura y cómoda.
+                                <div class="panel-body">Sim. A restauração do edifício contemplou critérios de
+                                    acessibilidade universal, incluindo rampas, elevadores e sinalização adequada, para
+                                    que todas as pessoas possam desfrutar do percurso de forma segura e confortável.
                                 </div>
                             </div>
                         </div>
@@ -505,17 +479,17 @@
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse"
                                         data-parent="#accordion" href="#collapseFive" aria-expanded="false"
-                                        aria-controls="collapseFive">¿Se pueden realizar eventos privados o
-                                        institucionales en la Plaza de Toros?</a>
+                                        aria-controls="collapseFive">Podem ser realizados eventos privados ou
+                                        institucionais na Plaza de Toros?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingFive">
-                                <div class="panel-body">Sí. El espacio puede alquilarse para eventos culturales,
-                                    empresariales o institucionales, siempre que se coordine previamente con la
-                                    administración. La Plaza ofrece infraestructura moderna y un entorno histórico único
-                                    para la realización de actividades especiales.</div>
+                                <div class="panel-body">Sim. O espaço pode ser alugado para eventos culturais,
+                                    empresariais ou institucionais, desde que seja coordenado previamente com a
+                                    administração. A Plaza oferece infraestrutura moderna e um cenário histórico único
+                                    para a realização de atividades especiais.</div>
                             </div>
                         </div>
                     </div>
@@ -523,16 +497,15 @@
             </div>
     </section>
 
-    <!-- MAPA -->
     <section id="mapa" class="section_mapa">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3 class="section-title">Localizacion de la Plaza</h3>
-                    <p>La Plaza de Toros Real de San Carlos se encuentra en el barrio Real de San Carlos, al oeste de
-                        Colonia del Sacramento, Uruguay. Está a unos 5 minutos del centro histórico, sobre la Rambla
-                        Costanera, rodeada de un entorno natural y con fácil acceso por las principales avenidas de la
-                        ciudad.</p>
+                    <h3 class="section-title">Localização da Plaza</h3>
+                    <p>A Plaza de Toros Real de San Carlos está localizada no bairro Real de San Carlos, a oeste de
+                        Colonia del Sacramento, Uruguai. Fica a cerca de 5 minutos do centro histórico, na Rambla
+                        Costanera, rodeada por um ambiente natural e com fácil acesso pelas principais avenidas da
+                        cidade.</p>
                 </div>
                 <div class="col-sm-9">
                     <iframe
@@ -547,20 +520,17 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-
     <footer id="contactos" class="site-footer section_contactos">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h3 class="section-title">Información y Contactos</h3>
+                    <h3 class="section-title">Informação e Contato</h3>
                     <p class="site-info">Designed and Developed <br> by Citadin Web Team</p>
                     <ul class="social-block">
                         <li><a href="https://www.facebook.com/plazadetorosRSC/?locale=es_LA" aria-label="Facebook"><i
                                     class="ion-social-facebook"></i></a></li>
                         <li><a href="https://es.wikipedia.org/wiki/Plaza_de_toros_Real_de_San_Carlos"
                                 aria-label="Wikipedia">
-                                <!-- Simple accessible SVG 'W' mark approximating a Wikipedia glyph -->
                                 <svg role="img" aria-labelledby="wikiTitle" viewBox="0 0 64 64"
                                     xmlns="http://www.w3.org/2000/svg" focusable="false">
                                     <title id="wikiTitle">Wikipedia</title>
@@ -576,12 +546,12 @@
                 </div>
                 <div class="col-md-8">
                     <div class="contact-form">
-                        <h4>Contacto</h4>
+                        <h4>Contato</h4>
                         <form method="POST" class="contact-form" id="contact-form">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" placeholder="Nombre" required>
+                                        <input type="text" class="form-control" name="name" placeholder="Nome" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -591,12 +561,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="subject" placeholder="Asunto" required>
+                                <input type="text" class="form-control" name="subject" placeholder="Assunto" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="4" placeholder="Mensaje" required></textarea>
+                                <textarea class="form-control" name="message" rows="4" placeholder="Mensagem" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
                         </form>
                     </div>
                 </div>
