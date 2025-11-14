@@ -14,19 +14,23 @@ Este es un sitio web desarrollado para la **Plaza de Toros de Colonia del Sacram
 - Área de administración (login) para que el equipo de la plaza pueda:
   - Agregar nuevos eventos.
   - Editar o eliminar eventos existentes.
+  - Ver y borrar mensajes de usuarios.
 - Cada evento tiene:
   - Nombre del evento.
   - Descripción.
   - Fecha.
   - Enlace a compra de entradas.
   - Imagen representativa.
+- Los usuarios pueden comunicarse con el equipo de la plaza por medio de un formulario de contacto.
 
 ---
 
 ## ⚙️ Requisitos
 
-- [XAMPP](https://www.apachefriends.org/index.html) o similar (Apache + PHP + MySQL)
+- [XAMPP](https://www.apachefriends.org/index.html) o similar (Apache + PHP + MySQL) para el desarrollo.
 - Navegador web moderno (Chrome, Firefox, Edge...)
+- Un servicio de hosting.
+- Visual Studio Code.
 
 ---
 
@@ -53,17 +57,22 @@ C:\xampp\htdocs\plazatoros
    - Crear una base de datos, de nombre: `citadin`.
    - Usar la opción "Importar" y subir el archivo `.sql` que se incluye con el proyecto.
 
-5. **Listo! Accedé al sitio en:**
+5. **Listo! Accedé al sitio de manera local en:**
 
 ```
 http://localhost/demo-proyecto-plazatoros
+```
+**O bien accediendo de manera online en:**
+
+```
+https://plazadetoros.great-site.net/
 ```
 
 ---
 
 ## 🔐 Acceso administrativo
 
-Se requiere login para acceder a la zona de gestión de eventos. Los usuarios admin pueden agregar, editar y eliminar eventos desde una interfaz sencilla.
+Se requiere login para acceder a la zona de gestión de eventos. Los usuarios admin pueden agregar, editar y eliminar eventos desde una interfaz sencilla y ver los mensajes que los usuarios envíen desde el formulario de contacto.
 
 ---
 
@@ -79,5 +88,5 @@ Este sitio busca:
 
 ## 💬 Créditos
 
-Desarrollado por estudiantes para fines educativos.  
+Desarrollado por estudiantes del equipo Citading Coding Team del Polo Educativo Tecnológico de Colonia (ex IAE) para fines educativos.  
 Proyecto académico con fines demostrativos.
