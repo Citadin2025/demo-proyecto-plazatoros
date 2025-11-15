@@ -204,7 +204,7 @@ a:focus {
   font-size: 13px;
   font-weight: 500;
   border-bottom: 2px solid transparent;
-  padding: 10px 12px;
+  padding: 10px 10px;
   letter-spacing: 0.6px;
   line-height: 60px;
   transition: color 0.3s, border-bottom-color 0.3s;
