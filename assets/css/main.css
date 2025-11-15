@@ -449,6 +449,10 @@ a:focus {
   }
 }
 
+.lang-dropdown select option {
+    background: black;
+    color: white;
+}
 
 
 /* =====================
