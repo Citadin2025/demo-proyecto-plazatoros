@@ -18,7 +18,7 @@ form.addEventListener('submit', async (e) => {
   if (data.ok) {
     mensaje.textContent = 'Login exitoso';
     mensaje.style.color = 'green';
-    window.location.href = '../../administrarEvento.html';
+    window.location.href = './administrarEvento.html';
   } else {
     mensaje.textContent = data.error || 'Error desconocido';
     mensaje.style.color = 'red';
