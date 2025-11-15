@@ -61,7 +61,7 @@ if ($requestMethod == "GET") {
 
     // 🔹 Validar reCAPTCHA
     $captcha = $_POST['g-recaptcha-response'] ?? '';
-    $secretKey = '6Le5ygssAAAAAFZBwHprALZgGDUM6Oth3Aagdj-0'; // 👉 Reemplazá esto por tu clave secreta de Google
+    $secretKey = '6LeVLw0sAAAAAHs6b4HdTPNT92pOQiOTLZ4rBVgI'; 
 
     if (empty($captcha)) {
         echo json_encode([

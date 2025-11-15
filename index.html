@@ -326,7 +326,6 @@
         });
     </script>
 
-
     <!-- ESPACIO ARTE -->
     <section id="espacio-arte" class="espacio-arte">
         <div class="container">
@@ -368,7 +367,6 @@
 
         </div>
     </section>
-
 
     <!-- GALERÍA -->
     <section id="galeria" class="section_galeria">
@@ -578,9 +576,10 @@
                     </ul>
                 </div>
                 <div class="col-md-8">
+                    
                     <div class="contact-form">
                         <h4>Contacto</h4>
-                        <form method="POST" class="contact-form" id="contact-form">
+                        <form action="/backEnd/model/contacto.php" method="POST" class="contact-form" id="contact-form">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -602,10 +601,9 @@
                                 <textarea class="form-control" name="message" rows="4" placeholder="Mensaje"
                                     required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
 
-                            <div class="g-recaptcha" data-sitekey="6Le5ygssAAAAALiGisBmT1zFy206J6d4QkPq0TLN"></div>
-                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                            <div class="g-recaptcha" data-sitekey="6LeVLw0sAAAAAGYBitB2hqJ_sjUxMTHF1XWEODjM"></div>
+                                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
 
                         </form>
                     </div>
@@ -624,6 +622,7 @@
     <script src="assets/js/navbar.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Chatbase widget -->
     <script>
